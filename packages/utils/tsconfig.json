@@ -1,0 +1,14 @@
+{
+    "extends": "../../tsconfig",
+    "compilerOptions": {
+        "allowJs": true,
+        "noImplicitThis": true
+    },
+    "include": [
+        "src/*",
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/.*/"
+    ]
+}

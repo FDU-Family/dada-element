@@ -1,0 +1,11 @@
+{
+  "name": "@dada-element/utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "keywords": [],
+  "author": "gjssss",
+  "peerDependencies": {
+    "vue":"^3.2"
+  }
+}

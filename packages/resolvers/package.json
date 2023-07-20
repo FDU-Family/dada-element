@@ -1,0 +1,21 @@
+{
+  "name": "@dada-element/resolver",
+  "version": "1.0.0",
+  "description": "auto import resolver",
+  "peerDependencies": {
+    "unplugin-vue-components": "*"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "require": "./src/index.cjs",
+      "import": "./src/index.mjs"
+    }
+  },
+  "main": "./src/index.cjs",
+  "module": "./src/index.mjs",
+  "types": "./src/index.d.ts",
+  "files": [
+    "src"
+  ]
+}

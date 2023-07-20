@@ -1,0 +1,18 @@
+{
+  "pages": [
+    {
+      "path": "pages/index",
+      "type": "home"
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTitleText": "dada",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "backgroundColorTop": "#fff",
+    "backgroundColorBottom": "#fff"
+  },
+  "subPackages": []
+}
