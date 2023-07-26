@@ -3,6 +3,9 @@
     "compilerOptions": {
         "allowJs": true,
         "noImplicitThis": true,
+        "types": [
+            "@dcloudio/types"
+        ]
     },
     "include": [
         "src/**/*",

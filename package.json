@@ -9,6 +9,7 @@
     "@dada-element/components": "workspace:*",
     "@dada-element/resolver": "workspace:*",
     "@dada-element/utils": "workspace:*",
+    "@dada-element/style": "workspace:*",
     "vue": "3.2.47"
   },
   "devDependencies": {
