@@ -1,0 +1,11 @@
+@mixin generate-class($namespace, $props-map) {
+  @each $prop, $prop-map in $props-map {
+    @each $name, $value-map in $prop-map {
+      .__dd-#{$namespace}-#{$prop}-#{$name} {
+        @each $key, $value in $value-map {
+          #{$key}: var(--#{$value});
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+// 文件全局引入mixin
+@use "mixins/mixin" as *;
+
+$props-map: (
+  type: (
+    default: (
+      color: "main-deep",
+      background-color: "main-flat",
+    ),
+    primary: (
+      color: "bas-nagative",
+      background-color: "main-primary",
+    ),
+    secondary: (
+      color: "bas-nagative",
+      background-color: "sub-primary",
+    ),
+    warning: (
+      color: "main-primary",
+      background-color: "main-contrast",
+    ),
+    info: (
+      color: "bas-nagative",
+      background-color: "main-deep",
+    ),
+  ),
+);
+
+.__dd-button {
+  font-weight: 700;
+  font-size: 26px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+@include generate-class("button", $props-map);
