@@ -4,7 +4,8 @@
         "allowJs": true,
         "noImplicitThis": true,
         "types": [
-            "@dcloudio/types"
+            "@dcloudio/types",
+            "vitest/globals"
         ]
     },
     "include": [

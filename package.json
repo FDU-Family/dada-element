@@ -3,7 +3,9 @@
     "play": "pnpm --filter play dev",
     "dev": "pnpm --filter @dada-element/components dev",
     "fix": "eslint --fix --ext .js,.ts,.vue .",
-    "lint": "eslint --ext .js,.ts,.vue ."
+    "lint": "eslint --ext .js,.ts,.vue .",
+    "test": "pnpm --filter @dada-element/components test",
+    "coverage": "pnpm --filter @dada-element/components coverage"
   },
   "dependencies": {
     "@dada-element/components": "workspace:*",
