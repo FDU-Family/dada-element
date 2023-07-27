@@ -5,9 +5,9 @@ import '@dada-element/style/src/Button.scss'
 
 export interface ButtonProps {
   type?: 'default' | 'primary' | 'secondary' | 'warning' | 'info'
-  width?: number
-  boundless?: boolean
-  text?: 'default' | 'primary' | 'secondary' | 'warning' | 'info'
+  width?: number | string
+  text?: boolean
+  textColor?: string
 }
 export interface ButtonEmits {
   (e: 'click', event: TouchEvent): void
@@ -15,6 +15,7 @@ export interface ButtonEmits {
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'default',
+  text: false,
 })
 
 const emit = defineEmits<ButtonEmits>()
@@ -27,19 +28,16 @@ const classAry = computed(() => {
   const { type, text } = props
   return [
     `__dd-button-type-${type}`,
-    text ? `__dd-button-text-${text}` : '',
+    text ? '__dd-button-text' : '',
   ]
 })
 const styleObj = computed(() => {
-  const { width, boundless } = props
+  const { width, textColor } = props
   const obj: Record<string, any> = {}
   if (width)
     obj.width = `${width}px`
-  if (boundless) {
-    obj.border = 'none'
-    obj.background = 'transparent'
-  }
-
+  if (textColor)
+    obj.color = textColor
   return obj
 })
 </script>

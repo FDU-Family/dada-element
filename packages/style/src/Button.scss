@@ -29,16 +29,16 @@ $props-map: (
       color: "main-deep",
     ),
     primary: (
-      color: "bas-nagative",
+      color: "main-primary",
     ),
     secondary: (
-      color: "bas-nagative",
+      color: "sub-primary",
     ),
     warning: (
       color: "main-contrast",
     ),
     info: (
-      color: "bas-nagative",
+      color: "bas-positive",
     ),
   ),
 );
@@ -52,4 +52,23 @@ $props-map: (
   text-align: center;
 }
 
-@include generate-class("button", $props-map);
+@each $name, $value-map in map-get($map: $props-map, $key: "type") {
+  .__dd-button-type-#{$name} {
+    @each $key, $value in $value-map {
+      #{$key}: var(--#{$value});
+    }
+  }
+}
+
+.__dd-button-text {
+  border: none;
+  background-color: var(--transparent);
+}
+
+@each $name, $value-map in map-get($props-map, "type") {
+  .__dd-button-text.__dd-button-type-#{$name} {
+    @each $key, $value in map-get(map-get($props-map, "text"), $name) {
+      #{$key}: var(--#{$value});
+    }
+  }
+}
