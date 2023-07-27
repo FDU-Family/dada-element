@@ -5,6 +5,7 @@ import '@dada-element/style/src/Button.scss'
 
 export interface ButtonProps {
   type?: 'default' | 'primary' | 'secondary' | 'warning' | 'info'
+  width?: number
 }
 export interface ButtonEmits {
   (e: 'click', event: TouchEvent): void
@@ -26,10 +27,17 @@ const classAry = computed(() => {
     `__dd-button-type-${type}`,
   ]
 })
+const styleObj = computed(() => {
+  const { width } = props
+  const obj: Record<string, any> = {}
+  if (width)
+    obj.width = `${width}px`
+  return obj
+})
 </script>
 
 <template>
-  <div class="dada-element-wapper __dd-button" :class="classAry" @click="click">
+  <div class="dada-element-wapper __dd-button" :class="classAry" :style="styleObj" @click="click">
     <slot />
   </div>
 </template>

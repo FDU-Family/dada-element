@@ -13,10 +13,19 @@
     <DadaButton type="warning">
       按钮
     </DadaButton>
-    <DadaButton type="info">
+    <DadaButton type="info" :width="100">
       按钮
+    </DadaButton>
+    <DadaButton>
+      <view class="w-btn">
+        按钮
+      </view>
     </DadaButton>
   </div>
 </template>
 
-<style></style>
+<style lang="scss" scoped>
+.w-btn {
+  width: 400px;
+}
+</style>
