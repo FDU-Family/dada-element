@@ -103,6 +103,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^0.33.0
         version: 0.33.0(vitest@0.33.0)
+      '@vitest/ui':
+        specifier: ^0.33.0
+        version: 0.33.0(vitest@0.33.0)
       '@vue/test-utils':
         specifier: ^2.4.1
         version: 2.4.1
@@ -123,7 +126,7 @@ importers:
         version: 0.25.1(vue@3.2.47)
       vitest:
         specifier: ^0.33.0
-        version: 0.33.0(jsdom@22.1.0)(sass@1.63.6)(terser@5.19.2)
+        version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)(sass@1.63.6)(terser@5.19.2)
 
   packages/resolvers:
     dependencies:
@@ -3632,7 +3635,7 @@ packages:
       std-env: 3.3.3
       test-exclude: 6.0.0
       v8-to-istanbul: 9.1.0
-      vitest: 0.33.0(jsdom@22.1.0)(sass@1.63.6)(terser@5.19.2)
+      vitest: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)(sass@1.63.6)(terser@5.19.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3665,6 +3668,21 @@ packages:
     resolution: {integrity: sha512-Kv+yZ4hnH1WdiAkPUQTpRxW8kGtH8VRTnus7ZTGovFYM1ZezJpvGtb9nPIjPnptHbsyIAxYZsEpVPYgtpjGnrg==}
     dependencies:
       tinyspy: 2.1.1
+    dev: true
+
+  /@vitest/ui@0.33.0(vitest@0.33.0):
+    resolution: {integrity: sha512-7gbAjLqt30R4bodkJAutdpy4ncv+u5IKTHYTow1c2q+FOxZUC9cKOSqMUxjwaaTwLN+EnDnmXYPtg3CoahaUzQ==}
+    peerDependencies:
+      vitest: '>=0.30.1 <1'
+    dependencies:
+      '@vitest/utils': 0.33.0
+      fast-glob: 3.3.1
+      fflate: 0.8.0
+      flatted: 3.2.7
+      pathe: 1.1.1
+      picocolors: 1.0.0
+      sirv: 2.0.3
+      vitest: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)(sass@1.63.6)(terser@5.19.2)
     dev: true
 
   /@vitest/utils@0.33.0:
@@ -5406,6 +5424,10 @@ packages:
     resolution: {integrity: sha512-p5161BqbuCaSnB8jIbzQHOlpgsPmK5rJVDfDKO91Axs5NC1uu3HRQm6wt9cd9/+GtQQIO53JdGXXoyDpTAsgYA==}
     dependencies:
       bser: 2.1.1
+    dev: true
+
+  /fflate@0.8.0:
+    resolution: {integrity: sha512-FAdS4qMuFjsJj6XHbBaZeXOgaypXp8iw/Tpyuq/w3XA41jjLHT8NPA+n7czH/DDhdncq0nAyDZmPeWXh2qmdIg==}
     dev: true
 
   /file-entry-cache@6.0.1:
@@ -8481,7 +8503,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest@0.33.0(jsdom@22.1.0)(sass@1.63.6)(terser@5.19.2):
+  /vitest@0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)(sass@1.63.6)(terser@5.19.2):
     resolution: {integrity: sha512-1CxaugJ50xskkQ0e969R/hW47za4YXDUfWJDxip1hwbnhUjYolpfUn2AMOulqG/Dtd9WYAtkHmM/m3yKVrEejQ==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -8519,6 +8541,7 @@ packages:
       '@vitest/runner': 0.33.0
       '@vitest/snapshot': 0.33.0
       '@vitest/spy': 0.33.0
+      '@vitest/ui': 0.33.0(vitest@0.33.0)
       '@vitest/utils': 0.33.0
       acorn: 8.10.0
       acorn-walk: 8.2.0

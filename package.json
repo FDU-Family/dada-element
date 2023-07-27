@@ -5,7 +5,8 @@
     "fix": "eslint --fix --ext .js,.ts,.vue .",
     "lint": "eslint --ext .js,.ts,.vue .",
     "test": "pnpm --filter @dada-element/components test",
-    "coverage": "pnpm --filter @dada-element/components coverage"
+    "coverage": "pnpm --filter @dada-element/components coverage",
+    "test-ui": "pnpm --filter @dada-element/components test-ui"
   },
   "dependencies": {
     "@dada-element/components": "workspace:*",
