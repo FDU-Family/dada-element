@@ -24,6 +24,23 @@ $props-map: (
       background-color: "main-deep",
     ),
   ),
+  text: (
+    default: (
+      color: "main-deep",
+    ),
+    primary: (
+      color: "bas-nagative",
+    ),
+    secondary: (
+      color: "bas-nagative",
+    ),
+    warning: (
+      color: "main-contrast",
+    ),
+    info: (
+      color: "bas-nagative",
+    ),
+  ),
 );
 
 .__dd-button {
