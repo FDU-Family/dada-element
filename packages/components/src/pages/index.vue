@@ -16,6 +16,9 @@
     <DadaButton type="info" :width="100">
       按钮
     </DadaButton>
+    <DadaButton :boundless="true" text="warning" :width="200">
+      点击查看
+    </DadaButton>
     <DadaButton>
       <view class="w-btn">
         按钮
