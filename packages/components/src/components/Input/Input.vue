@@ -63,7 +63,7 @@ function inputHandle(e: InputOnInputEvent) {
 
 <template>
   <div
-    class="dada-element-wapper __dd-input-container"
+    class="dada-element-wrapper __dd-input-container"
     :class="containerClassAry"
   >
     <div :class="areaClassAry">

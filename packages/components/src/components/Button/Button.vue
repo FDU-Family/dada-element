@@ -49,7 +49,7 @@ const styleObj = computed(() => {
 </script>
 
 <template>
-  <div class="dada-element-wapper __dd-button" :class="classAry" :style="styleObj" @click="click">
+  <div class="dada-element-wrapper __dd-button" :class="classAry" :style="styleObj" @click="click">
     <slot />
   </div>
 </template>
