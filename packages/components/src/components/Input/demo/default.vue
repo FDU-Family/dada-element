@@ -2,6 +2,11 @@
 import { ref } from 'vue'
 
 const value = ref('123')
+const input = ref()
+
+function clickHandle() {
+  input.value.focus()
+}
 </script>
 
 <template>
@@ -15,6 +20,12 @@ const value = ref('123')
     <div class="mt">
       <DadaInput border placeholder="芝士输入框" />
     </div>
+    <div class="mt">
+      <DadaInput ref="input" placeholder="芝士输入框" />
+    </div>
+    <DadaButton @click="clickHandle">
+      聚焦
+    </DadaButton>
   </div>
 </template>
 
