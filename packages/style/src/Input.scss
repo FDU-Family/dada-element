@@ -27,6 +27,10 @@ $props-map: (
   padding: 10px;
 }
 
+.__dd-input-area {
+  position: relative;
+}
+
 .__dd-input-placeholder {
   color: var(--sub-primary);
 }
@@ -34,8 +38,26 @@ $props-map: (
 .__dd-input-shadow {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
+
 .__dd-input-border {
-  border: 4px solid var(--main-primary);
+    border: 4px solid var(--main-primary);
+}
+
+.__dd-input-border.__dd-input-container {
+  background-color: var(--bas-nagative);
+}
+
+.__dd-input-border .__dd-input-placeholder {
+  color: var(--main-flat);
+}
+
+.__dd-input-label {
+  position: absolute;
+  background-color: var(--bas-nagative);
+  transform: translateY(-100%);
+  padding: 5px 10px;
+  font-size: 24px;
 }
 
 @include generate-class("input", $props-map);
