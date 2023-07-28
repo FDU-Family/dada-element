@@ -1,75 +1,81 @@
 <script setup lang="ts">
+import type { InputOnInputEvent } from '@uni-helper/uni-app-types'
 import '@dada-element/style/src/Input.scss'
 import { computed, ref } from 'vue'
 
-interface InputProps {
-  placeholder?: string | [string, string]
-  readonly?: boolean
+export interface InputProps {
+  placeholder?: string
+  width?: string | number
+  shadow?: boolean
+  border?: boolean
   size?: 'small' | 'medium' | 'large'
-  type?: 'text' | 'number' | 'password' | 'idcard' | 'textarea'
-  modelValue?: string
-  disabled?: boolean
-  invalid?: boolean
-  focus?: boolean
-  password?: boolean
-  clearable?: boolean
-  width?: number | string
+  value?: string
+}
+
+export interface InputEmits {
+  (e: 'update:value', value: string): void
 }
 
 const props = withDefaults(defineProps<InputProps>(), {
-  placeholder: undefined,
-  readonly: false,
+  placeholder: '',
+  width: 200,
+  shadow: false,
+  border: false,
   size: 'medium',
-  type: 'text',
-  modelValue: '',
-  disabled: false,
-  focus: false,
-  password: false,
-  clearable: false,
 })
 
-const emits = defineEmits(['update:modelValue', 'input', 'clear'])
+const emits = defineEmits<InputEmits>()
+
 const inputRef = ref()
 
-function handleInput(e: Event) {
-  const target = e.target as HTMLInputElement
-  emits('update:modelValue', target.value)
-  emits('input', e)
-}
-
-function onClear() {
-  emits('clear')
-}
-
-const inputClass = computed(() => {
-  const { size } = props
+const containerClassAry = computed(() => {
+  const { shadow, border } = props
   return [
-      `__dd-input-size-${size}`,
+    shadow ? '__dd-input-shadow' : '',
+    border ? '__dd-input-border' : '',
   ]
 })
 
-const inputStyle = computed(() => {
+const areaClassAry = computed(() => {
+  const { size } = props
+  return [
+    `__dd-input-size-${size}`,
+  ]
+})
+
+const classAry = computed(() => {
+  return [
+  ]
+})
+
+const styleObj = computed(() => {
   const { width } = props
   const obj: Record<string, any> = {}
   if (width)
     obj.width = `${width}px`
   return obj
 })
+
+function inputHandle(e: InputOnInputEvent) {
+  emits('update:value', e.detail.value)
+}
 </script>
 
 <template>
-  <div class="dada-element-wapper __dd-input">
-    <slot />
-    <input
-      ref="inputRef"
-      :class="inputClass"
-      :style="inputStyle"
-      :focus="focus"
-      :password="password"
-      :value="modelValue"
-      :clearable="clearable"
-      :placeholder="placeholder"
-      @input="handleInput"
-    >
+  <div
+    class="dada-element-wapper __dd-input-container"
+    :class="containerClassAry"
+  >
+    <div :class="areaClassAry">
+      <input
+        ref="inputRef"
+        :class="classAry"
+        :style="styleObj"
+        :placeholder="placeholder"
+        placeholder-class="__dd-input-placeholder"
+        :value="value"
+        @input="inputHandle"
+      >
+    </div>
   </div>
 </template>

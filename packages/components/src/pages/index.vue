@@ -3,14 +3,21 @@ import BtnType from '~/components/Button/demo/type.vue'
 import BtnText from '~/components/Button/demo/text.vue'
 import BtnSize from '~/components/Button/demo/size.vue'
 import BtnCircle from '~/components/Button/demo/circle.vue'
+
+import InputDemo from '~/components/Input/demo/default.vue'
 </script>
 
 <template>
   <div>
-    <BtnType />
-    <BtnText />
-    <BtnSize />
-    <BtnCircle />
+    <div>
+      <BtnType />
+      <BtnText />
+      <BtnSize />
+      <BtnCircle />
+    </div>
+    <div>
+      <InputDemo />
+    </div>
   </div>
 </template>
 
