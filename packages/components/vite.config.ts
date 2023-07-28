@@ -1,3 +1,4 @@
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import Components from 'unplugin-vue-components/vite'
 import uniPlugin from '@dcloudio/vite-plugin-uni'
@@ -6,6 +7,12 @@ import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
 import pxtovw from 'postcss-px-to-viewport'
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '@/': `${path.resolve(__dirname, 'src')}/`,
+    },
+  },
   plugins: [
     Components({
       resolvers: [

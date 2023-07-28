@@ -8,6 +8,10 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./src/components/Button/Button.vue')['default']
+    Circle: typeof import('./src/components/Button/demo/circle.vue')['default']
     DadaButton: typeof import('@/components/Button/Button.vue')['default']
+    Size: typeof import('./src/components/Button/demo/size.vue')['default']
+    Text: typeof import('./src/components/Button/demo/text.vue')['default']
+    Type: typeof import('./src/components/Button/demo/type.vue')['default']
   }
 }
