@@ -8,6 +8,7 @@ export interface ButtonProps {
   width?: number | string
   text?: boolean
   textColor?: string
+  size?: 'small' | 'medium' | 'large'
 }
 export interface ButtonEmits {
   (e: 'click', event: TouchEvent): void
@@ -16,6 +17,7 @@ export interface ButtonEmits {
 const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'default',
   text: false,
+  size: 'medium',
 })
 
 const emit = defineEmits<ButtonEmits>()
@@ -25,9 +27,10 @@ function click(event: TouchEvent) {
 }
 
 const classAry = computed(() => {
-  const { type, text } = props
+  const { type, text, size } = props
   return [
     `__dd-button-type-${type}`,
+    `__dd-button-size-${size}`,
     text ? '__dd-button-text' : '',
   ]
 })

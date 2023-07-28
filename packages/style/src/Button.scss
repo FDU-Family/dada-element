@@ -4,71 +4,81 @@
 $props-map: (
   type: (
     default: (
-      color: "main-deep",
-      background-color: "main-flat",
+      color: var(--main-deep),
+      background-color: var(--main-flat),
     ),
     primary: (
-      color: "bas-nagative",
-      background-color: "main-primary",
+      color: var(--bas-nagative),
+      background-color: var(--main-primary),
     ),
     secondary: (
-      color: "bas-nagative",
-      background-color: "sub-primary",
+      color: var(--bas-nagative),
+      background-color: var(--sub-primary),
     ),
     warning: (
-      color: "main-primary",
-      background-color: "main-contrast",
+      color: var(--main-primary),
+      background-color: var(--main-contrast),
     ),
     info: (
-      color: "bas-nagative",
-      background-color: "main-deep",
+      color: var(--bas-nagative),
+      background-color: var(--main-deep),
     ),
   ),
-  text: (
-    default: (
-      color: "main-deep",
+  size: (
+    small: (
+      font-size: 24px,
+      padding: 10px,
+      border-radius: 5px,
     ),
-    primary: (
-      color: "main-primary",
+    medium: (
+      font-size: 26px,
+      padding: 10px 20px,
+      border-radius: 10px,
     ),
-    secondary: (
-      color: "sub-primary",
+    large: (
+      font-size: 32px,
+      padding: 20px,
+      border-radius: 20px,
     ),
-    warning: (
-      color: "main-contrast",
-    ),
-    info: (
-      color: "bas-positive",
-    ),
+  ),
+);
+
+$text-map: (
+  default: (
+    color: var(--main-deep),
+  ),
+  primary: (
+    color: var(--main-primary),
+  ),
+  secondary: (
+    color: var(--sub-primary),
+  ),
+  warning: (
+    color: var(--main-contrast),
+  ),
+  info: (
+    color: var(--bas-positive),
   ),
 );
 
 .__dd-button {
   font-weight: 700;
-  font-size: 26px;
   display: inline-block;
-  padding: 10px 20px;
   border-radius: 10px;
   text-align: center;
 }
 
-@each $name, $value-map in map-get($map: $props-map, $key: "type") {
-  .__dd-button-type-#{$name} {
-    @each $key, $value in $value-map {
-      #{$key}: var(--#{$value});
-    }
-  }
-}
+@include generate-class("button", $props-map);
 
 .__dd-button-text {
   border: none;
   background-color: var(--transparent);
 }
 
-@each $name, $value-map in map-get($props-map, "type") {
+@each $name, $value-map in $text-map {
   .__dd-button-text.__dd-button-type-#{$name} {
-    @each $key, $value in map-get(map-get($props-map, "text"), $name) {
-      #{$key}: var(--#{$value});
+    @each $key, $value in map-get($text-map, $name) {
+      #{$key}: $value;
     }
   }
 }

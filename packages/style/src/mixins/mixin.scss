@@ -3,7 +3,7 @@
     @each $name, $value-map in $prop-map {
       .__dd-#{$namespace}-#{$prop}-#{$name} {
         @each $key, $value in $value-map {
-          #{$key}: var(--#{$value});
+          #{$key}: $value;
         }
       }
     }
