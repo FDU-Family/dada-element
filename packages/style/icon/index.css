@@ -1,0 +1,227 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4186702 */
+  src: url('//at.alicdn.com/t/c/font_4186702_dzyd5y9f5o5.woff2?t=1690471512868') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4186702_dzyd5y9f5o5.woff?t=1690471512868') format('woff'),
+       url('//at.alicdn.com/t/c/font_4186702_dzyd5y9f5o5.ttf?t=1690471512868') format('truetype'),
+       url('//at.alicdn.com/t/c/font_4186702_dzyd5y9f5o5.svg?t=1690471512868#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 40px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dada-tab-home:before {
+  content: "\e6ce";
+}
+
+.dada-mani-confirm:before {
+  content: "\e6cf";
+}
+
+.dada-func-voice:before {
+  content: "\e6d0";
+}
+
+.dada-mani-cancel:before {
+  content: "\e6d1";
+}
+
+.dada-calc-minus:before {
+  content: "\e6b7";
+}
+
+.dada-func-scan:before {
+  content: "\e6b8";
+}
+
+.dada-att-gender:before {
+  content: "\e6b9";
+}
+
+.dada-func-filter:before {
+  content: "\e6ba";
+}
+
+.dada-func-cooperation:before {
+  content: "\e6bb";
+}
+
+.dada-calc-plus:before {
+  content: "\e6bc";
+}
+
+.dada-da-love:before {
+  content: "\e6bd";
+}
+
+.dada-tab-people:before {
+  content: "\e6be";
+}
+
+.dada-func-arrow:before {
+  content: "\e6bf";
+}
+
+.dada-att-location:before {
+  content: "\e6c0";
+}
+
+.dada-mani-cantsee:before {
+  content: "\e6c1";
+}
+
+.dada-da-like:before {
+  content: "\e6c2";
+}
+
+.dada-tab-meeting:before {
+  content: "\e6c3";
+}
+
+.dada-tab-setting-gear:before {
+  content: "\e6c4";
+}
+
+.dada-att-img:before {
+  content: "\e6c5";
+}
+
+.dada-tab-study:before {
+  content: "\e6c6";
+}
+
+.dada-tab-lucky-leaf:before {
+  content: "\e6c7";
+}
+
+.dada-tab-history:before {
+  content: "\e6c8";
+}
+
+.dada-mani-msgon:before {
+  content: "\e6c9";
+}
+
+.dada-tab-block:before {
+  content: "\e6ca";
+}
+
+.dada-tab-game:before {
+  content: "\e6cb";
+}
+
+.dada-tab-life-sun:before {
+  content: "\e6cc";
+}
+
+.dada-mani-cansee:before {
+  content: "\e6cd";
+}
+
+.dada-func-refresh:before {
+  content: "\e6a2";
+}
+
+.dada-func-ordering:before {
+  content: "\e6a3";
+}
+
+.dada-att-time:before {
+  content: "\e6a4";
+}
+
+.dada-func-switchover:before {
+  content: "\e6a5";
+}
+
+.dada-func-cart:before {
+  content: "\e6a6";
+}
+
+.dada-func-ideas:before {
+  content: "\e6a7";
+}
+
+.dada-func-rocket-totop:before {
+  content: "\e6a8";
+}
+
+.dada-da-flag:before {
+  content: "\e6a9";
+}
+
+.dada-att-gender-female:before {
+  content: "\e6aa";
+}
+
+.dada-func-security:before {
+  content: "\e6ab";
+}
+
+.dada-func-mailbox:before {
+  content: "\e6ac";
+}
+
+.dada-func-report:before {
+  content: "\e6ad";
+}
+
+.dada-func-at-link:before {
+  content: "\e6ae";
+}
+
+.dada-da-collection-star:before {
+  content: "\e6af";
+}
+
+.dada-func-search:before {
+  content: "\e6b0";
+}
+
+.dada-func-art:before {
+  content: "\e6b1";
+}
+
+.dada-func-menu:before {
+  content: "\e6b2";
+}
+
+.dada-att-gender-male:before {
+  content: "\e6b3";
+}
+
+.dada-func-buzzer:before {
+  content: "\e6b4";
+}
+
+.dada-da-comment:before {
+  content: "\e6b5";
+}
+
+.dada-mani-msgoff:before {
+  content: "\e69d";
+}
+
+.dada-att-tag:before {
+  content: "\e6b6";
+}
+
+.dada-func-mail:before {
+  content: "\e6a0";
+}
+
+.dada-tab-school:before {
+  content: "\e69e";
+}
+
+.dada-func-save:before {
+  content: "\e6a1";
+}
+
+.dada-func-delete:before {
+  content: "\e69f";
+}
