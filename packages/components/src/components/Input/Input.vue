@@ -79,13 +79,12 @@ defineExpose({
     class="dada-element-wrapper __dd-input-container"
     :class="containerClassAry"
   >
-    <div :class="areaClassAry" class="__dd-input-area">
+    <div :class="areaClassAry" :style="styleObj" class="__dd-input-area">
       <div v-if="label" class="__dd-input-label">
         {{ label }}
       </div>
       <input
         :class="classAry"
-        :style="styleObj"
         :placeholder="placeholder"
         placeholder-class="__dd-input-placeholder"
         :value="value"
