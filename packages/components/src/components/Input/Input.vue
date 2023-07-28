@@ -10,6 +10,7 @@ export interface InputProps {
   border?: boolean
   size?: 'small' | 'medium' | 'large'
   value?: string
+  label?: string
 }
 
 export interface InputEmits {
@@ -78,7 +79,10 @@ defineExpose({
     class="dada-element-wrapper __dd-input-container"
     :class="containerClassAry"
   >
-    <div :class="areaClassAry">
+    <div :class="areaClassAry" class="__dd-input-area">
+      <div v-if="label" class="__dd-input-label">
+        {{ label }}
+      </div>
       <input
         :class="classAry"
         :style="styleObj"

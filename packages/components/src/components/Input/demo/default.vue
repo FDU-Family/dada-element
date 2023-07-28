@@ -26,6 +26,9 @@ function clickHandle() {
     <DadaButton @click="clickHandle">
       聚焦
     </DadaButton>
+    <div class="mt">
+      <DadaInput border label="密码" placeholder="芝士输入框" />
+    </div>
   </div>
 </template>
 
