@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<InputProps>(), {
 
 const emits = defineEmits<InputEmits>()
 
-const inputRef = ref()
+const isFocus = ref(false)
 
 const containerClassAry = computed(() => {
   const { shadow, border } = props
@@ -59,6 +59,18 @@ const styleObj = computed(() => {
 function inputHandle(e: InputOnInputEvent) {
   emits('update:value', e.detail.value)
 }
+
+function blurHandle() {
+  isFocus.value = false
+}
+
+function focus() {
+  isFocus.value = true
+}
+
+defineExpose({
+  focus,
+})
 </script>
 
 <template>
@@ -68,13 +80,14 @@ function inputHandle(e: InputOnInputEvent) {
   >
     <div :class="areaClassAry">
       <input
-        ref="inputRef"
         :class="classAry"
         :style="styleObj"
         :placeholder="placeholder"
         placeholder-class="__dd-input-placeholder"
         :value="value"
+        :focus="isFocus"
         @input="inputHandle"
+        @blur="blurHandle"
       >
     </div>
   </div>
