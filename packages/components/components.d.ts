@@ -13,5 +13,8 @@ declare module 'vue' {
     Size: typeof import('./src/components/Button/demo/size.vue')['default']
     Text: typeof import('./src/components/Button/demo/text.vue')['default']
     Type: typeof import('./src/components/Button/demo/type.vue')['default']
+
+    Input: typeof import('./src/components/Input/Input.vue')['default']
+    DadaInput: typeof import('@/components/Input/Input.vue')['default']
   }
 }
