@@ -75,6 +75,10 @@ $text-map: (
   background-color: var(--transparent);
 }
 
+.__dd-button-circle {
+  border-radius: 50%;
+}
+
 @each $name, $value-map in $text-map {
   .__dd-button-text.__dd-button-type-#{$name} {
     @each $key, $value in map-get($text-map, $name) {
