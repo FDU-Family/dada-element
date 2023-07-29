@@ -5,10 +5,10 @@
 <template>
   <div>
     <h1>圆形按钮</h1>
-    <DadaButton size="large" circle>
+    <DadaButton class="mr" size="large" circle>
       <div class="iconfont dada-mani-confirm" />
     </DadaButton>
-    <DadaButton size="small" circle>
+    <DadaButton class="mr" size="small" circle>
       <div class="iconfont dada-mani-confirm" />
     </DadaButton>
   </div>

@@ -3,6 +3,14 @@
     {
       "path": "pages/index",
       "type": "home"
+    },
+    {
+      "path": "pages/button",
+      "type": "page"
+    },
+    {
+      "path": "pages/input",
+      "type": "page"
     }
   ],
   "globalStyle": {

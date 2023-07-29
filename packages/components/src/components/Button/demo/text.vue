@@ -6,22 +6,22 @@
   <div>
     <h1>文字按钮</h1>
     <div>
-      <DadaButton text>
+      <DadaButton class="mr" text>
         按钮
       </DadaButton>
-      <DadaButton type="primary" text>
+      <DadaButton class="mr" type="primary" text>
         按钮
       </DadaButton>
-      <DadaButton type="secondary" text>
+      <DadaButton class="mr" type="secondary" text>
         按钮
       </DadaButton>
-      <DadaButton type="warning" text>
+      <DadaButton class="mr" type="warning" text>
         按钮
       </DadaButton>
-      <DadaButton type="info" text>
+      <DadaButton class="mr" type="info" text>
         按钮
       </DadaButton>
-      <DadaButton text text-color="red">
+      <DadaButton class="mr" text text-color="red">
         按钮
       </DadaButton>
     </div>

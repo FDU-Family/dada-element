@@ -1,24 +1,27 @@
 <script setup lang="ts">
-import BtnType from '~/components/Button/demo/type.vue'
-import BtnText from '~/components/Button/demo/text.vue'
-import BtnSize from '~/components/Button/demo/size.vue'
-import BtnCircle from '~/components/Button/demo/circle.vue'
-
-import InputDemo from '~/components/Input/demo/default.vue'
+function routeTo(path: string) {
+  uni.navigateTo({
+    url: `/pages${path}`,
+  })
+}
 </script>
 
 <template>
-  <div>
-    <div>
-      <BtnType />
-      <BtnText />
-      <BtnSize />
-      <BtnCircle />
-    </div>
-    <div>
-      <InputDemo />
-    </div>
+  <div class="index-page">
+    <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/button')">
+      按钮
+    </DadaButton>
+    <DadaButton width="700" class="mt" size="large" @click="routeTo('/input')">
+      文本框
+    </DadaButton>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.index-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+</style>
