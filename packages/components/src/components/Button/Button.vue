@@ -9,7 +9,7 @@ export interface ButtonProps {
   text?: boolean
   textColor?: string
   size?: 'small' | 'medium' | 'large'
-  circle?: false
+  circle?: boolean
 }
 export interface ButtonEmits {
   (e: 'click', event: TouchEvent): void
