@@ -57,6 +57,12 @@ const styleObj = computed(() => {
   return obj
 })
 
+const inputStyle = computed(() => {
+  const obj: Record<string, any> = {}
+  obj.width = '600px'
+  return obj
+})
+
 function inputHandle(e: InputOnInputEvent) {
   emits('update:value', e.detail.value)
 }
@@ -83,15 +89,22 @@ defineExpose({
       <div v-if="label" class="__dd-input-label">
         {{ label }}
       </div>
-      <input
-        :class="classAry"
-        :placeholder="placeholder"
-        placeholder-class="__dd-input-placeholder"
-        :value="value"
-        :focus="isFocus"
-        @input="inputHandle"
-        @blur="blurHandle"
-      >
+      <div class="__dd-input-zone">
+        <input
+          :class="classAry"
+          :style-="inputStyle"
+          :placeholder="placeholder"
+          class="__dd-input-origin"
+          placeholder-class="__dd-input-placeholder"
+          :value="value"
+          :focus="isFocus"
+          @input="inputHandle"
+          @blur="blurHandle"
+        >
+        <div class="__dd-input-right">
+          <slot name="inputRight" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
