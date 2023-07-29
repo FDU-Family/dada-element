@@ -5,16 +5,15 @@
     "dev": "uni -p mp-weixin"
   },
   "dependencies": {
+    "@dada-element/components": "*",
+    "@dada-element/resolver": "*",
+    "@dada-element/style": "*",
     "@dcloudio/uni-app": "3.0.0-3080420230531001",
     "@dcloudio/uni-app-plus": "3.0.0-3080420230531001",
     "@dcloudio/uni-components": "3.0.0-3080420230531001",
-    "@dcloudio/uni-mp-weixin": "3.0.0-3080420230531001",
-    "@dada-element/resolver": "*",
-    "@dada-element/components": "*"
+    "@dcloudio/uni-mp-weixin": "3.0.0-3080420230531001"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "unplugin-vue-components": "^0.25.1",
     "@dcloudio/types": "^3.3.3",
     "@dcloudio/uni-automator": "3.0.0-3080420230531001",
     "@dcloudio/uni-cli-shared": "3.0.0-3080420230531001",
@@ -23,7 +22,10 @@
     "@uni-helper/uni-app-types": "^0.5.8",
     "@uni-helper/vite-plugin-uni-layouts": "^0.1.1",
     "@uni-helper/vite-plugin-uni-pages": "^0.2.3",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "postcss-px-to-viewport": "^1.1.1",
     "sass": "^1.63.6",
-    "unocss": "^0.53.5"
+    "unocss": "^0.53.5",
+    "unplugin-vue-components": "^0.25.1"
   }
 }
