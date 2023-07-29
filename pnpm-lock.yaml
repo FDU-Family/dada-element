@@ -45,9 +45,6 @@ importers:
 
   packages/components:
     dependencies:
-      '@dada-element/components':
-        specifier: '*'
-        version: 'link:'
       '@dada-element/resolver':
         specifier: '*'
         version: link:../resolvers
@@ -108,7 +105,7 @@ importers:
         version: 0.33.0(vitest@0.33.0)
       '@vue/test-utils':
         specifier: ^2.4.1
-        version: 2.4.1
+        version: 2.4.1(vue@3.2.47)
       jsdom:
         specifier: ^22.1.0
         version: 22.1.0
@@ -150,6 +147,9 @@ importers:
       '@dada-element/resolver':
         specifier: '*'
         version: link:../packages/resolvers
+      '@dada-element/style':
+        specifier: '*'
+        version: link:../packages/style
       '@dcloudio/uni-app':
         specifier: 3.0.0-3080420230531001
         version: 3.0.0-3080420230531001(@dcloudio/types@3.3.3)(postcss@8.4.27)(vue@3.2.47)
@@ -190,6 +190,9 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^4.2.3
         version: 4.2.3(vite@4.4.7)(vue@3.2.47)
+      postcss-px-to-viewport:
+        specifier: ^1.1.1
+        version: 1.1.1
       sass:
         specifier: ^1.63.6
         version: 1.63.6
@@ -3909,7 +3912,7 @@ packages:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
     dev: true
 
-  /@vue/test-utils@2.4.1:
+  /@vue/test-utils@2.4.1(vue@3.2.47):
     resolution: {integrity: sha512-VO8nragneNzUZUah6kOjiFmD/gwRjUauG9DROh6oaOeFwX1cZRUNHhdeogE8635cISigXFTtGLUQWx5KCb0xeg==}
     peerDependencies:
       '@vue/server-renderer': ^3.0.1
@@ -3919,6 +3922,7 @@ packages:
         optional: true
     dependencies:
       js-beautify: 1.14.9
+      vue: 3.2.47
       vue-component-type-helpers: 1.8.4
     dev: true
 
