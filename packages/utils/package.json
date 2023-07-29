@@ -1,11 +1,18 @@
 {
   "name": "@dada-element/utils",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
-  "keywords": [],
+  "version": "0.0.1",
+  "description": "utils for dada element",
   "author": "gjssss",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FDU-Family/dada-element"
+  },
+  "main": "index.ts",
   "peerDependencies": {
-    "vue":"^3.2"
-  }
+    "vue": "^3.2"
+  },
+  "files": [
+    "src"
+  ]
 }

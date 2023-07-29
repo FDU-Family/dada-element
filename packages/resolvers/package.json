@@ -1,7 +1,17 @@
 {
   "name": "@dada-element/resolver",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "auto import resolver",
+  "author": "gjssss",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FDU-Family/dada-element"
+  },
+  "keywords": [
+    "typescript",
+    "resolver"
+  ],
   "peerDependencies": {
     "unplugin-vue-components": "*"
   },

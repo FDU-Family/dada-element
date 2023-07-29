@@ -45,9 +45,6 @@ importers:
 
   packages/components:
     dependencies:
-      '@dada-element/components':
-        specifier: '*'
-        version: 'link:'
       '@dada-element/resolver':
         specifier: '*'
         version: link:../resolvers

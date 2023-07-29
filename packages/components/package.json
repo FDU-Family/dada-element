@@ -1,13 +1,22 @@
 {
   "name": "@dada-element/components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "all components are settled here",
+  "author": "gjssss",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/FDU-Family/dada-element"
   },
+  "keywords": [
+    "uniapp",
+    "typescript",
+    "components"
+  ],
   "peerDependencies": {
-    "vue": "^3.2.0"
+    "vue": "^3.2.0",
+    "@dada-element/resolver": "*",
+    "@dada-element/style": "*"
   },
   "scripts": {
     "dev": "uni -p mp-weixin",
@@ -16,9 +25,6 @@
     "test-ui": "vitest --ui"
   },
   "dependencies": {
-    "@dada-element/components": "*",
-    "@dada-element/resolver": "*",
-    "@dada-element/style": "*",
     "@dada-element/utils": "*",
     "@dcloudio/uni-app": "3.0.0-3080420230531001",
     "@dcloudio/uni-app-plus": "3.0.0-3080420230531001",
@@ -48,14 +54,7 @@
   "files": [
     "src/components/"
   ],
-  "license": "MIT",
-  "author": "gjssss",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  },
-  "keywords": [
-    "uniapp",
-    "typescript",
-    "components"
-  ]
+  }
 }
