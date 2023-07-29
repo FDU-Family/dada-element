@@ -4,11 +4,11 @@
 
 <template>
   <div class="mt">
-    <DadaInput size="medium" :disabled="true" placeholder="请输入新标签" />
+    <DadaInput size="medium" :disabled="true" placeholder="示范用" />
   </div>
   <div class="mt">
-    <DadaInput border width="600px" :focus="true" placeholder="请输入新标签">
-      <template #suffix-icon>
+    <DadaInput border label="手机号" :focus="true" placeholder="请输入手机号">
+      <template #prefix-icon>
         <div class="testIcon">
           <div class="iconfont dada-mani-confirm" />
         </div>
@@ -16,20 +16,13 @@
     </DadaInput>
   </div>
   <div class="mt">
-    <DadaInput border width="600px" value="计算机科学">
-      <template #suffix-icon>
-        <div class="testIcon">
-          <div class="iconfont dada-calc-minus" />
-        </div>
-      </template>
-    </DadaInput>
+    <DadaInput border label="密码" :password="true" placeholder="请输入密码" />
   </div>
   <div class="mt">
-    <DadaInput border width="600px" value="处女座">
+    <DadaInput border label="验证码" :maxlength="6" placeholder="请输入验证码">
       <template #suffix-icon>
         <div class="testIcon">
           <div class="iconfont dada-mani-confirm" />
-          <div class="iconfont dada-calc-minus" />
         </div>
       </template>
     </DadaInput>
@@ -48,7 +41,7 @@
   font-size: 55px;
 }
 .testIcon .iconfont {
-  margin-left: 10px;
+
   color: var(--main-primary);
 }
 </style>

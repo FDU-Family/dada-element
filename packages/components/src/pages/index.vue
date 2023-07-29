@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import InputDemo from '~/components/Input/demo/default.vue'
+import FormDemo from '~/components/Input/demo/form.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import InputDemo from '~/components/Input/demo/default.vue'
     </div> -->
     <div>
       <InputDemo />
+      <FormDemo />
     </div>
   </div>
 </template>

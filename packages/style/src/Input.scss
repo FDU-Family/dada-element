@@ -66,24 +66,56 @@ $props-map: (
 
 .__dd-input-zone {
   position: relative;
-  padding-right: 40px;
   margin: 0 auto;
   width: auto;
 }
 
-.__dd-input-container .__dd-input-origin {
-  width: 600px;
-  height: 65px;
+.slot {
+  &.__dd-input-pre-slot {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5px;
+  }
+  &.__dd-input-suf-slot {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 5px;
+  }
 }
 
-.__dd-input-right:not(:empty) {
+.input {
+  
+  &.prefix-icon {
+    padding-left: 60px;
+  }
+  &.suffix-icon {
+    padding-right: 30px;
+  }
+}
+
+.__dd-input-pre-slot:not(:empty) {
   position: absolute;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 999;
 }
-.__dd-input-right:empty {
+.__dd-input-pre-slot:empty {
+  display: none;
+}
+
+.__dd-input-suf-slot:not(:empty) {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+.__dd-input-suf-slot:empty {
   display: none;
 }
 

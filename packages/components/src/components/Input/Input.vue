@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { InputOnInputEvent } from '@uni-helper/uni-app-types'
+import type { InputOnFocusEvent, InputOnInputEvent } from '@uni-helper/uni-app-types'
 import '@dada-element/style/src/Input.scss'
-import { computed, ref } from 'vue'
+import { computed, ref, useSlots } from 'vue'
 
 export interface InputProps {
   placeholder?: string
@@ -11,23 +11,30 @@ export interface InputProps {
   size?: 'small' | 'medium' | 'large'
   value?: string
   label?: string
+  disabled?: boolean
+  maxlength?: number
+  isFocus?: boolean
+  password?: boolean
 }
 
 export interface InputEmits {
   (e: 'update:value', value: string): void
+  (e: 'update:focus', value: string, height?: number): void
 }
 
 const props = withDefaults(defineProps<InputProps>(), {
   placeholder: '',
-  width: 200,
+  width: 630,
   shadow: false,
   border: false,
   size: 'medium',
+  disabled: false,
+  maxlength: -1,
 })
 
 const emits = defineEmits<InputEmits>()
-
 const isFocus = ref(false)
+const slots = useSlots()
 
 const containerClassAry = computed(() => {
   const { shadow, border } = props
@@ -44,10 +51,11 @@ const areaClassAry = computed(() => {
   ]
 })
 
-const classAry = computed(() => {
-  return [
-  ]
-})
+const inputClass = computed(() => ({
+  'input': true,
+  'prefix-icon': slots['prefix-icon'],
+  'suffix-icon': slots['suffix-icon'],
+}))
 
 const styleObj = computed(() => {
   const { width } = props
@@ -71,6 +79,11 @@ function blurHandle() {
   isFocus.value = false
 }
 
+function focusHandle(e: InputOnFocusEvent) {
+  isFocus.value = true
+  emits('update:focus', e.detail.value, e.detail.height)
+}
+
 function focus() {
   isFocus.value = true
 }
@@ -90,19 +103,24 @@ defineExpose({
         {{ label }}
       </div>
       <div class="__dd-input-zone">
+        <div class="__dd-input-pre-slot slot">
+          <slot name="prefix-icon" />
+        </div>
         <input
-          :class="classAry"
+          :class="inputClass"
           :style-="inputStyle"
-          :placeholder="placeholder"
-          class="__dd-input-origin"
+          :placeholder="props.placeholder"
+          :disabled="props.disabled"
+          :maxlength="props.maxlength"
           placeholder-class="__dd-input-placeholder"
-          :value="value"
-          :focus="isFocus"
+          :value="props.value"
+          :password="props.password"
           @input="inputHandle"
           @blur="blurHandle"
+          @focus="focusHandle"
         >
-        <div class="__dd-input-right">
-          <slot name="inputRight" />
+        <div class="__dd-input-suf-slot slot">
+          <slot name="suffix-icon" />
         </div>
       </div>
     </div>
