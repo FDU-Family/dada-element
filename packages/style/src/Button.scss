@@ -65,6 +65,7 @@ $text-map: (
   font-weight: 700;
   display: inline-block;
   text-align: center;
+  box-sizing: border-box;
 }
 
 @include generate-class("button", $props-map);

@@ -41,7 +41,7 @@ const styleObj = computed(() => {
   const { width, textColor } = props
   const obj: Record<string, any> = {}
   if (width)
-    obj.width = `${width}px`
+    obj.width = `${Number(width) / 7.5}vw`
   if (textColor)
     obj.color = textColor
   return obj
