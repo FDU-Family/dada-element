@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { InputOnInputEvent } from '@uni-helper/uni-app-types'
 import '@dada-element/style/src/Input.scss'
-import { computed, ref } from 'vue'
+import { computed, ref, useSlots } from 'vue'
 
 export interface InputProps {
   placeholder?: string
@@ -19,7 +19,7 @@ export interface InputEmits {
 
 const props = withDefaults(defineProps<InputProps>(), {
   placeholder: '',
-  width: 200,
+  width: 600,
   shadow: false,
   border: false,
   size: 'medium',
@@ -28,6 +28,7 @@ const props = withDefaults(defineProps<InputProps>(), {
 const emits = defineEmits<InputEmits>()
 
 const isFocus = ref(false)
+const slots = useSlots()
 
 const containerClassAry = computed(() => {
   const { shadow, border } = props
@@ -46,6 +47,7 @@ const areaClassAry = computed(() => {
 
 const classAry = computed(() => {
   return [
+    slots.suffix ? 'suffix' : '',
   ]
 })
 
@@ -53,7 +55,7 @@ const styleObj = computed(() => {
   const { width } = props
   const obj: Record<string, any> = {}
   if (width)
-    obj.width = `${width}px`
+    obj.width = `${Number(width) / 7.5}vw`
   return obj
 })
 
@@ -78,12 +80,17 @@ defineExpose({
   <div
     class="dada-element-wrapper __dd-input-container"
     :class="containerClassAry"
+    :style="styleObj"
   >
-    <div :class="areaClassAry" :style="styleObj" class="__dd-input-area">
+    <div :class="areaClassAry" class="__dd-input-area">
       <div v-if="label" class="__dd-input-label">
         {{ label }}
       </div>
+      <div class="__dd-input-slot prefix">
+        <slot name="prefix" />
+      </div>
       <input
+        class="__dd-input"
         :class="classAry"
         :placeholder="placeholder"
         placeholder-class="__dd-input-placeholder"
@@ -92,6 +99,9 @@ defineExpose({
         @input="inputHandle"
         @blur="blurHandle"
       >
+      <div class="__dd-input-slot suffix">
+        <slot name="suffix" />
+      </div>
     </div>
   </div>
 </template>

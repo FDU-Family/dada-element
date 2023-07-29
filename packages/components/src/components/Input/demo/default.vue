@@ -29,6 +29,42 @@ function clickHandle() {
     <div class="mt">
       <DadaInput border label="密码" placeholder="芝士输入框" />
     </div>
+    <div class="mt">
+      <DadaInput placeholder="芝士输入框">
+        <template #prefix>
+          <div>
+            我是前缀
+          </div>
+        </template>
+        <template #suffix>
+          我是后缀别太长
+        </template>
+      </DadaInput>
+    </div>
+    <div class="mt">
+      <DadaInput placeholder="芝士输入框">
+        <template #prefix>
+          <div>
+            <div class="iconfont dada-calc-plus" />
+          </div>
+        </template>
+        <template #suffix>
+          <div class="iconfont dada-mani-confirm" />
+        </template>
+      </DadaInput>
+    </div>
+    <div class="mt">
+      <DadaInput placeholder="芝士输入框" size="large" :border="true" :shadow="true" label="手机号">
+        <template #prefix>
+          <div>
+            <div class="iconfont dada-calc-plus" />
+          </div>
+        </template>
+        <template #suffix>
+          <DadaButton>获取验证码</DadaButton>
+        </template>
+      </DadaInput>
+    </div>
   </div>
 </template>
 
