@@ -12,25 +12,27 @@ function clickHandle() {
 <template>
   <div>
     <div class="mt">
-      <DadaInput v-model:value="value" placeholder="芝士输入框" />{{ value }}
+      <DadaInput shadow placeholder="不带shadow" />
     </div>
     <div class="mt">
-      <DadaInput shadow placeholder="芝士输入框" />
+      <DadaInput border placeholder="带border" />
     </div>
     <div class="mt">
-      <DadaInput border placeholder="芝士输入框" />
+      <DadaInput v-model:value="value" placeholder="响应式测试" />{{ value }}
     </div>
     <div class="mt">
-      <DadaInput ref="input" placeholder="芝士输入框" />
-    </div>
-    <DadaButton @click="clickHandle">
-      聚焦
-    </DadaButton>
-    <div class="mt">
-      <DadaInput border label="密码" placeholder="芝士输入框" />
+      <DadaInput :disabled="true" placeholder="disabled测试" />
     </div>
     <div class="mt">
-      <DadaInput placeholder="芝士输入框">
+      <DadaInput ref="input" placeholder="聚焦测试" />
+    </div>
+    <div class="mt">
+      <DadaButton @click="clickHandle">
+        聚焦
+      </DadaButton>
+    </div>
+    <div class="mt">
+      <DadaInput placeholder="前后缀测试">
         <template #prefix>
           <div>
             我是前缀
@@ -53,23 +55,12 @@ function clickHandle() {
         </template>
       </DadaInput>
     </div>
-    <div class="mt">
-      <DadaInput placeholder="芝士输入框" size="large" :border="true" :shadow="true" label="手机号">
-        <template #prefix>
-          <div>
-            <div class="iconfont dada-calc-plus" />
-          </div>
-        </template>
-        <template #suffix>
-          <DadaButton>获取验证码</DadaButton>
-        </template>
-      </DadaInput>
-    </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .mt {
   margin-top: 30px;
+  margin-left: 50px;
 }
 </style>

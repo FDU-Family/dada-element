@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { InputOnInputEvent } from '@uni-helper/uni-app-types'
+import type { InputOnFocusEvent, InputOnInputEvent } from '@uni-helper/uni-app-types'
 import '@dada-element/style/src/Input.scss'
 import { computed, ref, useSlots } from 'vue'
 
@@ -11,6 +11,10 @@ export interface InputProps {
   size?: 'small' | 'medium' | 'large'
   value?: string
   label?: string
+  password?: boolean
+  maxlength?: number
+  disabled?: boolean
+  line?: boolean
 }
 
 export interface InputEmits {
@@ -23,12 +27,15 @@ const props = withDefaults(defineProps<InputProps>(), {
   shadow: false,
   border: false,
   size: 'medium',
+  line: false,
+  maxlength: 140,
 })
 
 const emits = defineEmits<InputEmits>()
 
 const isFocus = ref(false)
 const slots = useSlots()
+const keyboardHeight = ref()
 
 const containerClassAry = computed(() => {
   const { shadow, border } = props
@@ -46,8 +53,9 @@ const areaClassAry = computed(() => {
 })
 
 const classAry = computed(() => {
+  const { line } = props
   return [
-    slots.suffix ? 'suffix' : '',
+    (slots.suffix && line) ? 'suffix' : '',
   ]
 })
 
@@ -69,6 +77,10 @@ function blurHandle() {
 
 function focus() {
   isFocus.value = true
+}
+
+function focusHandle(e: InputOnFocusEvent) {
+  keyboardHeight.value = e.detail.height
 }
 
 defineExpose({
@@ -96,8 +108,12 @@ defineExpose({
         placeholder-class="__dd-input-placeholder"
         :value="value"
         :focus="isFocus"
+        :password="props.password"
+        :maxlength="props.maxlength"
+        :disabled="props.disabled"
         @input="inputHandle"
         @blur="blurHandle"
+        @focus="focusHandle"
       >
       <div class="__dd-input-slot suffix">
         <slot name="suffix" />
