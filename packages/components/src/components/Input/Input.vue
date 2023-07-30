@@ -8,6 +8,7 @@ export interface InputProps {
   width?: string | number
   shadow?: boolean
   border?: boolean
+  boundless?: boolean
   size?: 'small' | 'medium' | 'large'
   value?: string
   label?: string
@@ -29,6 +30,7 @@ const props = withDefaults(defineProps<InputProps>(), {
   size: 'medium',
   line: false,
   maxlength: 140,
+  boundless: false,
 })
 
 const emits = defineEmits<InputEmits>()
@@ -38,10 +40,11 @@ const slots = useSlots()
 const keyboardHeight = ref()
 
 const containerClassAry = computed(() => {
-  const { shadow, border } = props
+  const { shadow, border, boundless } = props
   return [
     shadow ? '__dd-input-shadow' : '',
     border ? '__dd-input-border' : '',
+    boundless ? '__dd-input-boundless' : '',
   ]
 })
 

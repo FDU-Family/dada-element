@@ -62,6 +62,10 @@ $props-map: (
   color: var(--main-flat);
 }
 
+.__dd-input-boundless.__dd-input-container {
+  background-color: var(--bas-nagative);
+}
+
 .__dd-input-label {
   position: absolute;
   top: 0;
