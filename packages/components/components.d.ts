@@ -11,7 +11,7 @@ declare module 'vue' {
     Circle: typeof import('./src/components/Button/demo/circle.vue')['default']
     DadaButton: typeof import('@/components/Button/Button.vue')['default']
     DadaInput: typeof import('@/components/Input/Input.vue')['default']
-    Feature: typeof import('./src/components/Input/demo/feature.vue')['default']
+    Default: typeof import('./src/components/Input/demo/default.vue')['default']
     Form: typeof import('./src/components/Input/demo/form.vue')['default']
     Input: typeof import('./src/components/Input/Input.vue')['default']
     Size: typeof import('./src/components/Button/demo/size.vue')['default']
