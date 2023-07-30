@@ -14,6 +14,7 @@ declare module 'vue' {
     Default: typeof import('./src/components/Input/demo/default.vue')['default']
     Form: typeof import('./src/components/Input/demo/form.vue')['default']
     Input: typeof import('./src/components/Input/Input.vue')['default']
+    Search: typeof import('./src/components/Input/demo/search.vue')['default']
     Size: typeof import('./src/components/Button/demo/size.vue')['default']
     Text: typeof import('./src/components/Button/demo/text.vue')['default']
     Type: typeof import('./src/components/Button/demo/type.vue')['default']
