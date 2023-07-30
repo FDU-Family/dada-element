@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import InputDemo from '~/components/Input/demo/default.vue'
-import EditDemo from '~/components/Input/demo/input.vue'
-import FormDemo from '~/components/Input/demo/form.vue'
-import SearchDemo from '~/components/Input/demo/search.vue'
+// import InputDemo from '~/components/Input/demo/default.vue'
+// import EditDemo from '~/components/Input/demo/input.vue'
+// import FormDemo from '~/components/Input/demo/form.vue'
+// import SearchDemo from '~/components/Input/demo/search.vue'
 </script>
 
 <template>
   <div class="container">
-    <InputDemo />
-    <EditDemo />
-    <FormDemo />
-    <SearchDemo />
+    <input-base />
+    <input-demo />
+    <input-form />
+    <input-search />
   </div>
 </template>
 
