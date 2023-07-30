@@ -11,27 +11,27 @@ function clickHandle() {
 
 <template>
   <div>
-    <div class="mt">
+    <div class="mt ml">
       <DadaInput shadow placeholder="不带shadow" />
     </div>
-    <div class="mt">
-      <DadaInput border placeholder="带border" />
+    <div class="mt ml">
+      <DadaInput type="primary" border placeholder="带border" />
     </div>
-    <div class="mt">
+    <div class="mt ml">
       <DadaInput v-model:value="value" placeholder="响应式测试" />{{ value }}
     </div>
-    <div class="mt">
+    <div class="mt ml">
       <DadaInput :disabled="true" placeholder="disabled测试" />
     </div>
-    <div class="mt">
+    <div class="mt ml">
       <DadaInput ref="input" placeholder="聚焦测试" />
     </div>
-    <div class="mt">
+    <div class="mt ml">
       <DadaButton @click="clickHandle">
         聚焦
       </DadaButton>
     </div>
-    <div class="mt">
+    <div class="mt ml">
       <DadaInput placeholder="前后缀测试">
         <template #prefix>
           <div>
@@ -43,7 +43,7 @@ function clickHandle() {
         </template>
       </DadaInput>
     </div>
-    <div class="mt">
+    <div class="mt ml">
       <DadaInput placeholder="芝士输入框">
         <template #prefix>
           <div>
@@ -58,9 +58,5 @@ function clickHandle() {
   </div>
 </template>
 
-<style scoped>
-.mt {
-  margin-top: 30px;
-  margin-left: 50px;
-}
+<style>
 </style>

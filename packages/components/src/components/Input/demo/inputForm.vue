@@ -24,8 +24,8 @@ function handlePicker(e: any) {
 <template>
   <div>
     <div class="line" />
-    <div class="mt">
-      <DadaInput placeholder="请输入手机号" border :maxlength="11" size="large" :shadow="true" label="手机号">
+    <div class="mt ml">
+      <DadaInput placeholder="请输入手机号" border type="primary" :maxlength="11" size="large" :shadow="true" label="手机号">
         <template #prefix>
           <picker
             mode="selector"
@@ -41,11 +41,11 @@ function handlePicker(e: any) {
         </template>
       </DadaInput>
     </div>
-    <div class="mt">
-      <DadaInput placeholder="请输入密码" border :password="true" size="large" :shadow="true" label="密码" />
+    <div class="mt ml">
+      <DadaInput placeholder="请输入密码" border type="primary" :password="true" size="large" :shadow="true" label="密码" />
     </div>
-    <div class="mt">
-      <DadaInput placeholder="请输入验证码" line border :maxlength="6" size="large" :shadow="true" label="验证码">
+    <div class="mt ml">
+      <DadaInput placeholder="请输入验证码" line border type="primary" :maxlength="6" size="large" :shadow="true" label="验证码">
         <template #suffix>
           <DadaButton type="info">
             获取验证码
@@ -56,20 +56,5 @@ function handlePicker(e: any) {
   </div>
 </template>
 
-<style scoped>
-.mt {
-  margin-top: 30px;
-  margin-left: 50px;
-}
-.line {
-    width: 100%;
-    height: 5px;
-    background-color: #b80808;
-    margin-top: 30px;
-}
-.testIcon {
-    color: var(--main-primary);
-    display: flex;
-    flex-direction: row;
-}
+<style>
 </style>
