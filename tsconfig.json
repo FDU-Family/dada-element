@@ -28,6 +28,9 @@
         ],
         "skipLibCheck": true
     },
+    "include": [
+        "packages/**/*"
+    ],
     "exclude": [
         "**/__tests__/**",
         "**/tests/**",

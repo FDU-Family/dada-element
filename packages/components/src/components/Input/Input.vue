@@ -2,6 +2,7 @@
 import type { InputOnFocusEvent, InputOnInputEvent } from '@uni-helper/uni-app-types'
 import '@dada-element/style/src/Input.scss'
 import { computed, ref, useSlots } from 'vue'
+import { pxToVw } from '@dada-element/utils'
 
 export interface InputProps {
   placeholder?: string
@@ -66,7 +67,7 @@ const styleObj = computed(() => {
   const { width } = props
   const obj: Record<string, any> = {}
   if (width)
-    obj.width = `${Number(width) / 7.5}vw`
+    obj.width = pxToVw(width)
   return obj
 })
 

@@ -2,6 +2,16 @@
 import type { TouchEvent } from '@uni-helper/uni-app-types'
 import { computed } from 'vue'
 import '@dada-element/style/src/Button.scss'
+import { pxToVw } from '@dada-element/utils'
+
+const props = withDefaults(defineProps<ButtonProps>(), {
+  type: 'default',
+  text: false,
+  size: 'medium',
+  circle: false,
+})
+
+const emit = defineEmits<ButtonEmits>()
 
 export interface ButtonProps {
   type?: 'default' | 'primary' | 'secondary' | 'warning' | 'info'
@@ -14,15 +24,6 @@ export interface ButtonProps {
 export interface ButtonEmits {
   (e: 'click', event: TouchEvent): void
 }
-
-const props = withDefaults(defineProps<ButtonProps>(), {
-  type: 'default',
-  text: false,
-  size: 'medium',
-  circle: false,
-})
-
-const emit = defineEmits<ButtonEmits>()
 
 function click(event: TouchEvent) {
   emit('click', event)
@@ -41,7 +42,7 @@ const styleObj = computed(() => {
   const { width, textColor } = props
   const obj: Record<string, any> = {}
   if (width)
-    obj.width = `${Number(width) / 7.5}vw`
+    obj.width = pxToVw(width)
   if (textColor)
     obj.color = textColor
   return obj
