@@ -1,0 +1,39 @@
+@use "mixins/mixin" as *;
+
+$props-map: (
+  type: (
+    default: (
+      color: var(--main-deep),
+    ),
+    primary: (
+      color: var(--main-primary),
+    ),
+  ),
+  direction: (
+    row: (
+        display: flex,
+        flex-direction: row,
+        margin-right: 20px,
+    ),
+    column: (
+        display: flex,
+        flex-direction: column,
+        margin-bottom: 20px
+    ),
+  ),
+);
+
+
+.__d-radio-container {
+    position: relative;
+}
+
+
+.radio-label-list {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+@include generate-class("radio", $props-map);

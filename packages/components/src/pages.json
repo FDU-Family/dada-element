@@ -11,6 +11,10 @@
     {
       "path": "pages/input",
       "type": "page"
+    },
+    {
+      "path": "pages/radio",
+      "type": "page"
     }
   ],
   "globalStyle": {
