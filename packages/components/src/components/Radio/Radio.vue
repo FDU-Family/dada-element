@@ -1,21 +1,22 @@
 <script setup lang="ts">
 import '@dada-element/style/src/Radio.scss'
+
 // import type { RadioGroupProps } from '@uni-helper/uni-app-types'
 import { computed, ref } from 'vue'
 
 export interface RangeItem {
-  value: string,
-  name: string,
+  value: string
+  name: string
   checked?: boolean
 }
 
 export interface RadioProps {
-  value?: string 
+  value?: string
   checked?: boolean
   disabled?: boolean
   type?: 'primary' | 'default'
   color?: string
-  range?: RangeItem[],
+  range?: RangeItem[]
   direction?: 'row' | 'column'
 
 }
@@ -31,12 +32,11 @@ const classAry = computed(() => {
   return [
     `__dd-radio-type-${type}`,
   ]
-  return []
 })
 
 const styleAry = computed(() => {
   // const { type } = props
-  const obj:Record<string, any> = {}
+  const obj: Record<string, any> = {}
   // if(type) {
   //   obj.color = type
   // }
@@ -52,7 +52,6 @@ const groupClass = computed(() => {
   ]
 })
 
-
 function radioChange(evt: any) {
   const radioAry = props.range
   if (radioAry) {
@@ -61,29 +60,36 @@ function radioChange(evt: any) {
         current.value = i
         break
       }
-   }
+    }
   }
 }
 
+function radioValue() {
+  return current.value
+}
+
+defineExpose ({
+  radioValue,
+})
 </script>
 
 <template>
   <div class="dada-element-wrapper __dd-radio-container">
-    <radio-group @change="radioChange" :class="groupClass">
-      <label v-for="(item, index) in range" class="radio-label-list" :key="item.value">
-          <div>
-            <radio
-              :style="styleAry"
-              :class="classAry"
-              :value="item.value"
-              :checked="index === current"
-              :type="type"
-              :color="color"
-            />
-          </div>
-          <div>
+    <radio-group :class="groupClass" @change="radioChange">
+      <label v-for="(item, index) in range" :key="item.value" class="radio-label-list">
+        <div>
+          <radio
+            :style="styleAry"
+            :class="classAry"
+            :value="item.value"
+            :checked="index === current"
+            :type="type"
+            :color="color"
+          />
+        </div>
+        <div>
           {{ item.name }}
-          </div>
+        </div>
       </label>
     </radio-group>
   </div>
