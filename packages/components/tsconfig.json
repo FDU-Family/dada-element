@@ -11,11 +11,13 @@
     "include": [
         "src/**/*",
         "docs/**/*",
-        "test/**/*"
+        "test/**/*",
+        "../utils/*"
     ],
     "exclude": [
         "**/node_modules",
-        "**/.*/"
+        "**/.*/",
+        "**/test/**/*"
     ],
     "baseUrl": "./",
     "paths": {
