@@ -15,6 +15,10 @@
     {
       "path": "pages/tabs",
       "type": "page"
+    },
+    {
+      "path": "pages/radio",
+      "type": "page"
     }
   ],
   "globalStyle": {
