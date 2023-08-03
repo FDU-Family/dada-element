@@ -35,9 +35,11 @@ $props-map: (
   position: relative;
 
   padding-bottom: 2px;
-  border-bottom: 2px solid var(--main-flat);
-
   --opacity: 0;
+
+  &.border {
+    border-bottom: 2px solid var(--main-flat);
+  }
 
   &::after {
     content: "";
@@ -66,13 +68,15 @@ $props-map: (
 
 .__dd-tabs-label {
   color: var(--sub-primary);
-  font-size: var(--unselect-text);
   height: var(--text-height);
+  font-size: var(--unselect-text);
+  font-weight: 400;
   @include flex-center();
 
   &.selected {
     color: var(--select-color);
     font-size: var(--select-text);
+    font-weight: 700;
   }
 }
 

@@ -14,6 +14,7 @@ export interface TabsProps {
   size?: 'small' | 'medium' | 'large'
   value: number | string
   dotted?: boolean
+  border?: boolean
   tabsOptions?: tabsOptionsType
   timeFunction?: 'default' | 'linear' | 'easeInCubic' | 'easeOutCubic' | 'easeInOutCubic'
 }
@@ -26,6 +27,7 @@ export interface TabsEmits {
 const props = withDefaults(defineProps<TabsProps>(), {
   size: 'medium',
   type: 'primary',
+  border: true,
   dotted: false,
   timeFunction: 'default',
 })
@@ -42,11 +44,12 @@ const slotArray = props.tabsOptions
   : []
 
 const labelAreaClassAry = computed(() => {
-  const { size, type, dotted } = props
+  const { size, type, dotted, border } = props
   return [
      `__dd-tabs-size-${size}`,
      `__dd-tabs-type-${type}`,
      dotted ? 'dotted' : 'linear',
+     border ? 'border' : '',
   ]
 })
 
