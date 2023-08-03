@@ -23,7 +23,7 @@ const index = ref(0)
 
 <template>
   <div>
-    <DadaTabs v-model:value="index" :tabs-options="options" size="small" time-function="linear" type="secondary">
+    <DadaTabs v-model:value="index" :tabs-options="options" size="small" time-function="linear" type="secondary" :dotted="true" :border="false">
       <template #slot-0>
         <div>
           activity
