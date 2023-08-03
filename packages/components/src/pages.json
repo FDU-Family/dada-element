@@ -13,11 +13,11 @@
       "type": "page"
     },
     {
-      "path": "pages/tabs",
+      "path": "pages/radio",
       "type": "page"
     },
     {
-      "path": "pages/radio",
+      "path": "pages/tabs",
       "type": "page"
     }
   ],
