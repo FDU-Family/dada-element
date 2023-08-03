@@ -9,3 +9,13 @@
     }
   }
 }
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin trans-all() {
+  transition: all 0.33s ease-in;
+}
