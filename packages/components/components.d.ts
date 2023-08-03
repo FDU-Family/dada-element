@@ -19,7 +19,7 @@ declare module 'vue' {
     InputSearch: typeof import('./src/components/Input/demo/inputSearch.vue')['default']
     Size: typeof import('./src/components/Button/demo/size.vue')['default']
     Tabs: typeof import('./src/components/Tabs/Tabs.vue')['default']
-    TabsBase: typeof import('./src/components/Tabs/demo/tabsBase.vue')['default']
+    TabsDemo: typeof import('./src/components/Tabs/demo/tabsDemo.vue')['default']
     TabsType: typeof import('./src/components/Tabs/demo/tabsType.vue')['default']
     Text: typeof import('./src/components/Button/demo/text.vue')['default']
     Type: typeof import('./src/components/Button/demo/type.vue')['default']
