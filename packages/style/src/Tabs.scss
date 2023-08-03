@@ -1,0 +1,79 @@
+@use "mixins/mixin" as *;
+
+$props-map: (
+  size: (
+    small: (
+      --select-text: 28px,
+      --unselect-text: 24px,
+      --text-height: 50px,
+    ),
+    medium: (
+      --select-text: 32px,
+      --unselect-text: 26px,
+      --text-height: 70px,
+    ),
+    large: (
+      // 还没有设计尺寸
+      --select-text: 32px,
+      --unselect-text: 26px,
+    ),
+  ),
+  type: (
+    primary: (
+      --select-color: var(--main-primary),
+    ),
+    secondary: (
+      --select-color: var(--main-deep),
+    ),
+  ),
+);
+.__dd-tabs-label-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  position: relative;
+
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--main-flat);
+
+  --opacity: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: var(--left-pos);
+    transform: translate(-50%, 50%);
+
+    background-color: var(--select-color);
+    opacity: var(--opacity);
+
+    @include trans-all();
+  }
+}
+
+.dotted.__dd-tabs-label-area::after {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.linear.__dd-tabs-label-area::after {
+  width: 40px;
+  height: 4px;
+}
+
+.__dd-tabs-label {
+  color: var(--sub-primary);
+  font-size: var(--unselect-text);
+  height: var(--text-height);
+  @include flex-center();
+
+  &.selected {
+    color: var(--select-color);
+    font-size: var(--select-text);
+  }
+}
+
+@include generate-class("tabs", $props-map);

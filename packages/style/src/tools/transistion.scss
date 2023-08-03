@@ -1,0 +1,5 @@
+@use "../mixins/mixin" as *;
+
+.trans-all {
+  @include trans-all();
+}
