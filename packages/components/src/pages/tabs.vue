@@ -5,10 +5,10 @@
 <template>
   <div>
     <div class="wa mt">
-      <tabsBase />
+      <tabs-demo />
     </div>
     <div class="wa mt">
-      <tabsType />
+      <tabs-type />
     </div>
   </div>
 </template>
