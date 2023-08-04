@@ -3,37 +3,49 @@
 $props-map: (
   type: (
     default: (
-      color: var(--main-deep),
+      --radio-color: var(--main-deep),
     ),
     primary: (
-      color: var(--main-primary),
-    ),
-  ),
-  direction: (
-    row: (
-        display: flex,
-        flex-direction: row,
-        margin-right: 20px,
-    ),
-    column: (
-        display: flex,
-        flex-direction: column,
-        margin-bottom: 20px
+      --radio-color: var(--main-primary),
     ),
   ),
 );
 
-
-.__d-radio-container {
-    position: relative;
+.__dd-radio-container {
+  display: flex;
+  height: 50px;
+  align-items: center;
 }
 
+.__dd-radio {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--radio-color);
+  border-radius: 10px;
+  box-sizing: border-box;
 
-.radio-label-list {
-    display: flex;
-    flex-direction: row;
+  position: relative;
 
+  &::before {
+    // 使用iconfont中的对号，并修改其赋予的before样式
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 38px;
+    transition: opacity 0.1s ease-in-out;
+  }
 }
 
+.select.__dd-radio::before {
+  opacity: 1;
+}
+
+.__dd-radio-label {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--radio-color);
+}
 
 @include generate-class("radio", $props-map);

@@ -20,6 +20,7 @@ declare module 'vue' {
     InputSearch: typeof import('./src/components/Input/demo/inputSearch.vue')['default']
     Radio: typeof import('./src/components/Radio/Radio.vue')['default']
     RadioDefault: typeof import('./src/components/Radio/demo/radioDefault.vue')['default']
+    RadioMuti: typeof import('./src/components/Radio/demo/radioMuti.vue')['default']
     Size: typeof import('./src/components/Button/demo/size.vue')['default']
     Tabs: typeof import('./src/components/Tabs/Tabs.vue')['default']
     TabsDemo: typeof import('./src/components/Tabs/demo/tabsDemo.vue')['default']
