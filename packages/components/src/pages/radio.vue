@@ -4,5 +4,6 @@
 <template>
   <div class="container">
     <radio-default />
+    <radio-muti />
   </div>
 </template>

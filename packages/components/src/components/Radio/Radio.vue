@@ -1,96 +1,60 @@
 <script setup lang="ts">
 import '@dada-element/style/src/Radio.scss'
-
-// import type { RadioGroupProps } from '@uni-helper/uni-app-types'
-import { computed, ref } from 'vue'
-
-export interface RangeItem {
-  value: string
-  name: string
-  checked?: boolean
-}
+import { computed, watchEffect } from 'vue'
+import { useRadio } from './hooks'
 
 export interface RadioProps {
-  value?: string
-  checked?: boolean
-  disabled?: boolean
-  type?: 'primary' | 'default'
-  color?: string
-  range?: RangeItem[]
-  direction?: 'row' | 'column'
+  muti?: boolean
+  name?: string
+  label?: string
+  unique?: string
+  value?: boolean
+  type?: 'default' | 'primary'
+}
 
+export interface RadioEmits {
+  (e: 'update:value', v: boolean): null
 }
 
 const props = withDefaults(defineProps<RadioProps>(), {
-  value: '',
-  checked: false,
-  disabled: false,
+  muti: false,
+  value: false,
+  type: 'default',
+})
+const emits = defineEmits<RadioEmits>()
+
+const { value, setValue, store } = useRadio(props)
+
+// 与store绑定
+watchEffect(() => {
+  const { unique, name } = props
+  if (unique && name)
+    emits('update:value', store.get(unique)!.get(name)!)
 })
 
-const classAry = computed(() => {
+const containerClassAry = computed(() => {
   const { type } = props
   return [
     `__dd-radio-type-${type}`,
   ]
 })
 
-const styleAry = computed(() => {
-  // const { type } = props
-  const obj: Record<string, any> = {}
-  // if(type) {
-  //   obj.color = type
-  // }
-  return obj
-})
-
-const current = ref(0)
-
-const groupClass = computed(() => {
-  const { direction } = props
+const classAry = computed(() => {
   return [
-    `__dd-radio-direction-${direction}`,
+    value.value ? 'select' : '',
   ]
 })
 
-function radioChange(evt: any) {
-  const radioAry = props.range
-  if (radioAry) {
-    for (let i = 0; i < radioAry.length; i++) {
-      if (radioAry[i].value === evt.detail.value) {
-        current.value = i
-        break
-      }
-    }
-  }
+function clickHandle() {
+  setValue(!value.value)
 }
-
-function radioValue() {
-  return current.value
-}
-
-defineExpose ({
-  radioValue,
-})
 </script>
 
 <template>
-  <div class="dada-element-wrapper __dd-radio-container">
-    <radio-group :class="groupClass" @change="radioChange">
-      <label v-for="(item, index) in range" :key="item.value" class="radio-label-list">
-        <div>
-          <radio
-            :style="styleAry"
-            :class="classAry"
-            :value="item.value"
-            :checked="index === current"
-            :type="type"
-            :color="color"
-          />
-        </div>
-        <div>
-          {{ item.name }}
-        </div>
-      </label>
-    </radio-group>
+  <div class="dada-element-wrapper __dd-radio-container" :class="containerClassAry">
+    <div class=" __dd-radio iconfont dada-mani-confirm" :class="classAry" @click="clickHandle" />
+    <div class="__dd-radio-label">
+      {{ label }}
+    </div>
   </div>
 </template>

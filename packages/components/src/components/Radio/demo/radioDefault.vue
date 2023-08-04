@@ -1,43 +1,15 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const radioAry = [{
-  value: 'USA',
-  name: '美国',
-  checked: 'true',
-},
-{
-  value: 'CHN',
-  name: '中国',
-},
-{
-  value: 'BRA',
-  name: '巴西',
-},
-{
-  value: 'ENG',
-  name: '英国',
-},
-{
-  value: 'FRA',
-  name: '法国',
-},
-]
-const radioValue = ref(0)
-
-const dadaRadio = ref()
-
-function getRadioValue() {
-  radioValue.value = dadaRadio.value.radioValue()
-}
+const r1 = ref(false)
+const r2 = ref(false)
 </script>
 
 <template>
-  <DadaRadio :range="radioAry" direction="row" type="primary" />
-  <DadaRadio :range="radioAry" direction="column" type="default" />
-  <DadaRadio ref="dadaRadio" :range="radioAry" direction="row" />
-  <DadaButton @click="getRadioValue">
-    获取radioValue
-  </DadaButton>
-  <text>radioValue的值是: {{ radioAry[radioValue].value }}</text>
+  <div class="mt">
+    <div>unique属性用来标记单选框组，name属性用于区分组内不同单选框，也是组件框的值，label是组件框的标签</div>
+    <DadaRadio v-model:value="r1" unique="demo-default-group" label="No.1" name="r1" />
+    <DadaRadio v-model:value="r2" unique="demo-default-group" label="No.2" name="r2" />
+    <div>No.1: {{ r1 }}, No.2: {{ r2 }}</div>
+  </div>
 </template>
