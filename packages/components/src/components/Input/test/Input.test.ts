@@ -27,13 +27,21 @@ describe('Input.vue', () => {
     const wrapper = mount(Input)
     expect(wrapper.props()).toStrictEqual(defaultProps)
   })
-  it('测试聚焦状态', async () => {
-    const mockFocusFn = vi.fn()
+  it('测试label是否正确渲染', async () => {
     const wrapper = mount(Input, {
       props: {
-        onFocus: mockFocusFn,
+        label: 'It is a test',
       },
     })
+    expect(wrapper.find('.__dd-input-label')).toBeTruthy()
+    wrapper.setProps({
+      label: undefined,
+    })
+    await nextTick()
+    expect(wrapper.find('.__dd-input-label').exists()).toBeFalsy()
+  })
+  it('测试初始聚焦状态', async () => {
+    const wrapper = mount(Input)
     // 测试Expose的方法是否正常
     expect(wrapper.vm.focus).toBeDefined()
     expect(wrapper.find('input').element.focus).toBeFalsy()
@@ -41,13 +49,15 @@ describe('Input.vue', () => {
     await nextTick()
     expect(wrapper.find('input').element.focus).toBeTruthy()
   })
-  it('测试失焦事件', () => {
+  it('测试失焦事件', async () => {
     const wrapper = mount(Input)
-    expect(wrapper.vm.isFocus).toBeFalsy()
+    expect(wrapper.find('input').element.focus).toBeFalsy()
     wrapper.vm.focus()
-    expect(wrapper.vm.isFocus).toBeTruthy()
+    await nextTick()
+    expect(wrapper.find('input').element.focus).toBeTruthy()
     wrapper.find('input').trigger('blur')
-    expect(wrapper.vm.isFocus).toBeFalsy()
+    await nextTick()
+    expect(wrapper.find('input').element.focus).toBeFalsy()
   })
   it('测试输入更新函数调用', async () => {
     const mockUpdateFn = vi.fn()
