@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
+import { nextTick } from 'vue'
 import Input from '../Input.vue'
 
 // 默认设置，如果之后有组件默认设置的更改，请修改测试的对应位置
@@ -26,7 +27,7 @@ describe('Input.vue', () => {
     const wrapper = mount(Input)
     expect(wrapper.props()).toStrictEqual(defaultProps)
   })
-  it('测试聚焦状态', () => {
+  it('测试聚焦状态', async () => {
     const mockFocusFn = vi.fn()
     const wrapper = mount(Input, {
       props: {
@@ -35,9 +36,10 @@ describe('Input.vue', () => {
     })
     // 测试Expose的方法是否正常
     expect(wrapper.vm.focus).toBeDefined()
-    expect(wrapper.vm.isFocus).toBeFalsy()
+    expect(wrapper.find('input').element.focus).toBeFalsy()
     wrapper.vm.focus()
-    expect(wrapper.vm.isFocus).toBeTruthy()
+    await nextTick()
+    expect(wrapper.find('input').element.focus).toBeTruthy()
   })
   it('测试失焦事件', () => {
     const wrapper = mount(Input)
@@ -57,11 +59,22 @@ describe('Input.vue', () => {
     await wrapper.trigger('input')
     expect(mockUpdateFn).toHaveBeenCalled()
   })
-
+  it('测试向下绑定的value', () => {
+    const myValue1 = '我的输入1'
+    const myValue2 = '我的输入2'
+    const wrapper = mount(Input, {
+      props: {
+        value: myValue1,
+      },
+    })
+    expect(wrapper.find('input').element.value).toBe(myValue1)
+    wrapper.setValue(myValue2)
+    expect(wrapper.find('input').element.value).toBe(myValue1)
+  })
   it('测试向上emits的事件(input事件)', () => {
     const myValue1 = '我的动态输入1'
     const wrapper = mount(Input)
-    // 两次input观察传值
+    // input观察传值
     wrapper.find('input').trigger('input', {
       detail: {
         value: myValue1,
