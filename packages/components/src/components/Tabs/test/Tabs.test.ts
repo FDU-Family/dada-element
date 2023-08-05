@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
+import { nextTick } from 'vue'
 import Tabs from '../Tabs.vue'
 
 const defaultProps = {
@@ -61,7 +62,7 @@ describe('Tabs.vue', () => {
     const emittedValue = wrapper.emitted('update:value') ?? []
     expect(emittedValue[0][0]).toBe('0')
   })
-  it('测试click事件', () => {
+  it('测试click事件', async () => {
     const wrapper = mount(Tabs, {
       props: {
         tabsOptions: options,
@@ -72,5 +73,14 @@ describe('Tabs.vue', () => {
     tabs[0].trigger('click')
     const emittedClick = wrapper.emitted('update:value') ?? []
     expect(emittedClick[0][0]).toBe(0)
+    wrapper.setProps({
+      value: 'test',
+    })
+    await nextTick()
+    const valueTabs = wrapper.findAll('.__dd-tabs-label')
+    expect(valueTabs.length).toBe(3)
+    valueTabs[0].trigger('click')
+    const emittedClickHis = wrapper.emitted('update:value') ?? []
+    expect(emittedClickHis[1][0]).toBe('0')
   })
 })
