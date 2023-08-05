@@ -36,6 +36,6 @@ describe('Button.vue', () => {
     await widthWrapper.setProps({ width: 100 })
     expect(widthWrapper.vm.$props.width).toBe(100)
     // 次数测试根结点的width，如果更改宽度的位置要重新编写
-    expect(widthWrapper.element.style.width).toBe('100px')
+    expect(widthWrapper.element.style.width).toBe(`${100 / 7.5}vw`)
   })
 })

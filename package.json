@@ -11,8 +11,10 @@
   "dependencies": {
     "@dada-element/components": "workspace:*",
     "@dada-element/resolver": "workspace:*",
-    "@dada-element/utils": "workspace:*",
     "@dada-element/style": "workspace:*",
+    "@dada-element/utils": "workspace:*",
+    "@types/lodash-es": "^4.17.8",
+    "lodash-es": "^4.17.21",
     "vue": "3.2.47"
   },
   "devDependencies": {

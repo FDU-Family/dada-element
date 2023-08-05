@@ -1,0 +1,51 @@
+@use "mixins/mixin" as *;
+
+$props-map: (
+  type: (
+    default: (
+      --radio-color: var(--main-deep),
+    ),
+    primary: (
+      --radio-color: var(--main-primary),
+    ),
+  ),
+);
+
+.__dd-radio-container {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
+.__dd-radio {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--radio-color);
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  position: relative;
+
+  &::before {
+    // 使用iconfont中的对号，并修改其赋予的before样式
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 38px;
+    transition: opacity 0.1s ease-in-out;
+  }
+}
+
+.select.__dd-radio::before {
+  opacity: 1;
+}
+
+.__dd-radio-label {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--radio-color);
+}
+
+@include generate-class("radio", $props-map);

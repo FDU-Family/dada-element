@@ -13,6 +13,10 @@
       "type": "page"
     },
     {
+      "path": "pages/radio",
+      "type": "page"
+    },
+    {
       "path": "pages/tabs",
       "type": "page"
     }
