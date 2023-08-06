@@ -17,6 +17,10 @@
       "type": "page"
     },
     {
+      "path": "pages/select",
+      "type": "page"
+    },
+    {
       "path": "pages/tabs",
       "type": "page"
     }

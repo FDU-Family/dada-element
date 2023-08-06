@@ -17,8 +17,11 @@ function routeTo(path: string) {
     <DadaButton width="700" class="mt" size="large" type="secondary" @click="routeTo('/radio')">
       单选框
     </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="secondary" @click="routeTo('/tabs')">
+    <DadaButton width="700" class="mt" size="large" type="warning" @click="routeTo('/tabs')">
       Tab
+    </DadaButton>
+    <DadaButton width="700" class="mt" size="large" type="info" @click="routeTo('/select')">
+      选择器
     </DadaButton>
   </div>
 </template>
