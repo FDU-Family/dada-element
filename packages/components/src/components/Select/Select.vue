@@ -15,7 +15,7 @@ export interface SelectProps {
   border?: boolean
   type?: 'default' | 'primary'
   size?: 'small' | 'medium' | 'large'
-  value?: string | string
+  value?: string | number
   label?: string
   options: Array<optionsProp>
 }
