@@ -23,6 +23,9 @@ function routeTo(path: string) {
     <DadaButton width="700" class="mt" size="large" type="info" @click="routeTo('/select')">
       选择器
     </DadaButton>
+    <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/date-picker')">
+      日历选择器
+    </DadaButton>
   </div>
 </template>
 

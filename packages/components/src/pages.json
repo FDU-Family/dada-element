@@ -9,6 +9,10 @@
       "type": "page"
     },
     {
+      "path": "pages/date-picker",
+      "type": "page"
+    },
+    {
       "path": "pages/input",
       "type": "page"
     },
