@@ -27,6 +27,10 @@
     {
       "path": "pages/tabs",
       "type": "page"
+    },
+    {
+      "path": "pages/time-picker",
+      "type": "page"
     }
   ],
   "globalStyle": {

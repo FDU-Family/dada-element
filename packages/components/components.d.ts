@@ -15,6 +15,7 @@ declare module 'vue' {
     DadaRadio: typeof import('@/components/Radio/Radio.vue')['default']
     DadaSelect: typeof import('@/components/Select/Select.vue')['default']
     DadaTabs: typeof import('@/components/Tabs/Tabs.vue')['default']
+    DadaTimePicker: typeof import('@/components/TimePicker/TimePicker.vue')['default']
     DatePicker: typeof import('./src/components/DatePicker/DatePicker.vue')['default']
     DatePickerDefault: typeof import('./src/components/DatePicker/demo/DatePickerDefault.vue')['default']
     DatePickerFields: typeof import('./src/components/DatePicker/demo/DatePickerFields.vue')['default']
@@ -33,6 +34,8 @@ declare module 'vue' {
     TabsDemo: typeof import('./src/components/Tabs/demo/tabsDemo.vue')['default']
     TabsType: typeof import('./src/components/Tabs/demo/tabsType.vue')['default']
     Text: typeof import('./src/components/Button/demo/text.vue')['default']
+    TimePicker: typeof import('./src/components/TimePicker/TimePicker.vue')['default']
+    TimePickerDefault: typeof import('./src/components/TimePicker/demo/TimePickerDefault.vue')['default']
     Type: typeof import('./src/components/Button/demo/type.vue')['default']
   }
 }
