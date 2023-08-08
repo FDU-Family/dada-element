@@ -29,6 +29,9 @@ function routeTo(path: string) {
     <DadaButton width="700" class="mt" size="large" @click="routeTo('/time-picker')">
       时间选择器
     </DadaButton>
+    <DadaButton width="700" class="mt" size="large" @click="routeTo('/modal')">
+      弹窗
+    </DadaButton>
   </div>
 </template>
 
