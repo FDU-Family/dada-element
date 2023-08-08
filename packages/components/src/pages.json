@@ -21,6 +21,10 @@
       "type": "page"
     },
     {
+      "path": "pages/pop-out",
+      "type": "page"
+    },
+    {
       "path": "pages/radio",
       "type": "page"
     },
