@@ -13,6 +13,10 @@
       "type": "page"
     },
     {
+      "path": "pages/image",
+      "type": "page"
+    },
+    {
       "path": "pages/input",
       "type": "page"
     },
