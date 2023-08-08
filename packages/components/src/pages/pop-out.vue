@@ -1,3 +1,3 @@
 <template>
-  <modal-base />
+  <pop-out-base />
 </template>

@@ -12,7 +12,7 @@ function showModal() {
   <DadaButton size="large" @click="showModal">
     点击
   </DadaButton>
-  <DadaModal :visible="visible" masked :close-on-click-mask="true" @update:visible=" visible = $event">
+  <DadaPopOut :visible="visible" masked :close-on-click-mask="true" @update:visible=" visible = $event">
     modal test
-  </DadaModal>
+  </DadaPopOut>
 </template>

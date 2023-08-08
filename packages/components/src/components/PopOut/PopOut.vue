@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import '@dada-element/style/src/Modal.scss'
+import '@dada-element/style/src/PopOut.scss'
 import { computed, defineEmits, defineProps, withDefaults } from 'vue'
 
 export interface modalProps {
