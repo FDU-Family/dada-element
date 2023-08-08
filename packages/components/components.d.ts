@@ -13,7 +13,6 @@ declare module 'vue' {
     DadaDatePicker: typeof import('@/components/DatePicker/DatePicker.vue')['default']
     DadaImage: typeof import('@/components/Image/Image.vue')['default']
     DadaInput: typeof import('@/components/Input/Input.vue')['default']
-    DadaModal: typeof import('@/components/Modal/Modal.vue')['default']
     DadaPopOut: typeof import('@/components/PopOut/PopOut.vue')['default']
     DadaRadio: typeof import('@/components/Radio/Radio.vue')['default']
     DadaSelect: typeof import('@/components/Select/Select.vue')['default']

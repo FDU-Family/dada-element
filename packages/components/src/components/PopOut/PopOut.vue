@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import '@dada-element/style/src/PopOut.scss'
-import { defineEmits, defineProps, ref, watch, watchEffect, withDefaults } from 'vue'
+import { ref, watch, watchEffect, withDefaults } from 'vue'
 
 export interface PopOutProps {
   visible?: boolean
