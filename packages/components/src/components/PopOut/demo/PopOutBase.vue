@@ -2,17 +2,15 @@
 import { ref } from 'vue'
 
 const visible = ref(false)
-
-function showModal() {
-  visible.value = !visible.value
-}
 </script>
 
 <template>
-  <DadaButton size="large" @click="showModal">
-    点击
-  </DadaButton>
-  <DadaPopOut :visible="visible" masked :close-on-click-mask="true" @update:visible=" visible = $event">
+  <div class="mt ml">
+    <DadaButton size="large" @click="visible = true">
+      点击
+    </DadaButton>
+  </div>
+  <DadaPopOut v-model:visible="visible">
     modal test
   </DadaPopOut>
 </template>

@@ -2,45 +2,41 @@
 import '@dada-element/style/src/PopOut.scss'
 import { computed, defineEmits, defineProps, withDefaults } from 'vue'
 
-export interface modalProps {
+export interface PopOutProps {
   visible?: boolean
-  masked?: boolean
-  closeOnClickMask?: boolean
+  mask?: boolean
+  maskClosable?: boolean
 }
 
-const props = withDefaults(defineProps<modalProps>(), {
+export interface PopOutEmits {
+  (e: 'update:visible', value: boolean): null
+}
+
+const props = withDefaults(defineProps<PopOutProps>(), {
   visible: false,
-  masked: false,
-  closeOnClickMask: true,
+  mask: true,
+  maskClosable: true,
 })
 
-const emits = defineEmits(['update:visible'])
+const emits = defineEmits<PopOutEmits>()
 
 const classAry = computed(() => {
-  const { masked, visible } = props
+  const { mask } = props
   return [
-    masked ? '__modal-mask' : '',
-    visible ? '__open-animation' : '__close-animation',
+    mask ? '__dd-pop-out-mask' : '',
   ]
 })
 
-const animationClass = computed(() => {
-  const { visible } = props
-  return [
-    visible ? '__open-animation' : '__close-animation',
-  ]
-})
-
-function closeOnMaskClick() {
-  if (props.masked && props.closeOnClickMask)
+function clickHandle() {
+  if (props.maskClosable)
     emits('update:visible', false)
 }
 </script>
 
 <template>
-  <div v-if="props.visible" :class="animationClass" class="dada-element-wrapper __modal-container">
-    <div v-if="props.masked" :class="classAry" @click="closeOnMaskClick" />
-    <div class="__modal-content" @click.stop>
+  <div v-if="visible" class="dada-element-wrapper  __dd-pop-out-container" @click="clickHandle">
+    <div :class="classAry" />
+    <div class="__dd-pop-out">
       <slot />
     </div>
   </div>
