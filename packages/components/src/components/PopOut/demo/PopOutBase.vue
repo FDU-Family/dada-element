@@ -7,7 +7,7 @@ const visible = ref(false)
 <template>
   <div class="mt ml">
     <DadaButton size="large" @click="visible = true">
-      点击
+      base Modal
     </DadaButton>
   </div>
   <DadaPopOut v-model:visible="visible">

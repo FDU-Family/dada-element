@@ -1,0 +1,48 @@
+.__dada-modal-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #fff;
+    width: 550px;
+    height: 540px;
+    position: fixed;
+    border-radius: 10px;
+  }
+  
+  /* Style for the modal title */
+  .modal-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    width: 128px;
+    height: 60px;
+    line-height: 38.73px;
+    color: var(--main-primary);
+    margin-top: 30px;
+    gap: 10px;
+  }
+  
+  /* Style for the modal content */
+  .modal-content {
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43.57px;
+    margin-top: 124px;
+    width: 440px;
+    height: 140px;
+  }
+  
+  /* Style for the modal buttons */
+  .modal-button {
+    margin-top: 324px;
+    height: 180px;
+    width: 480px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  
