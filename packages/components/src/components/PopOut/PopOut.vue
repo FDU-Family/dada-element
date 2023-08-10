@@ -48,20 +48,12 @@ watchEffect(() => {
     setTimeout(() => {
       maskClassObj.value['__dd-pop-out-mask-to'] = true
     }, 50)
-  }
-  else {
-    delete maskClassObj.value['__dd-pop-out-mask-to']
-  }
-})
-
-watchEffect(() => {
-  const { visible } = props
-  if (visible) {
     setTimeout(() => {
       classObj.value['__dd-pop-out-to'] = true
     }, 50)
   }
   else {
+    delete maskClassObj.value['__dd-pop-out-mask-to']
     delete classObj.value['__dd-pop-out-to']
   }
 })
