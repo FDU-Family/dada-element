@@ -1,0 +1,32 @@
+.__dd-toast {
+  width: 200px;
+  height: 200px;
+  background-color: var(--bas-nagative);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--main-deep);
+}
+.__dd-toast-icon {
+  width: 100px;
+  height: 100px;
+  font-size: 100px;
+  font-weight: normal;
+}
+
+.__dd-toast-icon-loading {
+  animation: rotate 1.2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
