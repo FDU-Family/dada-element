@@ -6,6 +6,7 @@ export interface ToastProp {
   visible: boolean
   preset: 'loading' | 'success'
   icon: string
+  canClose: boolean // 是否能手动关闭
 }
 
 export interface ToastEmits {
@@ -13,9 +14,10 @@ export interface ToastEmits {
 }
 const props = withDefaults(defineProps<ToastProp>(), {
   preset: 'loading',
+  canClose: false,
 })
 
-defineEmits<ToastEmits>()
+const emits = defineEmits<ToastEmits>()
 
 const presetClass = {
   loading: {
@@ -39,10 +41,16 @@ const classAry = computed(() => {
     !icon && preset ? presetClass[preset].class : '', // 没有icon的话再考虑preset
   ]
 })
+
+function updateHandle(value: boolean) {
+  const { canClose } = props
+  if (canClose)
+    emits('update:visible', value)
+}
 </script>
 
 <template>
-  <DadaPopOut :visible="visible" @update:visible="(value:boolean) => $emit('update:visible', value)">
+  <DadaPopOut :visible="visible" @update:visible="updateHandle">
     <div class="dada-element-wrapper __dd-toast">
       <div class="iconfont __dd-toast-icon" :class="classAry" />
       <div>

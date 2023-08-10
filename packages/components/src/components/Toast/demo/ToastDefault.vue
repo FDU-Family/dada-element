@@ -1,47 +1,51 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { reactive } from 'vue'
 
-const visible1 = ref(false)
-const visible2 = ref(false)
-const visible3 = ref(false)
-const visible4 = ref(false)
+const visible = reactive(Array.from({ length: 4 }).map(() => false))
+
+function clickHandle(index: number) {
+  visible[index] = true
+  setTimeout(() => {
+    visible[index] = false
+  }, 2000)
+}
 </script>
 
 <template>
   <div>
     <div class="mt ml">
       <div>
-        <DadaButton @click="visible1 = true">
+        <DadaButton @click="clickHandle(1)">
           loading 预设(默认)
         </DadaButton>
       </div>
-      <DadaToast v-model:visible="visible1">
+      <DadaToast v-model:visible="visible[1]">
         测试
       </DadaToast>
     </div>
     <div class="mt ml">
       <div>
-        <DadaButton @click="visible2 = true">
+        <DadaButton @click="clickHandle(2)">
           success预设
         </DadaButton>
       </div>
-      <DadaToast v-model:visible="visible2" preset="success" />
+      <DadaToast v-model:visible="visible[2]" preset="success" />
     </div>
     <div class="mt ml">
       <div>
-        <DadaButton @click="visible3 = true">
+        <DadaButton @click="clickHandle(3)">
           error预设
         </DadaButton>
       </div>
-      <DadaToast v-model:visible="visible3" preset="error" />
+      <DadaToast v-model:visible="visible[3]" preset="error" />
     </div>
     <div class="mt ml">
       <div>
-        <DadaButton @click="visible4 = true">
+        <DadaButton @click="clickHandle(4)">
           自定义icon
         </DadaButton>
       </div>
-      <DadaToast v-model:visible="visible4" icon="dada-att-gender-female">
+      <DadaToast v-model:visible="visible[4]" icon="dada-att-gender-female">
         测试
       </DadaToast>
     </div>
