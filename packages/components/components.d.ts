@@ -8,7 +8,10 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./src/components/Button/Button.vue')['default']
-    Circle: typeof import('./src/components/Button/demo/circle.vue')['default']
+    ButtonCircle: typeof import('./src/components/Button/demo/ButtonCircle.vue')['default']
+    ButtonSize: typeof import('./src/components/Button/demo/ButtonSize.vue')['default']
+    ButtonText: typeof import('./src/components/Button/demo/ButtonText.vue')['default']
+    ButtonType: typeof import('./src/components/Button/demo/ButtonType.vue')['default']
     DadaButton: typeof import('@/components/Button/Button.vue')['default']
     DadaDatePicker: typeof import('@/components/DatePicker/DatePicker.vue')['default']
     DadaImage: typeof import('@/components/Image/Image.vue')['default']
@@ -30,6 +33,7 @@ declare module 'vue' {
     InputDemo: typeof import('./src/components/Input/demo/inputDemo.vue')['default']
     InputForm: typeof import('./src/components/Input/demo/inputForm.vue')['default']
     InputSearch: typeof import('./src/components/Input/demo/inputSearch.vue')['default']
+    Notification: typeof import('./src/components/Notification/Notification.vue')['default']
     PopOut: typeof import('./src/components/PopOut/PopOut.vue')['default']
     PopOutBase: typeof import('./src/components/PopOut/demo/PopOutBase.vue')['default']
     Radio: typeof import('./src/components/Radio/Radio.vue')['default']
@@ -37,15 +41,12 @@ declare module 'vue' {
     RadioMuti: typeof import('./src/components/Radio/demo/radioMuti.vue')['default']
     Select: typeof import('./src/components/Select/Select.vue')['default']
     SelectDefault: typeof import('./src/components/Select/demo/SelectDefault.vue')['default']
-    Size: typeof import('./src/components/Button/demo/size.vue')['default']
     Tabs: typeof import('./src/components/Tabs/Tabs.vue')['default']
     TabsDemo: typeof import('./src/components/Tabs/demo/tabsDemo.vue')['default']
     TabsType: typeof import('./src/components/Tabs/demo/tabsType.vue')['default']
-    Text: typeof import('./src/components/Button/demo/text.vue')['default']
     TimePicker: typeof import('./src/components/TimePicker/TimePicker.vue')['default']
     TimePickerDefault: typeof import('./src/components/TimePicker/demo/TimePickerDefault.vue')['default']
     Toast: typeof import('./src/components/Toast/Toast.vue')['default']
     ToastDefault: typeof import('./src/components/Toast/demo/ToastDefault.vue')['default']
-    Type: typeof import('./src/components/Button/demo/type.vue')['default']
   }
 }
