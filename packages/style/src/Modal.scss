@@ -1,0 +1,28 @@
+.__dd-modal-container {
+  width: 550px;
+  padding: 30px;
+  background-color: var(--bas-nagative);
+  font-weight: 700;
+  font-size: 32px;
+  border-radius: 40px;
+}
+
+.__dd-modal-title {
+  height: 60px;
+  line-height: 60px;
+  margin: 10px 0;
+  text-align: center;
+  color: var(--main-primary);
+}
+
+.__dd-modal-content-area {
+  margin: 10px 30px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.__dd-modal-button-group view {
+  margin-top: 20px;
+}
