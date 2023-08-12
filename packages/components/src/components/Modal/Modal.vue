@@ -27,7 +27,7 @@ function updateHandle(value: boolean) {
 
 <template>
   <DadaPopOut :visible="visible" @update:visible="updateHandle">
-    <div class="dada-element-wrapper __dd-modal-container">
+    <div class="dada-element-wrapper __dd-modal-container" @click.stop="">
       <div class="__dd-modal-title">
         {{ title }}
       </div>
@@ -45,6 +45,9 @@ function updateHandle(value: boolean) {
           <DadaButton :block="true" size="large" :shadow="true" @click="(e:TouchEvent) => $emit('cancel', e)">
             取消
           </DadaButton>
+        </template>
+        <template v-else>
+          <slot name="footer" />
         </template>
       </div>
     </div>
