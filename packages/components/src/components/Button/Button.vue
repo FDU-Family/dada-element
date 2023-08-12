@@ -12,6 +12,7 @@ export interface ButtonProps {
   size?: 'small' | 'medium' | 'large'
   circle?: boolean
   block?: boolean
+  shadow?: boolean
 }
 export interface ButtonEmits {
   (e: 'click', event: TouchEvent): void
@@ -23,6 +24,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   size: 'medium',
   circle: false,
   block: false,
+  shadow: false,
 })
 
 const emit = defineEmits<ButtonEmits>()
@@ -32,13 +34,14 @@ function click(event: TouchEvent) {
 }
 
 const classAry = computed(() => {
-  const { type, text, size, circle, block } = props
+  const { type, text, size, circle, block, shadow } = props
   return [
     `__dd-button-type-${type}`,
     `__dd-button-size-${size}`,
     text ? '__dd-button-text' : '',
     circle ? '__dd-button-circle' : '',
     block ? '__dd-button-block' : '',
+    shadow ? '__dd-button-shadow' : '',
   ]
 })
 const styleObj = computed(() => {
