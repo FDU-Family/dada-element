@@ -6,6 +6,7 @@
   <div>
     <div class="img ml mt">
       <dada-image src="https://placekitten.com/200/300" preview-src="https://placekitten.com/800/1200" />
+      <dada-image src="https://placekitten.com/200/300" />
     </div>
   </div>
 </template>

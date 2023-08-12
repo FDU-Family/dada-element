@@ -2,6 +2,7 @@
 // https://placekitten.com/200/300
 import '@dada-element/style/src/Image.scss'
 import { ref, watch, watchEffect } from 'vue'
+import { formatBase64MineType } from '@dada-element/utils'
 
 type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left' | 'bottom right'
 
@@ -10,7 +11,7 @@ export interface ImageProps {
   src: string
   previewSrc: string
   preview: boolean
-  lazy: boolean
+  lazy: boolean // 这个lazy实际上没用，回来修
 }
 
 const props = withDefaults(defineProps<ImageProps>(), {
@@ -29,8 +30,9 @@ watchEffect(() => {
   uni.request({
     url: props.src, responseType: 'arraybuffer',
   }).then((res) => {
-    const type = res.header['Content-Type']
-    picSrc.value = `data:${type};base64,${uni.arrayBufferToBase64(res.data as ArrayBuffer)}`
+    const base64 = uni.arrayBufferToBase64(res.data as ArrayBuffer)
+    const type = formatBase64MineType(base64[0])
+    picSrc.value = `data:${type};base64,${base64}`
   })
 })
 
@@ -40,18 +42,23 @@ watch(() => props.previewSrc, () => {
 })
 
 function previewHandle() {
-  if (props.preview && props.previewSrc) {
+  if (props.preview) {
     // 先显示图片
     previewFlag.value = true
     if (isPreviewLoad === false) {
     // 第一次加载
-      uni.request({
-        url: props.previewSrc, responseType: 'arraybuffer',
-      }).then((res) => {
-        const type = res.header['Content-Type']
-        previewSrc.value = `data:${type};base64,${uni.arrayBufferToBase64(res.data as ArrayBuffer)}`
-        isPreviewLoad = true
-      })
+      if (props.previewSrc) {
+        uni.request({
+          url: props.previewSrc, responseType: 'arraybuffer',
+        }).then((res) => {
+          const base64 = uni.arrayBufferToBase64(res.data as ArrayBuffer)
+          const type = formatBase64MineType(base64[0])
+          previewSrc.value = `data:${type};base64,${base64}`
+        })
+      }
+      else {
+        previewSrc.value = picSrc.value
+      }
     }
   }
 }
