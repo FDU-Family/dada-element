@@ -35,6 +35,10 @@ $props-map: (
   box-sizing: border-box;
 }
 
+.__dd-input-block {
+  display: block;
+}
+
 .__dd-input-area {
   position: relative;
   display: flex;

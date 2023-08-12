@@ -17,6 +17,7 @@ export interface InputProps {
   maxlength?: number
   disabled?: boolean
   line?: boolean
+  block?: boolean
 }
 
 export interface InputEmits {
@@ -25,13 +26,13 @@ export interface InputEmits {
 
 const props = withDefaults(defineProps<InputProps>(), {
   placeholder: '',
-  width: 600,
   shadow: false,
   border: false,
   size: 'medium',
   line: false,
   maxlength: 140,
   type: 'default',
+  block: false,
 })
 
 const emits = defineEmits<InputEmits>()
@@ -41,10 +42,11 @@ const slots = useSlots()
 const keyboardHeight = ref()
 
 const containerClassAry = computed(() => {
-  const { shadow, border, type } = props
+  const { shadow, border, type, block } = props
   return [
     shadow ? '__dd-input-shadow' : '',
     border ? '__dd-input-border' : '',
+    block ? '__dd-input-block' : '',
     `__dd-input-type-${type}`,
   ]
 })
