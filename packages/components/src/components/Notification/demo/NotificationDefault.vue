@@ -9,7 +9,7 @@ const value = ref(false)
     <DadaButton @click="value = true">
       通知
     </DadaButton>
-    <DadaNotification v-model:visible="value">
+    <DadaNotification v-model:visible="value" title="通知">
       这是一条通知消息
     </DadaNotification>
   </div>

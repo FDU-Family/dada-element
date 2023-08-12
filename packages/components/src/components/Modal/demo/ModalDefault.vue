@@ -18,7 +18,7 @@ function cancelHandle() {
       <DadaButton @click="value = true">
         模态框
       </DadaButton>
-      <DadaModal v-model:visible="value" preset="default" @confirm="confirmHandle" @cancel="cancelHandle">
+      <DadaModal v-model:visible="value" preset="default" title="模态框" @confirm="confirmHandle" @cancel="cancelHandle">
         这是一条通知消息
       </DadaModal>
     </div>
