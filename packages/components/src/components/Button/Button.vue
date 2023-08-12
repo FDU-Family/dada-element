@@ -4,15 +4,6 @@ import { computed } from 'vue'
 import '@dada-element/style/src/Button.scss'
 import { pxToVw } from '@dada-element/utils'
 
-const props = withDefaults(defineProps<ButtonProps>(), {
-  type: 'default',
-  text: false,
-  size: 'medium',
-  circle: false,
-})
-
-const emit = defineEmits<ButtonEmits>()
-
 export interface ButtonProps {
   type?: 'default' | 'primary' | 'secondary' | 'warning' | 'info'
   width?: number | string
@@ -20,22 +11,34 @@ export interface ButtonProps {
   textColor?: string
   size?: 'small' | 'medium' | 'large'
   circle?: boolean
+  block?: boolean
 }
 export interface ButtonEmits {
   (e: 'click', event: TouchEvent): void
 }
+
+const props = withDefaults(defineProps<ButtonProps>(), {
+  type: 'default',
+  text: false,
+  size: 'medium',
+  circle: false,
+  block: false,
+})
+
+const emit = defineEmits<ButtonEmits>()
 
 function click(event: TouchEvent) {
   emit('click', event)
 }
 
 const classAry = computed(() => {
-  const { type, text, size, circle } = props
+  const { type, text, size, circle, block } = props
   return [
     `__dd-button-type-${type}`,
     `__dd-button-size-${size}`,
     text ? '__dd-button-text' : '',
     circle ? '__dd-button-circle' : '',
+    block ? '__dd-button-block' : '',
   ]
 })
 const styleObj = computed(() => {
