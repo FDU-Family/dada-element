@@ -7,11 +7,14 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Avatar: typeof import('./src/components/Avatar/Avatar.vue')['default']
+    AvatarDefault: typeof import('./src/components/Avatar/demo/AvatarDefault.vue')['default']
     Button: typeof import('./src/components/Button/Button.vue')['default']
     ButtonCircle: typeof import('./src/components/Button/demo/ButtonCircle.vue')['default']
     ButtonSize: typeof import('./src/components/Button/demo/ButtonSize.vue')['default']
     ButtonText: typeof import('./src/components/Button/demo/ButtonText.vue')['default']
     ButtonType: typeof import('./src/components/Button/demo/ButtonType.vue')['default']
+    DadaAvatar: typeof import('@/components/Avatar/Avatar.vue')['default']
     DadaButton: typeof import('@/components/Button/Button.vue')['default']
     DadaDatePicker: typeof import('@/components/DatePicker/DatePicker.vue')['default']
     DadaHr: typeof import('@/components/Hr/Hr.vue')['default']

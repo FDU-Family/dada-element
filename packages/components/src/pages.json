@@ -5,6 +5,10 @@
       "type": "home"
     },
     {
+      "path": "pages/avatar",
+      "type": "page"
+    },
+    {
       "path": "pages/button",
       "type": "page"
     },
