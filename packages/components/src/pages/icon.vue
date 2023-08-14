@@ -1,0 +1,3 @@
+<template>
+  <icon-default />
+</template>
