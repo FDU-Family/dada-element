@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import '@dada-element/style/src/Toast.scss'
-import { computed } from '@vue/runtime-core'
+import { computed } from 'vue'
 
 export interface ToastProp {
   visible: boolean

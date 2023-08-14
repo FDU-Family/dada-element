@@ -33,6 +33,10 @@
       "type": "page"
     },
     {
+      "path": "pages/switcher",
+      "type": "page"
+    },
+    {
       "path": "pages/tabs",
       "type": "page"
     },
