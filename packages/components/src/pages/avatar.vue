@@ -1,0 +1,3 @@
+<template>
+  <avatar-default />
+</template>

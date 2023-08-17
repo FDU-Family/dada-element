@@ -5,6 +5,10 @@
       "type": "home"
     },
     {
+      "path": "pages/avatar",
+      "type": "page"
+    },
+    {
       "path": "pages/button",
       "type": "page"
     },
@@ -34,6 +38,10 @@
     },
     {
       "path": "pages/select",
+      "type": "page"
+    },
+    {
+      "path": "pages/switcher",
       "type": "page"
     },
     {

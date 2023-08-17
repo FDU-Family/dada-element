@@ -1,0 +1,3 @@
+<template>
+  <switcher-default />
+</template>

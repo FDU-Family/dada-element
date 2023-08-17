@@ -7,11 +7,14 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Avatar: typeof import('./src/components/Avatar/Avatar.vue')['default']
+    AvatarDefault: typeof import('./src/components/Avatar/demo/AvatarDefault.vue')['default']
     Button: typeof import('./src/components/Button/Button.vue')['default']
     ButtonCircle: typeof import('./src/components/Button/demo/ButtonCircle.vue')['default']
     ButtonSize: typeof import('./src/components/Button/demo/ButtonSize.vue')['default']
     ButtonText: typeof import('./src/components/Button/demo/ButtonText.vue')['default']
     ButtonType: typeof import('./src/components/Button/demo/ButtonType.vue')['default']
+    DadaAvatar: typeof import('@/components/Avatar/Avatar.vue')['default']
     DadaButton: typeof import('@/components/Button/Button.vue')['default']
     DadaDatePicker: typeof import('@/components/DatePicker/DatePicker.vue')['default']
     DadaHr: typeof import('@/components/Hr/Hr.vue')['default']
@@ -23,6 +26,7 @@ declare module 'vue' {
     DadaPopOut: typeof import('@/components/PopOut/PopOut.vue')['default']
     DadaRadio: typeof import('@/components/Radio/Radio.vue')['default']
     DadaSelect: typeof import('@/components/Select/Select.vue')['default']
+    DadaSwitcher: typeof import('@/components/Switcher/Switcher.vue')['default']
     DadaTabs: typeof import('@/components/Tabs/Tabs.vue')['default']
     DadaTimePicker: typeof import('@/components/TimePicker/TimePicker.vue')['default']
     DadaToast: typeof import('@/components/Toast/Toast.vue')['default']
@@ -50,6 +54,8 @@ declare module 'vue' {
     RadioMuti: typeof import('./src/components/Radio/demo/radioMuti.vue')['default']
     Select: typeof import('./src/components/Select/Select.vue')['default']
     SelectDefault: typeof import('./src/components/Select/demo/SelectDefault.vue')['default']
+    Switcher: typeof import('./src/components/Switcher/Switcher.vue')['default']
+    SwitcherDefault: typeof import('./src/components/Switcher/demo/SwitcherDefault.vue')['default']
     Tabs: typeof import('./src/components/Tabs/Tabs.vue')['default']
     TabsDemo: typeof import('./src/components/Tabs/demo/tabsDemo.vue')['default']
     TabsType: typeof import('./src/components/Tabs/demo/tabsType.vue')['default']

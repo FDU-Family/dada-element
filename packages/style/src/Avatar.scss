@@ -1,0 +1,49 @@
+@use 'mixins/mixin' as *;
+
+$props-map: (
+  size: (
+    small: (
+      width: 80px,
+      height: 80px,
+    ),
+    medium: (
+      width: 120px,
+      height: 120px,
+    ),
+    large: (
+      width: 200px,
+      height: 200px,
+    ),
+  ),
+  shape: (
+    circle: (
+      border-radius: 50%,
+    ),
+    square: (
+      border-radius: 20px,
+    ),
+  ),
+  shadow: (
+    none: (
+      box-shadow: none,
+    ),
+    medium: (
+      box-shadow: 0px 10px 10px 0px var(--bas-positive),
+    ),
+    large: (
+      box-shadow:  0px 10px 20px 0px var(--bas-positive),
+    ),
+  ),
+);
+
+@include generate-class('avatar', $props-map);
+.__dada-avatar-container {
+  position: relative;
+  overflow: hidden;
+}
+.__dd-avatar-shadow {
+  box-shadow: 0px 10px 10px 0px var(--bas-positive);
+}
+.__dd-avatar-border {
+  border: 4px solid var(--main-deep);
+}

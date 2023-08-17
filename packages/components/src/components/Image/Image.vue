@@ -5,13 +5,13 @@ import { ref, watch, watchEffect } from 'vue'
 import { formatBase64MineType } from '@dada-element/utils'
 
 type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left' | 'bottom right'
-
+// TODO(GJSSSS): 修复lazy
 export interface ImageProps {
   mode: ImageMode
   src: string
   previewSrc: string
   preview: boolean
-  lazy: boolean // 这个lazy实际上没用，回来修
+  lazy: boolean // 这个lazy实际上没用，回来修(kcheng:好的)
 }
 
 const props = withDefaults(defineProps<ImageProps>(), {

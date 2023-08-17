@@ -1,0 +1,37 @@
+@use 'mixins/mixin' as *;
+
+.__dada-switcher-container {
+  width: 630px;
+  height: 80px;
+  background-color: var(--main-deep);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.__dada-switcher-item {
+  width: 300px;
+  height: 60px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.__dada-switcher-text {
+  font-family: Inter;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--bas-nagative);
+}
+
+.__dada-switcher-item-active {
+    border-radius: 10px;
+    background-color: var(--main-primary);
+}
