@@ -17,6 +17,10 @@
       "type": "page"
     },
     {
+      "path": "pages/icon",
+      "type": "page"
+    },
+    {
       "path": "pages/image",
       "type": "page"
     },

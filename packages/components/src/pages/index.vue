@@ -35,6 +35,8 @@ function routeTo(path: string) {
     <DadaButton width="700" class="mt" size="large" type="warning" @click="routeTo('/pop-out')">
       弹窗
     </DadaButton>
+    <DadaButton width="700" class="mt" size="large" type="info" @click="routeTo('/icon')">
+      图标
     <DadaButton width="700" class="mt" size="large" @click="routeTo('/switcher')">
       切换
     </DadaButton>
