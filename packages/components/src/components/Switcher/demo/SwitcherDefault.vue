@@ -22,5 +22,10 @@ watch(value, (newVal) => {
 </script>
 
 <template>
-  <dada-switcher v-model:value="value" :switcher-options="options" />
+  <div class="ml mt mc">
+    <dada-switcher v-model:value="value" :switcher-options="options" />
+  </div>
+  <div class="ml mt mc">
+    <dada-switcher v-model:value="value" type="tag" :switcher-options="options" />
+  </div>
 </template>
