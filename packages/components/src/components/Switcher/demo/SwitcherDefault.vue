@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import type { switcherOptionsType } from '../Switcher.vue'
 
-const value = ref(0)
+const value = ref('1')
 
 const options: switcherOptionsType = [
   {
@@ -16,12 +16,12 @@ const options: switcherOptionsType = [
     checked: false,
   },
 ]
-watch(value, (newVal) => {
-  console.log(newVal)
-})
 </script>
 
 <template>
+  <div @click="value = '2'">
+    {{ value }}
+  </div>
   <div class="ml mt mc">
     <dada-switcher v-model:value="value" :switcher-options="options" />
   </div>

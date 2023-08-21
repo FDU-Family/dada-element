@@ -1,59 +1,39 @@
-@use 'mixins/mixin' as *;
-
-.__dada-switcher-container {
-  display: inline-block;
-  box-sizing: border-box;
-}
-
 .__dada-switcher-area {
   background-color: var(--main-deep);
   border-radius: 16px;
-  flex-direction: row;
-  display: flex;
   width: 630px;
   height: 80px;
-  position: relative;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .__dada-switcher-item {
   width: 300px;
   height: 60px;
   position: relative;
-  top: 10px;
-  left: 10px;
   align-items: center;
   justify-content: center;
-  z-index: 998;
-  margin-right: 10px;
   display: flex;
-  transition: background 0.5s ease-in-out;
-  background-color: transparent;
-  z-index: 999;
-  
-  // &.selected {
-  //   border-radius: 10px;
-  //   background-color: var(--main-primary);
-  //   transform: translateX(calc(var(--index)*50%));
-  // }
-}
 
-.__dada-slider-background {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 300px;
-  height: 60px;
-  background-color: var(--main-primary);
-  border-radius: 10px;
-  transition: left 0.5s ease-in-out;
+  &.first::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--main-primary);
+    position: absolute;
+    z-index: 0;
+    transform: translateX(calc(var(--index)*100%));
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .__dada-switcher-text {
-  font-family: Inter;
   font-size: 26px;
   font-weight: 700;
-  line-height: 31px;
-  letter-spacing: 0em;
-  text-align: center;
+  z-index: 1;
+  position: relative;
   color: var(--bas-nagative);
 }
