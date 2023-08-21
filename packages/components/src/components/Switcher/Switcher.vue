@@ -12,7 +12,6 @@ export type switcherOptionsType = Array<{
 export interface SwitcherProps {
   switcherOptions?: switcherOptionsType
   value: number
-  type: 'default' | 'tag'
 }
 
 export interface SwitcherEmits {
@@ -20,7 +19,6 @@ export interface SwitcherEmits {
 }
 
 const props = withDefaults(defineProps<SwitcherProps>(), {
-  type: 'default',
 })
 
 const emits = defineEmits<SwitcherEmits>()
@@ -45,7 +43,7 @@ const sliderPosition = computed(() => {
 
 <template>
   <div class="dada-element-wrapper __dada-switcher-container">
-    <div v-if="props.type === 'default'" class="__dada-switcher-area">
+    <div class="__dada-switcher-area">
       <div class="__dada-slider-background" :style="{ left: sliderPosition }" />
       <div
         v-for="(item, index) in props.switcherOptions"
@@ -59,9 +57,6 @@ const sliderPosition = computed(() => {
           {{ item.label }}
         </div>
       </div>
-    </div>
-    <div v-if="props.type === 'tag'">
-      hello tag
     </div>
   </div>
 </template>
