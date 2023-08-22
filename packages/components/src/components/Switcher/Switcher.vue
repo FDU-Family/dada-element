@@ -31,9 +31,9 @@ const currentIndex = computed(() => props.switcherOptions?.findIndex(item => pro
 </script>
 
 <template>
-  <div class="dada-element-wrapper __dada-switcher-container">
+  <div class="dada-element-wrapper">
     <div v-if="props.type === 'default'">
-      <div class="__dada-switcher-area">
+      <div class="__dada-switcher-container __dada-switcher-default">
         <div
           v-for="(item, index) in switcherOptions"
           :key="item.key"
@@ -49,7 +49,7 @@ const currentIndex = computed(() => props.switcherOptions?.findIndex(item => pro
       </div>
     </div>
     <div v-if="props.type === 'tag'">
-      <div class="__dada-switcher-tag-area">
+      <div class="__dada-switcher-container">
         <div
           v-for="(item) in switcherOptions"
           :key="item.key"

@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import type { switcherOptionsType } from '../Switcher.vue'
 
 const value = ref('1')
-const tagValue = ref('2')
+const tagValue = ref('feature')
 
 const options: switcherOptionsType = [
   {
@@ -43,6 +43,10 @@ const tagOptions: switcherOptionsType = [
     <div class="ml mt mc">
       <dada-switcher v-model:value="tagValue" type="tag" :switcher-options="tagOptions" />
     </div>
+    <div class="ml mt mc">
+      <dada-switcher v-model:value="tagValue" type="tag" :switcher-options="tagOptions" />
+    </div>
+    {{ tagValue }}
   </div>
 </template>
 
