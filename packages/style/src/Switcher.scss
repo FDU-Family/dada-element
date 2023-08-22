@@ -1,15 +1,11 @@
-.__dada-switcher-area {
+.__dada-switcher-default {
   background-color: var(--main-deep);
   border-radius: 16px;
   width: 630px;
   height: 80px;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
-.__dada-switcher-tag-area {
+.__dada-switcher-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -31,23 +27,24 @@
     background-color: var(--main-primary);
     position: absolute;
     z-index: 0;
-    transform: translateX(calc(var(--index)*100% + var(--index)*10px));
+    transform: translateX(calc(var(--index) * 100% + var(--index) * 10px));
     transition: all 0.3s ease-in-out;
   }
 }
 
 .__dada-switcher-tag-item {
-  width: 140px;
   height: 40px;
   border-radius: 10px;
-  padding: 0 10px 0 10px;
-  margin-right: 20px;
+  padding: 5px 20px;
   background-color: var(--bas-nagative);
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease-in-out;
+
+  &:first-child {
+    margin-right: 20px;
+  }
 
   &.selected {
     background-color: var(--main-deep);
@@ -64,10 +61,6 @@
 }
 
 .__dada-switcher-tag-text {
-  width: 96px;
-  height: 29px;
   font-size: 24px;
   font-weight: 700;
-  text-align: center;
-  position: relative;
 }
