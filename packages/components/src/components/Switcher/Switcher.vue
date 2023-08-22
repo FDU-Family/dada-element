@@ -11,6 +11,7 @@ export type switcherOptionsType = Array<{
 export interface SwitcherProps {
   switcherOptions?: switcherOptionsType
   value: string
+  type: 'default' | 'tag'
 }
 
 export interface SwitcherEmits {
@@ -18,6 +19,7 @@ export interface SwitcherEmits {
 }
 
 const props = withDefaults(defineProps<SwitcherProps>(), {
+  type: 'default',
 })
 
 const emits = defineEmits<SwitcherEmits>()
@@ -25,24 +27,39 @@ const emits = defineEmits<SwitcherEmits>()
 function handleSwitcherClick(key: string) {
   emits('update:value', key)
 }
-const currentIndex = computed(() =>
-  props.switcherOptions?.findIndex(item => props.value === item.key),
-)
+const currentIndex = computed(() => props.switcherOptions?.findIndex(item => props.value === item.key))
 </script>
 
 <template>
   <div class="dada-element-wrapper __dada-switcher-container">
-    <div class="__dada-switcher-area">
-      <div
-        v-for="(item, index) in switcherOptions"
-        :key="item.key"
-        class="__dada-switcher-item"
-        :class="{ first: index === 0 }"
-        :style="`--index: ${currentIndex}`"
-        @click="handleSwitcherClick(item.key)"
-      >
-        <div class="__dada-switcher-text">
-          {{ item.label }}
+    <div v-if="props.type === 'default'">
+      <div class="__dada-switcher-area">
+        <div
+          v-for="(item, index) in switcherOptions"
+          :key="item.key"
+          class="__dada-switcher-item"
+          :class="{ first: index === 0 }"
+          :style="`--index: ${currentIndex}`"
+          @click="handleSwitcherClick(item.key)"
+        >
+          <div class="__dada-switcher-text">
+            {{ item.label }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-if="props.type === 'tag'">
+      <div class="__dada-switcher-tag-area">
+        <div
+          v-for="(item) in switcherOptions"
+          :key="item.key"
+          class="__dada-switcher-tag-item"
+          :class="{ selected: props.value === item.key }"
+          @click="handleSwitcherClick(item.key)"
+        >
+          <div class="__dada-switcher-tag-text">
+            {{ item.label }}
+          </div>
         </div>
       </div>
     </div>
