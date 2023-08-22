@@ -35,10 +35,9 @@ const currentIndex = computed(() => props.switcherOptions?.findIndex(item => pro
     <div v-if="props.type === 'default'">
       <div class="__dada-switcher-container __dada-switcher-default">
         <div
-          v-for="(item, index) in switcherOptions"
+          v-for="(item) in switcherOptions"
           :key="item.key"
           class="__dada-switcher-item"
-          :class="{ first: index === 0 }"
           :style="`--index: ${currentIndex}`"
           @click="handleSwitcherClick(item.key)"
         >
