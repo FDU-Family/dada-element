@@ -5,7 +5,7 @@ import DadaPopOut from '../PopOut/PopOut.vue'
 
 export interface ToastProp {
   visible: boolean
-  preset?: 'loading' | 'success'
+  preset?: 'loading' | 'success' | 'error'
   icon?: string
   canClose?: boolean // 是否能手动关闭
   message?: string
