@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import '@dada-element/style/src/Toast.scss'
 import { computed } from 'vue'
+import DadaPopOut from '../PopOut/PopOut.vue'
 
 export interface ToastProp {
   visible: boolean
-  preset: 'loading' | 'success'
-  icon: string
-  canClose: boolean // 是否能手动关闭
+  preset?: 'loading' | 'success'
+  icon?: string
+  canClose?: boolean // 是否能手动关闭
 }
 
 export interface ToastEmits {
@@ -63,6 +64,4 @@ function updateHandle(value: boolean) {
   </DadaPopOut>
 </template>
 
-<style>
-
-</style>
+<style></style>

@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import '@dada-element/style/src/Modal.scss'
 import type { TouchEvent } from '@uni-helper/uni-app-types'
+import DadaPopOut from '../PopOut/PopOut.vue'
 
 export interface ModalProp {
   visible: boolean
-  title: string
-  preset: 'default'
+  title?: string
+  preset?: 'default'
 }
 
 export interface ModalEmits {
@@ -39,10 +40,16 @@ function updateHandle(value: boolean) {
       </div>
       <div class="__dd-modal-button-group">
         <template v-if="preset === 'default'">
-          <DadaButton :block="true" size="large" :shadow="true" type="primary" @click="(e:TouchEvent) => $emit('confirm', e)">
+          <DadaButton
+            :block="true"
+            size="large"
+            :shadow="true"
+            type="primary"
+            @click="(e: TouchEvent) => $emit('confirm', e)"
+          >
             确认
           </DadaButton>
-          <DadaButton :block="true" size="large" :shadow="true" @click="(e:TouchEvent) => $emit('cancel', e)">
+          <DadaButton :block="true" size="large" :shadow="true" @click="(e: TouchEvent) => $emit('cancel', e)">
             取消
           </DadaButton>
         </template>
@@ -54,6 +61,4 @@ function updateHandle(value: boolean) {
   </DadaPopOut>
 </template>
 
-<style>
-
-</style>
+<style></style>

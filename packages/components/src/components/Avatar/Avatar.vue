@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import '@dada-element/style/src/Avatar.scss'
+import DadaImage from '../Image/Image.vue'
 
 type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left' | 'bottom right'
 
@@ -40,6 +41,6 @@ const ClassAry = computed(() => {
 
 <template>
   <div class="dada-element-wrapper __dada-avatar-container" :class="ClassAry">
-    <dada-image :src="props.src" :preview="props.preview" :mode="props.mode" />
+    <DadaImage :src="props.src" :preview="props.preview" :mode="props.mode" />
   </div>
 </template>

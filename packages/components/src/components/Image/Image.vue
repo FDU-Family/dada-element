@@ -9,9 +9,8 @@ type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heig
 export interface ImageProps {
   mode: ImageMode
   src: string
-  previewSrc: string
-  preview: boolean
-  lazy: boolean // 这个lazy实际上没用，回来修(kcheng:好的)
+  previewSrc?: string
+  preview?: boolean
 }
 
 const props = withDefaults(defineProps<ImageProps>(), {
@@ -72,7 +71,7 @@ function closePreview() {
   <div class="__dd-image-container">
     <image class="__dd-image" :src="picSrc" :mode="mode" @click="previewHandle" />
     <div v-if="previewFlag" class="__dd-image-preview-area">
-      <image :lazy-load="lazy" class="__dd-image" :src="previewSrc" mode="aspectFit" @click="closePreview" />
+      <image class="__dd-image" :src="previewSrc" mode="aspectFit" @click="closePreview" />
     </div>
   </div>
 </template>

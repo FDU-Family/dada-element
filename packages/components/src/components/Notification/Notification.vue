@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import DadaModal from '../Modal/Modal.vue'
+
 export interface ToastProp {
   visible: boolean
   title: string
