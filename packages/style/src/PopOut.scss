@@ -5,6 +5,7 @@
   width: 100vw;
   height: 100vh;
   transition: all 0.2s ease-out;
+  z-index: 9997;
 }
 
 .__dd-pop-out {
@@ -32,6 +33,7 @@
   left: 0;
   top: 0;
   transition: background 0.3s ease-in;
+  z-index: 9997;
 }
 .__dd-pop-out-mask-from {
   background-color: rgba(0, 0, 0, 0);
