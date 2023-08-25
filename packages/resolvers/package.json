@@ -27,5 +27,9 @@
   "types": "./src/index.d.ts",
   "files": [
     "src"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
 }
