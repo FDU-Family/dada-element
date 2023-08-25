@@ -8,6 +8,7 @@ export interface ToastProp {
   preset?: 'loading' | 'success'
   icon?: string
   canClose?: boolean // 是否能手动关闭
+  message?: string
 }
 
 export interface ToastEmits {
@@ -20,26 +21,26 @@ const props = withDefaults(defineProps<ToastProp>(), {
 
 const emits = defineEmits<ToastEmits>()
 
-const presetClass = {
+const presetClass = computed(() => ({
   loading: {
     class: 'dada-func-refresh __dd-toast-icon-loading',
     content: '正在加载',
   },
   success: {
     class: 'dada-mani-confirm',
-    content: '成功！',
+    content: props.message && props.message.trim() !== '' ? props.message : '成功',
   },
   error: {
     class: 'dada-mani-cancel',
-    content: '失败！',
+    content: props.message && props.message.trim() !== '' ? props.message : '失败',
   },
-}
+}))
 
 const classAry = computed(() => {
   const { preset, icon } = props
   return [
     icon ?? '', // 如果有icon，就设置为icon（优先级最高）
-    !icon && preset ? presetClass[preset].class : '', // 没有icon的话再考虑preset
+    !icon && preset ? presetClass.value[preset].class : '', // 没有icon的话再考虑preset
   ]
 })
 

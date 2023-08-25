@@ -16,6 +16,7 @@
   align-items: center;
   z-index: 9998;
   transition: all 0.3s ease-in;
+  position: relative;
 }
 .__dd-pop-out-from{
   transform: translateY(50px);
