@@ -3,7 +3,7 @@ import '@dada-element/style/src/Radio.scss'
 import { computed, watchEffect } from 'vue'
 import { useRadio } from './hooks'
 
-export interface RadioProps {
+interface RadioProps {
   muti?: boolean
   name?: string
   label?: string
@@ -12,7 +12,7 @@ export interface RadioProps {
   type?: 'default' | 'primary'
 }
 
-export interface RadioEmits {
+interface RadioEmits {
   (e: 'update:value', v: boolean): null
 }
 

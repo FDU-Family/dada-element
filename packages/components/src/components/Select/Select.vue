@@ -4,11 +4,11 @@ import { computed } from 'vue'
 import { pxToVw } from '@dada-element/utils'
 import type { SelectorPickerOnChangeEvent } from '@uni-helper/uni-app-types'
 
-export interface optionsProp {
+interface optionsProp {
   label: string | number
   value: string | number
 }
-export interface SelectProps {
+interface SelectProps {
   placeholder?: string
   width?: string | number
   shadow?: boolean
@@ -20,7 +20,7 @@ export interface SelectProps {
   options: Array<optionsProp>
 }
 
-export interface SelectEmits {
+interface SelectEmits {
   (e: 'update:value', value: string | number): void
 }
 

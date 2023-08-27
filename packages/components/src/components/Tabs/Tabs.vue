@@ -2,14 +2,9 @@
 import type { SwiperOnChangeEvent, TouchEvent } from '@uni-helper/uni-app-types'
 import '@dada-element/style/src/Tabs.scss'
 import { computed } from 'vue'
+import type { tabsOptionsType } from '../../types'
 
-export type tabsOptionsType = Array<{
-  lable: string
-  key: string
-  slotName?: string
-}>
-
-export interface TabsProps {
+interface TabsProps {
   type?: 'primary' | 'secondary'
   size?: 'small' | 'medium' | 'large'
   value: number | string
@@ -19,7 +14,7 @@ export interface TabsProps {
   timeFunction?: 'default' | 'linear' | 'easeInCubic' | 'easeOutCubic' | 'easeInOutCubic'
 }
 
-export interface TabsEmits {
+interface TabsEmits {
   (e: 'update:value', value: number | string): void
   (e: 'change', event: SwiperOnChangeEvent): void
 }

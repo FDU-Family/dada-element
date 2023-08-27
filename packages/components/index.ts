@@ -1,1 +1,1 @@
-export * from './src/components/Button'
+export type * from './src/types'

@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import '@dada-element/style/src/Icon.scss'
 
-export interface IconProps {
+interface IconProps {
   name?: string
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'huge'
   color?: string

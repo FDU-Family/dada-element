@@ -3,13 +3,13 @@ import '@dada-element/style/src/Modal.scss'
 import type { TouchEvent } from '@uni-helper/uni-app-types'
 import DadaPopOut from '../PopOut/PopOut.vue'
 
-export interface ModalProp {
+interface ModalProp {
   visible: boolean
   title?: string
   preset?: 'default'
 }
 
-export interface ModalEmits {
+interface ModalEmits {
   (e: 'update:visible', value: boolean): void
   (e: 'confirm', event: TouchEvent): void
   (e: 'cancel', event: TouchEvent): void

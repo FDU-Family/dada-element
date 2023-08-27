@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { tabsOptionsType } from '../Tabs/Tabs.vue'
+import type { tabsOptionsType } from '../../../types.ts'
 
 const options: tabsOptionsType = [
   {

@@ -2,13 +2,13 @@
 import '@dada-element/style/src/PopOut.scss'
 import { ref, watch, watchEffect, withDefaults } from 'vue'
 
-export interface PopOutProps {
+interface PopOutProps {
   visible?: boolean
   mask?: boolean
   maskClosable?: boolean
 }
 
-export interface PopOutEmits {
+interface PopOutEmits {
   (e: 'update:visible', value: boolean): null
 }
 

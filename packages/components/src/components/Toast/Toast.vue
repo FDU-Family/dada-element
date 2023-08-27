@@ -3,7 +3,7 @@ import '@dada-element/style/src/Toast.scss'
 import { computed } from 'vue'
 import DadaPopOut from '../PopOut/PopOut.vue'
 
-export interface ToastProp {
+interface ToastProp {
   visible: boolean
   preset?: 'loading' | 'success' | 'error'
   icon?: string
@@ -11,7 +11,7 @@ export interface ToastProp {
   message?: string
 }
 
-export interface ToastEmits {
+interface ToastEmits {
   (e: 'update:visible', value: boolean): void
 }
 const props = withDefaults(defineProps<ToastProp>(), {

@@ -2,9 +2,9 @@
 import { computed } from 'vue'
 import '@dada-element/style/src/Avatar.scss'
 import DadaImage from '../Image/Image.vue'
-import type { ImageMode } from '../Image/Image.vue'
+import type { ImageMode } from '../../types'
 
-export interface AvatarProps {
+interface AvatarProps {
   src: string
   size: 'tiny' | 'small' | 'medium' | 'large' | 'max'
   shape: 'circle' | 'square'

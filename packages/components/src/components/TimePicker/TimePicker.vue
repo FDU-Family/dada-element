@@ -7,7 +7,7 @@ import type { TimePickerOnChangeEvent } from '@uni-helper/uni-app-types'
 // hh:mm
 type timeRule = `${number}${number}:${number}${number}`
 
-export interface DatePickerProps {
+interface DatePickerProps {
   placeholder?: string
   width?: string | number
   shadow?: boolean
@@ -20,7 +20,7 @@ export interface DatePickerProps {
   label?: string
 }
 
-export interface DatePickerEmits {
+interface DatePickerEmits {
   (e: 'update:value', value: string): void
 }
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { switcherOptionsType } from '../Switcher.vue'
+import type { switcherOptionsType } from '../../../types'
 
 const value = ref('1')
 const tagValue = ref('feature')

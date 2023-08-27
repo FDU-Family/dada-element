@@ -6,18 +6,19 @@
         "types": [
             "@dcloudio/types",
             "vitest/globals"
-        ]
+        ],
+        "declaration": true, // 生成类型声明文件
+        "declarationDir": "types" // 声明文件的输出目录
     },
     "include": [
-        "src/**/*",
-        "docs/**/*",
-        "test/**/*",
-        "../utils/*"
+        "src/components/**/*.vue",
+        "src/types.ts",
+        "src/**/hooks/*.ts"
     ],
     "exclude": [
         "**/node_modules",
-        "**/.*/",
-        "**/test/**/*"
+        "src/components/**/demo/**/*",
+        "src/components/**/test/**/*",
     ],
     "baseUrl": "./",
     "paths": {

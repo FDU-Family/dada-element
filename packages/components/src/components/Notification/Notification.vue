@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import DadaModal from '../Modal/Modal.vue'
 
-export interface ToastProp {
+interface ToastProp {
   visible: boolean
   title: string
 }
 
-export interface ToastEmits {
+interface ToastEmits {
   (e: 'update:visible', value: boolean): void
 }
 withDefaults(defineProps<ToastProp>(), {

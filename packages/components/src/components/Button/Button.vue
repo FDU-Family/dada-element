@@ -4,7 +4,7 @@ import { computed } from 'vue'
 import '@dada-element/style/src/Button.scss'
 import { pxToVw } from '@dada-element/utils'
 
-export interface ButtonProps {
+interface ButtonProps {
   type?: 'default' | 'primary' | 'secondary' | 'warning' | 'info'
   width?: number | string
   text?: boolean
@@ -14,7 +14,7 @@ export interface ButtonProps {
   block?: boolean
   shadow?: boolean
 }
-export interface ButtonEmits {
+interface ButtonEmits {
   (e: 'click', event: TouchEvent): void
 }
 

@@ -4,7 +4,7 @@ import '@dada-element/style/src/Input.scss'
 import { computed, ref, useSlots } from 'vue'
 import { pxToVw } from '@dada-element/utils'
 
-export interface InputProps {
+interface InputProps {
   placeholder?: string
   width?: string | number
   shadow?: boolean
@@ -20,7 +20,7 @@ export interface InputProps {
   block?: boolean
 }
 
-export interface InputEmits {
+interface InputEmits {
   (e: 'update:value', value: string): void
 }
 

@@ -1,20 +1,15 @@
 <script setup lang="ts">
 import '@dada-element/style/src/Switcher.scss'
 import { computed } from 'vue'
+import type { switcherOptionsType } from '../../types'
 
-export type switcherOptionsType = Array<{
-  label: string
-  key: string
-  checked?: boolean
-}>
-
-export interface SwitcherProps {
+interface SwitcherProps {
   switcherOptions?: switcherOptionsType
   value: string
   type: 'default' | 'tag'
 }
 
-export interface SwitcherEmits {
+interface SwitcherEmits {
   (e: 'update:value', value: string): void
 }
 

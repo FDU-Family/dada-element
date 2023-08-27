@@ -2,10 +2,9 @@
 import '@dada-element/style/src/Image.scss'
 import { ref, watch, watchEffect } from 'vue'
 import { formatBase64MineType } from '@dada-element/utils'
+import type { ImageMode } from '../../types'
 
-type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left' | 'bottom right'
-
-export interface ImageProps {
+interface ImageProps {
   mode: ImageMode
   src: string
   previewSrc?: string
@@ -44,7 +43,7 @@ function previewHandle() {
     // 先显示图片
     previewFlag.value = true
     if (isPreviewLoad === false) {
-    // 第一次加载
+      // 第一次加载
       if (props.previewSrc) {
         uni.request({
           url: props.previewSrc, responseType: 'arraybuffer',
@@ -75,6 +74,4 @@ function closePreview() {
   </div>
 </template>
 
-<style>
-
-</style>
+<style></style>

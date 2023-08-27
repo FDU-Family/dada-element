@@ -1,5 +1,13 @@
 import { computed, reactive, ref } from 'vue'
-import type { RadioProps } from '../Radio.vue'
+
+interface RadioProps {
+  muti?: boolean
+  name?: string
+  label?: string
+  unique?: string
+  value?: boolean
+  type?: 'default' | 'primary'
+}
 
 export type RadioDataItem = Map<string, boolean>
 
