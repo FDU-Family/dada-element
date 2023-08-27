@@ -1,11 +1,10 @@
 <script setup lang="ts">
-// https://placekitten.com/200/300
 import '@dada-element/style/src/Image.scss'
 import { ref, watch, watchEffect } from 'vue'
 import { formatBase64MineType } from '@dada-element/utils'
 
 type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left' | 'bottom right'
-// TODO(GJSSSS): 修复lazy
+
 export interface ImageProps {
   mode: ImageMode
   src: string

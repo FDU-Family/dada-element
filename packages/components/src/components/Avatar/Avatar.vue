@@ -2,12 +2,11 @@
 import { computed } from 'vue'
 import '@dada-element/style/src/Avatar.scss'
 import DadaImage from '../Image/Image.vue'
-
-type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left' | 'bottom right'
+import type { ImageMode } from '../Image/Image.vue'
 
 export interface AvatarProps {
   src: string
-  size: 'small' | 'medium' | 'large'
+  size: 'tiny' | 'small' | 'medium' | 'large' | 'max'
   shape: 'circle' | 'square'
   mode: ImageMode
   border: boolean

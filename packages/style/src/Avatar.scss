@@ -1,16 +1,24 @@
-@use 'mixins/mixin' as *;
+@use "mixins/mixin" as *;
 
 $props-map: (
   size: (
+    tiny: (
+      width: 44px,
+      height: 44px,
+    ),
     small: (
+      width: 60px,
+      height: 60px,
+    ),
+    medium: (
       width: 80px,
       height: 80px,
     ),
-    medium: (
+    large: (
       width: 120px,
       height: 120px,
     ),
-    large: (
+    max: (
       width: 200px,
       height: 200px,
     ),
@@ -28,21 +36,19 @@ $props-map: (
       box-shadow: none,
     ),
     medium: (
-      box-shadow: 0px 10px 10px 0px var(--bas-positive),
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
     ),
     large: (
-      box-shadow:  0px 10px 20px 0px var(--bas-positive),
+      box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25),
     ),
   ),
 );
 
-@include generate-class('avatar', $props-map);
+@include generate-class("avatar", $props-map);
 .__dada-avatar-container {
   position: relative;
   overflow: hidden;
-}
-.__dd-avatar-shadow {
-  box-shadow: 0px 10px 10px 0px var(--bas-positive);
+  box-sizing: border-box;
 }
 .__dd-avatar-border {
   border: 4px solid var(--main-deep);
