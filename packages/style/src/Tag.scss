@@ -1,0 +1,31 @@
+// 文件全局引入mixin
+@use "mixins/mixin" as *;
+
+$props-map: (
+  size: (
+    small: (
+      font-size: 24px,
+      padding: 10px,
+      border-radius: 10px,
+    ),
+    medium: (
+      font-size: 26px,
+      padding: 10px 20px,
+      border-radius: 10px,
+    ),
+    large: (
+      font-size: 32px,
+      padding: 20px,
+      border-radius: 10px,
+    ),
+  ),
+);
+
+.__dd-tag {
+  font-weight: 700;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@include generate-class("tag", $props-map);

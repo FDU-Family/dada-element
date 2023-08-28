@@ -44,6 +44,9 @@ function routeTo(path: string) {
     <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/avatar')">
       头像
     </DadaButton>
+    <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/tag')">
+      Tag
+    </DadaButton>
   </div>
 </template>
 
