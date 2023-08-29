@@ -6,7 +6,7 @@ import type { ImageMode } from '../../types'
 
 interface AvatarProps {
   src: string
-  size: 'tiny' | 'small' | 'medium' | 'large' | 'max'
+  size: 'tiny' | 'small' | 'medium' | 'large' | 'huge'
   shape: 'circle' | 'square'
   mode: ImageMode
   border: boolean
