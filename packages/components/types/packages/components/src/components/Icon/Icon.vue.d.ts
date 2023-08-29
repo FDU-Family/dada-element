@@ -1,16 +1,8 @@
 import '@dada-element/style/src/Icon.scss';
 declare const _default: import("vue").DefineComponent<{
     type: {
-        type: import("vue").PropType<"primary" | "secondary" | "default" | "none" | "warning" | "info">;
+        type: import("vue").PropType<"default" | "none" | "primary" | "secondary" | "warning" | "info">;
         default: string;
-    };
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large" | "tiny" | "huge">;
-        default: string;
-    };
-    border: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
     };
     label: {
         type: import("vue").PropType<string>;
@@ -18,9 +10,17 @@ declare const _default: import("vue").DefineComponent<{
     color: {
         type: import("vue").PropType<string>;
     };
+    size: {
+        type: import("vue").PropType<"small" | "tiny" | "medium" | "large" | "huge">;
+        default: string;
+    };
     shape: {
         type: import("vue").PropType<"circle" | "square">;
         default: string;
+    };
+    border: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
     };
     shadow: {
         type: import("vue").PropType<boolean>;
@@ -35,7 +35,7 @@ declare const _default: import("vue").DefineComponent<{
         type: import("vue").PropType<string>;
     };
     textType: {
-        type: import("vue").PropType<"primary" | "secondary" | "default" | "warning" | "info">;
+        type: import("vue").PropType<"default" | "primary" | "secondary" | "warning" | "info">;
         default: string;
     };
     labelPosition: {
@@ -44,16 +44,8 @@ declare const _default: import("vue").DefineComponent<{
     };
 }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     type: {
-        type: import("vue").PropType<"primary" | "secondary" | "default" | "none" | "warning" | "info">;
+        type: import("vue").PropType<"default" | "none" | "primary" | "secondary" | "warning" | "info">;
         default: string;
-    };
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large" | "tiny" | "huge">;
-        default: string;
-    };
-    border: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
     };
     label: {
         type: import("vue").PropType<string>;
@@ -61,9 +53,17 @@ declare const _default: import("vue").DefineComponent<{
     color: {
         type: import("vue").PropType<string>;
     };
+    size: {
+        type: import("vue").PropType<"small" | "tiny" | "medium" | "large" | "huge">;
+        default: string;
+    };
     shape: {
         type: import("vue").PropType<"circle" | "square">;
         default: string;
+    };
+    border: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
     };
     shadow: {
         type: import("vue").PropType<boolean>;
@@ -78,7 +78,7 @@ declare const _default: import("vue").DefineComponent<{
         type: import("vue").PropType<string>;
     };
     textType: {
-        type: import("vue").PropType<"primary" | "secondary" | "default" | "warning" | "info">;
+        type: import("vue").PropType<"default" | "primary" | "secondary" | "warning" | "info">;
         default: string;
     };
     labelPosition: {
@@ -86,11 +86,11 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
 }>>, {
-    type: "primary" | "secondary" | "default" | "none" | "warning" | "info";
-    size: "small" | "medium" | "large" | "tiny" | "huge";
-    border: boolean;
+    type: "default" | "none" | "primary" | "secondary" | "warning" | "info";
+    size: "small" | "tiny" | "medium" | "large" | "huge";
     shape: "circle" | "square";
-    textType: "primary" | "secondary" | "default" | "warning" | "info";
+    border: boolean;
+    textType: "default" | "primary" | "secondary" | "warning" | "info";
     labelPosition: "top" | "bottom" | "left" | "right";
 }>;
 export default _default;

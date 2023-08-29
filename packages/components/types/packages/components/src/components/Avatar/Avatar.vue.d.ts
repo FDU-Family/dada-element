@@ -1,33 +1,18 @@
 import '@dada-element/style/src/Avatar.scss';
 import type { ImageMode } from '../../types';
 declare const _default: import("vue").DefineComponent<{
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large" | "tiny" | "max">;
+    mode: {
+        type: import("vue").PropType<ImageMode>;
         required: true;
         default: string;
-    };
-    border: {
-        type: import("vue").PropType<boolean>;
-        required: true;
-        default: boolean;
     };
     src: {
         type: import("vue").PropType<string>;
         required: true;
         default: string;
     };
-    shape: {
-        type: import("vue").PropType<"circle" | "square">;
-        required: true;
-        default: string;
-    };
-    mode: {
-        type: import("vue").PropType<ImageMode>;
-        required: true;
-        default: string;
-    };
-    shadow: {
-        type: import("vue").PropType<"medium" | "large" | "none">;
+    previewSrc: {
+        type: import("vue").PropType<string>;
         required: true;
         default: string;
     };
@@ -36,39 +21,43 @@ declare const _default: import("vue").DefineComponent<{
         required: true;
         default: boolean;
     };
-    previewSrc: {
-        type: import("vue").PropType<string>;
+    size: {
+        type: import("vue").PropType<"small" | "tiny" | "medium" | "large" | "huge">;
         required: true;
         default: string;
+    };
+    shape: {
+        type: import("vue").PropType<"circle" | "square">;
+        required: true;
+        default: string;
+    };
+    border: {
+        type: import("vue").PropType<boolean>;
+        required: true;
+        default: boolean;
+    };
+    shadow: {
+        type: import("vue").PropType<"medium" | "large" | "none">;
+        required: true;
+        default: string;
+    };
+    width: {
+        type: import("vue").PropType<string | number>;
+        required: true;
     };
 }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large" | "tiny" | "max">;
+    mode: {
+        type: import("vue").PropType<ImageMode>;
         required: true;
         default: string;
-    };
-    border: {
-        type: import("vue").PropType<boolean>;
-        required: true;
-        default: boolean;
     };
     src: {
         type: import("vue").PropType<string>;
         required: true;
         default: string;
     };
-    shape: {
-        type: import("vue").PropType<"circle" | "square">;
-        required: true;
-        default: string;
-    };
-    mode: {
-        type: import("vue").PropType<ImageMode>;
-        required: true;
-        default: string;
-    };
-    shadow: {
-        type: import("vue").PropType<"medium" | "large" | "none">;
+    previewSrc: {
+        type: import("vue").PropType<string>;
         required: true;
         default: string;
     };
@@ -77,19 +66,38 @@ declare const _default: import("vue").DefineComponent<{
         required: true;
         default: boolean;
     };
-    previewSrc: {
-        type: import("vue").PropType<string>;
+    size: {
+        type: import("vue").PropType<"small" | "tiny" | "medium" | "large" | "huge">;
         required: true;
         default: string;
     };
+    shape: {
+        type: import("vue").PropType<"circle" | "square">;
+        required: true;
+        default: string;
+    };
+    border: {
+        type: import("vue").PropType<boolean>;
+        required: true;
+        default: boolean;
+    };
+    shadow: {
+        type: import("vue").PropType<"medium" | "large" | "none">;
+        required: true;
+        default: string;
+    };
+    width: {
+        type: import("vue").PropType<string | number>;
+        required: true;
+    };
 }>>, {
-    size: "small" | "medium" | "large" | "tiny" | "max";
-    border: boolean;
-    src: string;
-    shape: "circle" | "square";
     mode: ImageMode;
-    shadow: "medium" | "large" | "none";
-    preview: boolean;
+    src: string;
     previewSrc: string;
+    preview: boolean;
+    size: "small" | "tiny" | "medium" | "large" | "huge";
+    shape: "circle" | "square";
+    border: boolean;
+    shadow: "medium" | "large" | "none";
 }>;
 export default _default;

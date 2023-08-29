@@ -2,11 +2,7 @@ import type { TouchEvent } from '@uni-helper/uni-app-types';
 import '@dada-element/style/src/Button.scss';
 declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     type: {
-        type: import("vue").PropType<"primary" | "secondary" | "default" | "warning" | "info">;
-        default: string;
-    };
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large">;
+        type: import("vue").PropType<"default" | "primary" | "secondary" | "warning" | "info">;
         default: string;
     };
     circle: {
@@ -17,29 +13,29 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         type: import("vue").PropType<boolean>;
         default: boolean;
     };
-    width: {
-        type: import("vue").PropType<string | number>;
+    size: {
+        type: import("vue").PropType<"small" | "medium" | "large">;
+        default: string;
     };
     shadow: {
         type: import("vue").PropType<boolean>;
         default: boolean;
     };
-    textColor: {
-        type: import("vue").PropType<string>;
+    width: {
+        type: import("vue").PropType<string | number>;
     };
     block: {
         type: import("vue").PropType<boolean>;
         default: boolean;
+    };
+    textColor: {
+        type: import("vue").PropType<string>;
     };
 }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
     click: (event: TouchEvent<import("@uni-helper/uni-app-types").AnyRecord, import("@uni-helper/uni-app-types").AnyRecord, import("@uni-helper/uni-app-types").AnyRecord, import("@uni-helper/uni-app-types").AnyRecord>) => void;
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     type: {
-        type: import("vue").PropType<"primary" | "secondary" | "default" | "warning" | "info">;
-        default: string;
-    };
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large">;
+        type: import("vue").PropType<"default" | "primary" | "secondary" | "warning" | "info">;
         default: string;
     };
     circle: {
@@ -50,27 +46,31 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         type: import("vue").PropType<boolean>;
         default: boolean;
     };
+    size: {
+        type: import("vue").PropType<"small" | "medium" | "large">;
+        default: string;
+    };
+    shadow: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
     width: {
         type: import("vue").PropType<string | number>;
     };
-    shadow: {
+    block: {
         type: import("vue").PropType<boolean>;
         default: boolean;
     };
     textColor: {
         type: import("vue").PropType<string>;
     };
-    block: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
 }>> & {
     onClick?: ((event: TouchEvent<import("@uni-helper/uni-app-types").AnyRecord, import("@uni-helper/uni-app-types").AnyRecord, import("@uni-helper/uni-app-types").AnyRecord, import("@uni-helper/uni-app-types").AnyRecord>) => any) | undefined;
 }, {
-    type: "primary" | "secondary" | "default" | "warning" | "info";
-    size: "small" | "medium" | "large";
+    type: "default" | "primary" | "secondary" | "warning" | "info";
     circle: boolean;
     text: boolean;
+    size: "small" | "medium" | "large";
     shadow: boolean;
     block: boolean;
 }>, {

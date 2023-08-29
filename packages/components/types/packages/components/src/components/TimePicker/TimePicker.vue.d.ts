@@ -1,19 +1,8 @@
 import '@dada-element/style/src/Select.scss';
 declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     type: {
-        type: import("vue").PropType<"primary" | "default">;
+        type: import("vue").PropType<"default" | "primary">;
         default: string;
-    };
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large">;
-        default: string;
-    };
-    value: {
-        type: import("vue").PropType<string>;
-    };
-    border: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
     };
     label: {
         type: import("vue").PropType<string>;
@@ -22,13 +11,21 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         type: import("vue").PropType<string>;
         default: string;
     };
-    width: {
-        type: import("vue").PropType<string | number>;
-        default: number;
+    size: {
+        type: import("vue").PropType<"small" | "medium" | "large">;
+        default: string;
+    };
+    border: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
     };
     shadow: {
         type: import("vue").PropType<boolean>;
         default: boolean;
+    };
+    width: {
+        type: import("vue").PropType<string | number>;
+        default: number;
     };
     start: {
         type: import("vue").PropType<`${number}${number}:${number}${number}`>;
@@ -37,24 +34,16 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     end: {
         type: import("vue").PropType<`${number}${number}:${number}${number}`>;
         default: string;
+    };
+    value: {
+        type: import("vue").PropType<string>;
     };
 }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
     "update:value": (value: string) => void;
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     type: {
-        type: import("vue").PropType<"primary" | "default">;
+        type: import("vue").PropType<"default" | "primary">;
         default: string;
-    };
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large">;
-        default: string;
-    };
-    value: {
-        type: import("vue").PropType<string>;
-    };
-    border: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
     };
     label: {
         type: import("vue").PropType<string>;
@@ -63,13 +52,21 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         type: import("vue").PropType<string>;
         default: string;
     };
-    width: {
-        type: import("vue").PropType<string | number>;
-        default: number;
+    size: {
+        type: import("vue").PropType<"small" | "medium" | "large">;
+        default: string;
+    };
+    border: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
     };
     shadow: {
         type: import("vue").PropType<boolean>;
         default: boolean;
+    };
+    width: {
+        type: import("vue").PropType<string | number>;
+        default: number;
     };
     start: {
         type: import("vue").PropType<`${number}${number}:${number}${number}`>;
@@ -79,15 +76,18 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         type: import("vue").PropType<`${number}${number}:${number}${number}`>;
         default: string;
     };
+    value: {
+        type: import("vue").PropType<string>;
+    };
 }>> & {
     "onUpdate:value"?: ((value: string) => any) | undefined;
 }, {
-    type: "primary" | "default";
+    type: "default" | "primary";
+    placeholder: string;
     size: "small" | "medium" | "large";
     border: boolean;
-    placeholder: string;
-    width: string | number;
     shadow: boolean;
+    width: string | number;
     start: `${number}${number}:${number}${number}`;
     end: `${number}${number}:${number}${number}`;
 }>, {

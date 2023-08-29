@@ -1,15 +1,15 @@
 import '@dada-element/style/src/Radio.scss';
 declare const _default: import("vue").DefineComponent<{
     type: {
-        type: import("vue").PropType<"primary" | "default">;
+        type: import("vue").PropType<"default" | "primary">;
         default: string;
+    };
+    label: {
+        type: import("vue").PropType<string>;
     };
     value: {
         type: import("vue").PropType<boolean>;
         default: boolean;
-    };
-    label: {
-        type: import("vue").PropType<string>;
     };
     name: {
         type: import("vue").PropType<string>;
@@ -25,15 +25,15 @@ declare const _default: import("vue").DefineComponent<{
     "update:value": (v: boolean) => void;
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     type: {
-        type: import("vue").PropType<"primary" | "default">;
+        type: import("vue").PropType<"default" | "primary">;
         default: string;
+    };
+    label: {
+        type: import("vue").PropType<string>;
     };
     value: {
         type: import("vue").PropType<boolean>;
         default: boolean;
-    };
-    label: {
-        type: import("vue").PropType<string>;
     };
     name: {
         type: import("vue").PropType<string>;
@@ -48,7 +48,7 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:value"?: ((v: boolean) => any) | undefined;
 }, {
-    type: "primary" | "default";
+    type: "default" | "primary";
     value: boolean;
     muti: boolean;
 }>;

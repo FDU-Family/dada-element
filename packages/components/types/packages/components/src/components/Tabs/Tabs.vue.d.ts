@@ -10,15 +10,15 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         type: import("vue").PropType<"small" | "medium" | "large">;
         default: string;
     };
+    border: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
     value: {
         type: import("vue").PropType<string | number>;
         required: true;
     };
     dotted: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    border: {
         type: import("vue").PropType<boolean>;
         default: boolean;
     };
@@ -41,15 +41,15 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         type: import("vue").PropType<"small" | "medium" | "large">;
         default: string;
     };
+    border: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
     value: {
         type: import("vue").PropType<string | number>;
         required: true;
     };
     dotted: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    border: {
         type: import("vue").PropType<boolean>;
         default: boolean;
     };
@@ -61,13 +61,13 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         default: string;
     };
 }>> & {
-    "onUpdate:value"?: ((value: string | number) => any) | undefined;
     onChange?: ((event: SwiperOnChangeEvent) => any) | undefined;
+    "onUpdate:value"?: ((value: string | number) => any) | undefined;
 }, {
     type: "primary" | "secondary";
     size: "small" | "medium" | "large";
-    dotted: boolean;
     border: boolean;
+    dotted: boolean;
     timeFunction: "default" | "linear" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic";
 }>, Partial<Record<string, (_: {}) => any>>>;
 export default _default;

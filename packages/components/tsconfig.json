@@ -13,7 +13,9 @@
     "include": [
         "src/components/**/*.vue",
         "src/types.ts",
-        "src/**/hooks/*.ts"
+        "src/**/hooks/*.ts",
+        "../utils/index.ts",
+        "../utils/src"
     ],
     "exclude": [
         "**/node_modules",

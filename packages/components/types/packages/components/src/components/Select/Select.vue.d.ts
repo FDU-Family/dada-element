@@ -5,19 +5,8 @@ interface optionsProp {
 }
 declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     type: {
-        type: import("vue").PropType<"primary" | "default">;
+        type: import("vue").PropType<"default" | "primary">;
         default: string;
-    };
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large">;
-        default: string;
-    };
-    value: {
-        type: import("vue").PropType<string | number>;
-    };
-    border: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
     };
     label: {
         type: import("vue").PropType<string>;
@@ -26,13 +15,24 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         type: import("vue").PropType<string>;
         default: string;
     };
-    width: {
-        type: import("vue").PropType<string | number>;
-        default: number;
+    size: {
+        type: import("vue").PropType<"small" | "medium" | "large">;
+        default: string;
+    };
+    border: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
     };
     shadow: {
         type: import("vue").PropType<boolean>;
         default: boolean;
+    };
+    width: {
+        type: import("vue").PropType<string | number>;
+        default: number;
+    };
+    value: {
+        type: import("vue").PropType<string | number>;
     };
     options: {
         type: import("vue").PropType<optionsProp[]>;
@@ -42,19 +42,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     "update:value": (value: string | number) => void;
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     type: {
-        type: import("vue").PropType<"primary" | "default">;
+        type: import("vue").PropType<"default" | "primary">;
         default: string;
-    };
-    size: {
-        type: import("vue").PropType<"small" | "medium" | "large">;
-        default: string;
-    };
-    value: {
-        type: import("vue").PropType<string | number>;
-    };
-    border: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
     };
     label: {
         type: import("vue").PropType<string>;
@@ -63,13 +52,24 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         type: import("vue").PropType<string>;
         default: string;
     };
-    width: {
-        type: import("vue").PropType<string | number>;
-        default: number;
+    size: {
+        type: import("vue").PropType<"small" | "medium" | "large">;
+        default: string;
+    };
+    border: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
     };
     shadow: {
         type: import("vue").PropType<boolean>;
         default: boolean;
+    };
+    width: {
+        type: import("vue").PropType<string | number>;
+        default: number;
+    };
+    value: {
+        type: import("vue").PropType<string | number>;
     };
     options: {
         type: import("vue").PropType<optionsProp[]>;
@@ -78,12 +78,12 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
 }>> & {
     "onUpdate:value"?: ((value: string | number) => any) | undefined;
 }, {
-    type: "primary" | "default";
+    type: "default" | "primary";
+    placeholder: string;
     size: "small" | "medium" | "large";
     border: boolean;
-    placeholder: string;
-    width: string | number;
     shadow: boolean;
+    width: string | number;
 }>, {
     prefix?(_: {}): any;
 }>;
