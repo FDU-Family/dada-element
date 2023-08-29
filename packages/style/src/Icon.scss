@@ -20,7 +20,7 @@ $props-map: (
       border-radius: 50%,
     ),
     square: (
-      border-radius: 20px,
+      border-radius: 4px,
     ),
   ),
   size: (
@@ -77,10 +77,6 @@ $props-map: (
   ),
 );
 
-$text-map: (
-  
-);
-
 .__dd-icon-container {
   display: flex;
   align-items: center;
@@ -91,7 +87,6 @@ $text-map: (
   align-items: center;
   justify-content: center;
   display: flex;
-  margin: 20px;
 }
 
 .__dd-icon-shadow {
