@@ -3,25 +3,50 @@ import '@dada-element/style/src/Radio.scss'
 import { computed, watchEffect } from 'vue'
 import { useRadio } from './hooks'
 
-interface RadioProps {
+const props = withDefaults(defineProps<{
+  /**
+   * 是否支持多选
+   */
   muti?: boolean
+
+  /**
+   * 单选框的名称
+   */
   name?: string
+
+  /**
+   * 单选框的标签
+   */
   label?: string
+
+  /**
+   * 唯一标识符
+   */
   unique?: string
+
+  /**
+   * 单选框的选中状态
+   */
   value?: boolean
+
+  /**
+   * 单选框的类型
+   */
   type?: 'default' | 'primary'
-}
-
-interface RadioEmits {
-  (e: 'update:value', v: boolean): null
-}
-
-const props = withDefaults(defineProps<RadioProps>(), {
+}>(), {
   muti: false,
   value: false,
   type: 'default',
 })
-const emits = defineEmits<RadioEmits>()
+const emits = defineEmits<{
+  /**
+   * 选中状态发生变化时触发
+   *
+   * @param e 事件名称（'update:value'）
+   * @param v 新的选中状态值
+   */
+  (e: 'update:value', v: boolean): null
+}>()
 
 const { value, setValue, store } = useRadio(props)
 

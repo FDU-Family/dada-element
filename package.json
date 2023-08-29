@@ -6,13 +6,17 @@
     "lint": "eslint --ext .js,.ts,.vue .",
     "test": "pnpm --filter @dada-element/components test",
     "coverage": "pnpm --filter @dada-element/components coverage",
-    "test-ui": "pnpm --filter @dada-element/components test-ui"
+    "test-ui": "pnpm --filter @dada-element/components test-ui",
+    "docs:dev": "pnpm --filter @dada-element/docs docs:dev",
+    "docs:build": "pnpm --filter @dada-element/docs docs:build",
+    "docs:preview": "pnpm --filter @dada-element/docs docs:preview"
   },
   "dependencies": {
     "@dada-element/components": "workspace:*",
     "@dada-element/resolver": "workspace:*",
     "@dada-element/style": "workspace:*",
     "@dada-element/utils": "workspace:*",
+    "@dada-element/docs": "workspace:*",
     "@types/lodash-es": "^4.17.8",
     "lodash-es": "^4.17.21",
     "vue": "3.2.47"

@@ -2,23 +2,36 @@
 import '@dada-element/style/src/PopOut.scss'
 import { ref, watch, watchEffect, withDefaults } from 'vue'
 
-interface PopOutProps {
+const props = withDefaults(defineProps<{
+  /**
+   * 控制组件弹出
+   */
   visible?: boolean
+
+  /**
+   * 是否显示遮罩
+   */
   mask?: boolean
+
+  /**
+   * 点击遮罩后是否可以关闭
+   */
   maskClosable?: boolean
-}
-
-interface PopOutEmits {
-  (e: 'update:visible', value: boolean): null
-}
-
-const props = withDefaults(defineProps<PopOutProps>(), {
+}>(), {
   visible: false,
   mask: true,
   maskClosable: true,
 })
 
-const emits = defineEmits<PopOutEmits>()
+const emits = defineEmits<{
+  /**
+   * 当弹出组件的可见性发生变化时触发
+   *
+   * @param e 事件名称（'update:visible'）
+   * @param value 新的可见性值
+   */
+  (e: 'update:visible', value: boolean): null
+}>()
 
 const isAnimate = ref(false)
 let timer: null | NodeJS.Timeout = null

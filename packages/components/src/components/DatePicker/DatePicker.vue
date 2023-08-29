@@ -4,28 +4,67 @@ import { computed } from 'vue'
 import { pxToVw } from '@dada-element/utils'
 import type { DatePickerOnChangeEvent } from '@uni-helper/uni-app-types'
 
+// TODO: 这里还少一个block属性，记得顺便改文档
+
 // YYYY-MM-DD
 type dateRule = `${number}${number}${number}${number}-${number}${number}-${number}${number}`
 
-interface DatePickerProps {
+const props = withDefaults(defineProps<{
+  /**
+   * 占位文本，在输入为空时显示
+   */
   placeholder?: string
+
+  /**
+   * 日期选择器的宽度（以像素或其他 CSS 单位表示）
+   */
   width?: string | number
+
+  /**
+   * 是否带有阴影
+   */
   shadow?: boolean
+
+  /**
+   * 是否带有边框
+   */
   border?: boolean
+
+  /**
+   * 日期选择器按钮的类型
+   */
   type?: 'default' | 'primary'
+
+  /**
+   * 日期选择器按钮的尺寸
+   */
   size?: 'small' | 'medium' | 'large'
+
+  /**
+   * 日期选择的起始日期限制
+   */
   start?: dateRule
+
+  /**
+   * 日期选择的结束日期限制
+   */
   end?: dateRule
+
+  /**
+   * 在日期选择器中显示的字段（'year'、'month'、'day'）
+   */
   fields?: 'year' | 'month' | 'day'
+
+  /**
+   * 选定的日期值（字符串格式）
+   */
   value?: string
+
+  /**
+   * 日期选择器的标签
+   */
   label?: string
-}
-
-interface DatePickerEmits {
-  (e: 'update:value', value: string): void
-}
-
-const props = withDefaults(defineProps<DatePickerProps>(), {
+}>(), {
   placeholder: '',
   width: 600,
   shadow: false,
@@ -38,7 +77,15 @@ const props = withDefaults(defineProps<DatePickerProps>(), {
   end: '2023-12-31',
 })
 
-const emits = defineEmits<DatePickerEmits>()
+const emits = defineEmits<{
+  /**
+   * 选定的日期值发生变化时触发
+   *
+   * @param e 事件名称（'update:value'）
+   * @param value 新选定的日期值（字符串格式）
+   */
+  (e: 'update:value', value: string): void
+}>()
 
 function bindPickerChange(e: DatePickerOnChangeEvent) {
   emits('update:value', e.detail.value)
@@ -70,11 +117,7 @@ const styleObj = computed(() => {
 </script>
 
 <template>
-  <div
-    class="dada-element-wrapper __dd-input-container"
-    :class="containerClassAry"
-    :style="styleObj"
-  >
+  <div class="dada-element-wrapper __dd-input-container" :class="containerClassAry" :style="styleObj">
     <div :class="areaClassAry" class="__dd-input-area">
       <div v-if="label" class="__dd-input-label">
         {{ label }}

@@ -4,14 +4,27 @@ import { ref, watch, watchEffect } from 'vue'
 import { formatBase64MineType } from '@dada-element/utils'
 import type { ImageMode } from '../../types'
 
-interface ImageProps {
+const props = withDefaults(defineProps<{
+  /**
+   * 图片填充模式
+   */
   mode: ImageMode
-  src: string
-  previewSrc?: string
-  preview?: boolean
-}
 
-const props = withDefaults(defineProps<ImageProps>(), {
+  /**
+   * 图片缩略图url
+   */
+  src: string
+
+  /**
+   * 图片预览url
+   */
+  previewSrc?: string
+
+  /**
+   * 是否可以预览
+   */
+  preview?: boolean
+}>(), {
   preview: true,
   mode: 'aspectFit',
   lazy: false,

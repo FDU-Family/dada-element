@@ -2,21 +2,67 @@
 import { computed } from 'vue'
 import '@dada-element/style/src/Icon.scss'
 
-interface IconProps {
+const props = withDefaults(defineProps<{
+  /**
+   * 图标的名称
+   */
   name?: string
+
+  /**
+   * 图标的尺寸
+   */
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'huge'
+
+  /**
+   * 图标的颜色
+   */
   color?: string
+
+  /**
+   * 图标的背景颜色
+   */
   bgColor?: string
+
+  /**
+   * 图标的类型
+   */
   type?: 'none' | 'default' | 'primary' | 'secondary' | 'warning' | 'info'
+
+  /**
+   * 图标文字的类型
+   */
   textType?: 'default' | 'primary' | 'secondary' | 'warning' | 'info'
+
+  /**
+   * 图标文字的颜色
+   */
   textColor?: string
+
+  /**
+   * 图标的形状
+   */
   shape?: 'circle' | 'square'
+
+  /**
+   * 是否带有边框
+   */
   border?: boolean
+
+  /**
+   * 标签位置
+   */
   labelPosition?: 'top' | 'right' | 'bottom' | 'left'
+
+  /**
+   * 是否带有阴影
+   */
   shadow?: boolean
+
+  /**
+   * 图标的标签
+   */
   label?: string
-}
-const props = withDefaults(defineProps<IconProps>(), {
+}>(), {
   size: 'medium',
   type: 'default',
   shape: 'circle',

@@ -3,23 +3,50 @@ import '@dada-element/style/src/Modal.scss'
 import type { TouchEvent } from '@uni-helper/uni-app-types'
 import DadaPopOut from '../PopOut/PopOut.vue'
 
-interface ModalProp {
+withDefaults(defineProps<{
+  /**
+   * 是否可见，控制模态框是否弹出显示
+   */
   visible: boolean
+
+  /**
+   * 模态框的标题
+   */
   title?: string
+
+  /**
+   * 使用预设的类型
+   */
   preset?: 'default'
-}
-
-interface ModalEmits {
-  (e: 'update:visible', value: boolean): void
-  (e: 'confirm', event: TouchEvent): void
-  (e: 'cancel', event: TouchEvent): void
-}
-
-withDefaults(defineProps<ModalProp>(), {
+}>(), {
   title: '标题',
 })
 
-const emits = defineEmits<ModalEmits>()
+const emits = defineEmits<{
+  /**
+   * 当模态框的可见性发生变化时触发
+   *
+   * @param e 事件名称（'update:visible'）
+   * @param value 新的可见性值
+   */
+  (e: 'update:visible', value: boolean): void
+
+  /**
+   * 当确认按钮被点击时触发
+   *
+   * @param e 事件名称（'confirm'）
+   * @param event 点击事件对象
+   */
+  (e: 'confirm', event: TouchEvent): void
+
+  /**
+   * 当取消按钮被点击时触发
+   *
+   * @param e 事件名称（'cancel'）
+   * @param event 点击事件对象
+   */
+  (e: 'cancel', event: TouchEvent): void
+}>()
 
 function updateHandle(value: boolean) {
   emits('update:visible', value)
@@ -40,13 +67,7 @@ function updateHandle(value: boolean) {
       </div>
       <div class="__dd-modal-button-group">
         <template v-if="preset === 'default'">
-          <DadaButton
-            :block="true"
-            size="large"
-            :shadow="true"
-            type="primary"
-            @click="(e: TouchEvent) => $emit('confirm', e)"
-          >
+          <DadaButton :block="true" size="large" :shadow="true" type="primary" @click="(e: TouchEvent) => $emit('confirm', e)">
             确认
           </DadaButton>
           <DadaButton :block="true" size="large" :shadow="true" @click="(e: TouchEvent) => $emit('cancel', e)">

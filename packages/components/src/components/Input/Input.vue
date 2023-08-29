@@ -4,27 +4,72 @@ import '@dada-element/style/src/Input.scss'
 import { computed, ref, useSlots } from 'vue'
 import { pxToVw } from '@dada-element/utils'
 
-interface InputProps {
+const props = withDefaults(defineProps<{
+  /**
+   * 输入框的占位文本
+   */
   placeholder?: string
+
+  /**
+   * 输入框的宽度（以像素或其他 CSS 单位表示）
+   */
   width?: string | number
+
+  /**
+   * 是否带有阴影
+   */
   shadow?: boolean
+
+  /**
+   * 是否带有边框
+   */
   border?: boolean
+
+  /**
+   * 输入框的类型
+   */
   type?: 'default' | 'primary'
+
+  /**
+   * 输入框的尺寸
+   */
   size?: 'small' | 'medium' | 'large'
+
+  /**
+   * 输入框的值
+   */
   value?: string
+
+  /**
+   * 输入框的标签
+   */
   label?: string
+
+  /**
+   * 是否是密码输入框
+   */
   password?: boolean
+
+  /**
+   * 最大输入长度
+   */
   maxlength?: number
+
+  /**
+   * 是否禁用输入框
+   */
   disabled?: boolean
+
+  /**
+   * 是否显示右侧的线
+   */
   line?: boolean
+
+  /**
+   * 是否为块状元素
+   */
   block?: boolean
-}
-
-interface InputEmits {
-  (e: 'update:value', value: string): void
-}
-
-const props = withDefaults(defineProps<InputProps>(), {
+}>(), {
   placeholder: '',
   shadow: false,
   border: false,
@@ -35,7 +80,15 @@ const props = withDefaults(defineProps<InputProps>(), {
   block: false,
 })
 
-const emits = defineEmits<InputEmits>()
+const emits = defineEmits<{
+  /**
+   * 输入框的值发生变化时触发
+   *
+   * @param e 事件名称（'update:value'）
+   * @param value 新的输入框值
+   */
+  (e: 'update:value', value: string): void
+}>()
 
 const isFocus = ref(false)
 const slots = useSlots()

@@ -1,0 +1,15 @@
+{
+  "name": "@dada-element/docs",
+  "version": "1.0.0",
+  "description": "搭搭组件库文档",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "author": "gjssss",
+  "devDependencies": {
+    "vitepress": "1.0.0-rc.4"
+  },
+  "type": "module"
+}

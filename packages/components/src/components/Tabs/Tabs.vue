@@ -4,22 +4,42 @@ import '@dada-element/style/src/Tabs.scss'
 import { computed } from 'vue'
 import type { tabsOptionsType } from '../../types'
 
-interface TabsProps {
+const props = withDefaults(defineProps<{
+  /**
+   * 标签的类型
+   */
   type?: 'primary' | 'secondary'
+
+  /**
+   * 标签的尺寸
+   */
   size?: 'small' | 'medium' | 'large'
+
+  /**
+   * 当前选中的标签值
+   */
   value: number | string
+
+  /**
+   * 是否显示点状标记
+   */
   dotted?: boolean
+
+  /**
+   * 是否带有边框
+   */
   border?: boolean
+
+  /**
+   * 标签选项配置
+   */
   tabsOptions?: tabsOptionsType
+
+  /**
+   * 时间函数，用于标签切换的动画
+   */
   timeFunction?: 'default' | 'linear' | 'easeInCubic' | 'easeOutCubic' | 'easeInOutCubic'
-}
-
-interface TabsEmits {
-  (e: 'update:value', value: number | string): void
-  (e: 'change', event: SwiperOnChangeEvent): void
-}
-
-const props = withDefaults(defineProps<TabsProps>(), {
+}>(), {
   size: 'medium',
   type: 'primary',
   border: true,
@@ -27,7 +47,23 @@ const props = withDefaults(defineProps<TabsProps>(), {
   timeFunction: 'default',
 })
 
-const emits = defineEmits<TabsEmits>()
+const emits = defineEmits<{
+  /**
+   * 当选中的标签值发生变化时触发
+   *
+   * @param e 事件名称（'update:value'）
+   * @param value 新的选中的标签值
+   */
+  (e: 'update:value', value: number | string): void
+
+  /**
+   * 当标签切换时触发
+   *
+   * @param e 事件名称（'change'）
+   * @param event Swiper 切换事件对象
+   */
+  (e: 'change', event: SwiperOnChangeEvent): void
+}>()
 
 const slotArray = props.tabsOptions
   ? props.tabsOptions.map((item, index) => {

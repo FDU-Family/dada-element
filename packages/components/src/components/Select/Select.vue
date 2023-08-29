@@ -8,23 +8,53 @@ interface optionsProp {
   label: string | number
   value: string | number
 }
-interface SelectProps {
+
+const props = withDefaults(defineProps<{
+  /**
+   * 下拉框的占位文本
+   */
   placeholder?: string
+
+  /**
+   * 下拉框的宽度（以像素或其他 CSS 单位表示）
+   */
   width?: string | number
+
+  /**
+   * 是否带有阴影
+   */
   shadow?: boolean
+
+  /**
+   * 是否带有边框
+   */
   border?: boolean
+
+  /**
+   * 下拉框的类型
+   */
   type?: 'default' | 'primary'
+
+  /**
+   * 下拉框的尺寸
+   */
   size?: 'small' | 'medium' | 'large'
+
+  /**
+   * 下拉框的值
+   */
   value?: string | number
+
+  /**
+   * 下拉框的标签
+   */
   label?: string
+
+  /**
+   * 下拉框的选项列表
+   */
   options: Array<optionsProp>
-}
-
-interface SelectEmits {
-  (e: 'update:value', value: string | number): void
-}
-
-const props = withDefaults(defineProps<SelectProps>(), {
+}>(), {
   placeholder: '',
   width: 600,
   shadow: false,
@@ -34,7 +64,15 @@ const props = withDefaults(defineProps<SelectProps>(), {
   type: 'default',
 })
 
-const emits = defineEmits<SelectEmits>()
+const emits = defineEmits<{
+  /**
+   * 选中值发生变化时触发
+   *
+   * @param e 事件名称（'update:value'）
+   * @param value 新的选中值
+   */
+  (e: 'update:value', value: string | number): void
+}>()
 
 const index = computed(() => props.options.findIndex(item => item.value === props.value))
 const array = computed(() => props.options.map(item => item.label))

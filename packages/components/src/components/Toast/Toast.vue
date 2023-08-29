@@ -3,23 +3,45 @@ import '@dada-element/style/src/Toast.scss'
 import { computed } from 'vue'
 import DadaPopOut from '../PopOut/PopOut.vue'
 
-interface ToastProp {
+const props = withDefaults(defineProps<{
+  /**
+   * 是否可见，控制 Toast 是否显示
+   */
   visible: boolean
-  preset?: 'loading' | 'success' | 'error'
-  icon?: string
-  canClose?: boolean // 是否能手动关闭
-  message?: string
-}
 
-interface ToastEmits {
-  (e: 'update:visible', value: boolean): void
-}
-const props = withDefaults(defineProps<ToastProp>(), {
+  /**
+   * 预设的样式，如 loading、success、error
+   */
+  preset?: 'loading' | 'success' | 'error'
+
+  /**
+   * 自定义图标的名称（如果需要）
+   */
+  icon?: string
+
+  /**
+   * 是否允许手动关闭 Toast
+   */
+  canClose?: boolean
+
+  /**
+   * Toast 显示的消息文本
+   */
+  message?: string
+}>(), {
   preset: 'loading',
   canClose: false,
 })
 
-const emits = defineEmits<ToastEmits>()
+const emits = defineEmits<{
+  /**
+   * 当 Toast 的可见性发生变化时触发
+   *
+   * @param e 事件名称（'update:visible'）
+   * @param value 新的可见性值
+   */
+  (e: 'update:visible', value: boolean): void
+}>()
 
 const presetClass = computed(() => ({
   loading: {

@@ -4,47 +4,21 @@ import { computed } from 'vue'
 import '@dada-element/style/src/Button.scss'
 import { pxToVw } from '@dada-element/utils'
 
-const props = withDefaults(defineProps<{
-  /**
-   * 按钮类型
-   */
+export interface ButtonProps {
   type?: 'default' | 'primary' | 'secondary' | 'warning' | 'info'
-
-  /**
-   * 是否是文字按钮
-   */
-  text?: boolean
-
-  /**
-   * 按钮的尺寸
-   */
-  size?: 'small' | 'medium' | 'large'
-
-  /**
-   * 按钮的宽度，当设置`block`为`true`时不可用
-   */
   width?: number | string
-
-  /**
-   * 是否是圆形按钮
-   */
-  circle?: boolean
-
-  /**
-   * 是否为块状元素
-   */
-  block?: boolean
-
-  /**
-   * 是否有阴影
-   */
-  shadow?: boolean
-
-  /**
-   * 文字颜色
-   */
+  text?: boolean
   textColor?: string
-}>(), {
+  size?: 'small' | 'medium' | 'large'
+  circle?: boolean
+  block?: boolean
+  shadow?: boolean
+}
+export interface ButtonEmits {
+  (e: 'click', event: TouchEvent): void
+}
+
+const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'default',
   text: false,
   size: 'medium',
@@ -53,9 +27,7 @@ const props = withDefaults(defineProps<{
   shadow: false,
 })
 
-const emit = defineEmits<{
-  (e: 'click', event: TouchEvent): void
-}>()
+const emit = defineEmits<ButtonEmits>()
 
 function click(event: TouchEvent) {
   emit('click', event)

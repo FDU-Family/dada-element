@@ -7,24 +7,57 @@ import type { TimePickerOnChangeEvent } from '@uni-helper/uni-app-types'
 // hh:mm
 type timeRule = `${number}${number}:${number}${number}`
 
-interface DatePickerProps {
+const props = withDefaults(defineProps<{
+  /**
+   * 占位文本，在输入为空时显示
+   */
   placeholder?: string
+
+  /**
+   * 时间选择器的宽度（以像素或其他 CSS 单位表示）
+   */
   width?: string | number
+
+  /**
+   * 是否带有阴影
+   */
   shadow?: boolean
+
+  /**
+   * 是否带有边框
+   */
   border?: boolean
+
+  /**
+   * 按钮类型
+   */
   type?: 'default' | 'primary'
+
+  /**
+   * 按钮尺寸
+   */
   size?: 'small' | 'medium' | 'large'
+
+  /**
+   * 日期选择的起始时间规则
+   */
   start?: timeRule
+
+  /**
+   * 时间选择的结束时间规则
+   */
   end?: timeRule
+
+  /**
+   * 选定的时间值（字符串格式）
+   */
   value?: string
+
+  /**
+   * 时间选择器的标签
+   */
   label?: string
-}
-
-interface DatePickerEmits {
-  (e: 'update:value', value: string): void
-}
-
-const props = withDefaults(defineProps<DatePickerProps>(), {
+}>(), {
   placeholder: '',
   width: 600,
   shadow: false,
@@ -36,7 +69,15 @@ const props = withDefaults(defineProps<DatePickerProps>(), {
   end: '24:59',
 })
 
-const emits = defineEmits<DatePickerEmits>()
+const emits = defineEmits<{
+  /**
+   * 选定的时间值发生变化时触发
+   *
+   * @param e 事件名称（'update:value'）
+   * @param value 新选定的时间值（字符串格式）
+   */
+  (e: 'update:value', value: string): void
+}>()
 
 function bindPickerChange(e: TimePickerOnChangeEvent) {
   emits('update:value', e.detail.value)

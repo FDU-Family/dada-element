@@ -4,19 +4,52 @@ import '@dada-element/style/src/Avatar.scss'
 import DadaImage from '../Image/Image.vue'
 import type { ImageMode } from '../../types'
 
-interface AvatarProps {
+const props = withDefaults(defineProps<{
+  /**
+   * 头像url
+   */
   src: string
-  size: 'tiny' | 'small' | 'medium' | 'large' | 'huge'
-  shape: 'circle' | 'square'
-  mode: ImageMode
-  border: boolean
-  shadow: 'none' | 'medium' | 'large'
-  preview: boolean
-  previewSrc: string
-  width: number | string
-}
 
-const props = withDefaults(defineProps<AvatarProps>(), {
+  /**
+   * 头像尺寸
+   */
+  size: 'tiny' | 'small' | 'medium' | 'large' | 'huge'
+
+  /**
+   * 头像形状
+   */
+  shape: 'circle' | 'square'
+
+  /**
+   * 图片显示模式
+   */
+  mode: ImageMode
+
+  /**
+   * 是否有头像边框
+   */
+  border: boolean
+
+  /**
+   * 是否有阴影
+   */
+  shadow: 'none' | 'medium' | 'large'
+
+  /**
+   * 是否能预览
+   */
+  preview: boolean
+
+  /**
+   * 预览url
+   */
+  previewSrc: string
+
+  /**
+   * 设置大小，默认宽高相等
+   */
+  width: number | string
+}>(), {
   src: '',
   size: 'medium',
   mode: 'aspectFill',
