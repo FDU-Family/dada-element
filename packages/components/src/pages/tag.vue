@@ -1,0 +1,3 @@
+<template>
+  <tag-demo />
+</template>

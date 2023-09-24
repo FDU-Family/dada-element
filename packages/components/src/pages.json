@@ -49,6 +49,10 @@
       "type": "page"
     },
     {
+      "path": "pages/tag",
+      "type": "page"
+    },
+    {
       "path": "pages/time-picker",
       "type": "page"
     }
