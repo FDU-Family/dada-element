@@ -2,6 +2,28 @@
 @use "mixins/mixin" as *;
 
 $props-map: (
+  type: (
+    default: (
+      color: var(--main-deep),
+      background-color: var(--main-flat),
+    ),
+    primary: (
+      color: var(--bas-nagative),
+      background-color: var(--main-primary),
+    ),
+    secondary: (
+      color: var(--bas-nagative),
+      background-color: var(--sub-primary),
+    ),
+    warning: (
+      color: var(--main-primary),
+      background-color: var(--main-contrast),
+    ),
+    info: (
+      color: var(--bas-nagative),
+      background-color: var(--main-deep),
+    ),
+  ),
   size: (
     small: (
       font-size: 24px,

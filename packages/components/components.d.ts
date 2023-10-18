@@ -28,6 +28,7 @@ declare module 'vue' {
     DadaSelect: typeof import('@/components/Select/Select.vue')['default']
     DadaSwitcher: typeof import('@/components/Switcher/Switcher.vue')['default']
     DadaTabs: typeof import('@/components/Tabs/Tabs.vue')['default']
+    Dadatag: typeof import('@/components/tag/tag.vue')['default']
     DadaTag: typeof import('@/components/Tag/Tag.vue')['default']
     DadaTimePicker: typeof import('@/components/TimePicker/TimePicker.vue')['default']
     DadaToast: typeof import('@/components/Toast/Toast.vue')['default']

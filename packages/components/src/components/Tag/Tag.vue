@@ -12,18 +12,19 @@ export interface TagProps {
   textWeight?: number | string
   textSize?: number | string
   bgColor?: string
+  type: 'default' | 'primary' | 'success' | 'warning' | 'danger'
 }
 
 const props = withDefaults(defineProps<TagProps>(), {
   size: 'medium',
-  textColor: '#FFFFFF',
-  bgColor: '#5D3EBD',
+  type: 'default',
 })
 
 const classAry = computed(() => {
-  const { size } = props
+  const { size, type } = props
   return [
     `__dd-tag-size-${size}`,
+    `__dd-tag-type-${type}`,
   ]
 })
 
