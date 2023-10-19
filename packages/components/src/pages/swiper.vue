@@ -1,0 +1,3 @@
+<template>
+  <swiper-default />
+</template>
