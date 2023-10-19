@@ -47,6 +47,9 @@ function routeTo(path: string) {
     <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/tag')">
       Tag
     </DadaButton>
+    <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/swiper')">
+      swiper
+    </DadaButton>
   </div>
 </template>
 
