@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { ImageMode } from '../../types'
+import '@dada-element/style/src/Swiper.scss'
+import DadaImage from '../Image/Image.vue'
 
 export interface swiperImage {
   id: string
@@ -54,7 +56,7 @@ const props = withDefaults(defineProps<SwiperProps>(), {
     >
       <div v-for="(item) in props.images" :key="item.id">
         <swiper-item :itemid="item.id">
-          <dada-image :src="item.src" :preview="props.preview" :mode="props.mode" />
+          <DadaImage :src="item.src" :preview="props.preview" :mode="props.mode" />
           <slot />
         </swiper-item>
       </div>
