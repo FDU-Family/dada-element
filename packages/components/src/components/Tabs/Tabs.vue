@@ -65,14 +65,16 @@ const emits = defineEmits<{
   (e: 'change', event: SwiperOnChangeEvent): void
 }>()
 
-const slotArray = props.tabsOptions
-  ? props.tabsOptions.map((item, index) => {
-    if (item.slotName)
-      return item.slotName
-    else
-      return `slot-${index}`
-  })
-  : []
+const slotArray = computed(() => {
+  return props.tabsOptions
+    ? props.tabsOptions.map((item, index) => {
+      if (item.slotName)
+        return item.slotName
+      else
+        return `slot-${index}`
+    })
+    : []
+})
 
 const labelAreaClassAry = computed(() => {
   const { size, type, dotted, border } = props
@@ -86,13 +88,13 @@ const labelAreaClassAry = computed(() => {
 
 const labelStyleObj = computed(() => {
   return {
-    width: `${100 / slotArray.length}%`,
+    width: `${100 / slotArray.value.length}%`,
   }
 })
 
 const markPosition = computed(() => {
   // 这里的位置信息是根据flex space-arroud来计算的
-  const blockWidth = 100 / slotArray.length
+  const blockWidth = 100 / slotArray.value.length
   const { value } = props
 
   // 起始位置 + 间隔的文字距离 + 选中块的中心位置

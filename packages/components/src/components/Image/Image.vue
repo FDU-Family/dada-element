@@ -24,6 +24,7 @@ const props = withDefaults(defineProps<{
    * 是否可以预览
    */
   preview?: boolean
+  lazy?: boolean
 }>(), {
   preview: true,
   mode: 'aspectFit',
