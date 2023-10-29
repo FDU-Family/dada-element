@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { pxToVw } from '@dada-element/utils'
+import { computed } from 'vue'
 import type { ImageMode } from '../../types'
 import '@dada-element/style/src/Swiper.scss'
 import DadaImage from '../Image/Image.vue'
@@ -23,6 +25,7 @@ export interface SwiperProps {
   images?: swiperImage[]
   mode: ImageMode
   preview?: boolean
+  height?: string | number
 }
 
 const props = withDefaults(defineProps<SwiperProps>(), {
@@ -37,6 +40,15 @@ const props = withDefaults(defineProps<SwiperProps>(), {
   text: false,
   mode: 'aspectFill',
   preview: false,
+})
+
+const styleAry = computed(() => {
+  const { height } = props
+  const obj: Record<string, string> = {}
+  if (height)
+    obj.height = pxToVw(height)
+
+  return obj
 })
 </script>
 
@@ -53,6 +65,7 @@ const props = withDefaults(defineProps<SwiperProps>(), {
       :touch="props.touch"
       :current="props.current"
       :current-item-id="props.currentItemId"
+      :style="styleAry"
     >
       <div v-for="(item) in props.images" :key="item.id">
         <swiper-item :itemid="item.id">

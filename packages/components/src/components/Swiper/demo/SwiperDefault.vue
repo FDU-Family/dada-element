@@ -16,13 +16,16 @@ const color = '#f5cf39'
   <div class="outside">
     <dada-swiper class="casual" :text="true" :images="images" :dot-color="color" />
   </div>
+  <div class="outside">
+    <dada-swiper class="casual" height="500px" :text="true" :images="images" :dot-color="color" />
+  </div>
 </template>
 
 <style scoped lang="scss">
 .outside {
     width: 700px;
     display: block;
-    margin: auto;
+    margin-bottom: 100px;
     border-radius: 20px;
     overflow: hidden;
 }
