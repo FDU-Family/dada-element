@@ -2,6 +2,7 @@
 import '@dada-element/style/src/Modal.scss'
 import type { TouchEvent } from '@uni-helper/uni-app-types'
 import DadaPopOut from '../PopOut/PopOut.vue'
+import DadaButton from '../Button/Button.vue'
 
 withDefaults(defineProps<{
   /**
