@@ -3,4 +3,5 @@
   <toast-default />
   <notification-default />
   <modal-default />
+  <modal-slot />
 </template>

@@ -47,6 +47,7 @@ declare module 'vue' {
     InputSearch: typeof import('./src/components/Input/demo/inputSearch.vue')['default']
     Modal: typeof import('./src/components/Modal/Modal.vue')['default']
     ModalDefault: typeof import('./src/components/Modal/demo/ModalDefault.vue')['default']
+    ModalSlot: typeof import('./src/components/Modal/demo/ModalSlot.vue')['default']
     Notification: typeof import('./src/components/Notification/Notification.vue')['default']
     NotificationDefault: typeof import('./src/components/Notification/demo/NotificationDefault.vue')['default']
     PopOut: typeof import('./src/components/PopOut/PopOut.vue')['default']
