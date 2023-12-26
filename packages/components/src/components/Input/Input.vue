@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { InputOnFocusEvent, InputOnInputEvent } from '@uni-helper/uni-app-types'
+import type { InputOnBlurEvent, InputOnFocusEvent, InputOnInputEvent } from '@uni-helper/uni-app-types'
 import '@dada-element/style/src/Input.scss'
 import { computed, ref, useSlots } from 'vue'
 import { pxToVw } from '@dada-element/utils'
@@ -88,6 +88,8 @@ const emits = defineEmits<{
    * @param value 新的输入框值
    */
   (e: 'update:value', value: string): void
+  (e: 'onFocus', value: InputOnFocusEvent): void
+  (e: 'onBlur', value: InputOnBlurEvent): void
 }>()
 
 const isFocus = ref(false)
@@ -130,8 +132,9 @@ function inputHandle(e: InputOnInputEvent) {
   emits('update:value', e.detail.value)
 }
 
-function blurHandle() {
+function blurHandle(e: InputOnBlurEvent) {
   isFocus.value = false
+  emits('onBlur', e)
 }
 
 function focus() {
@@ -140,6 +143,7 @@ function focus() {
 
 function focusHandle(e: InputOnFocusEvent) {
   keyboardHeight.value = e.detail.height
+  emits('onFocus', e)
 }
 
 defineExpose({
