@@ -7,10 +7,18 @@ const input = ref()
 function clickHandle() {
   input.value.focus()
 }
+
+function focusTest() {
+  // eslint-disable-next-line no-console
+  console.log('hello, focus has listened')
+}
 </script>
 
 <template>
   <div>
+    <div class="mt ml">
+      <DadaInput type="primary" border placeholder="测试一下onFocus" @on-focus="focusTest" />
+    </div>
     <div class="mt ml">
       <DadaInput shadow placeholder="不带shadow" />
     </div>
