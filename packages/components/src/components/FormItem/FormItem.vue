@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { inject, provide } from 'vue';
-import { FormRules } from '../../types'
+import { inject, provide } from 'vue'
+import type { FormRules } from '../../types'
 
 const props = defineProps<{
-    name: string
+  name: string
 }>()
 const rule = inject<Readonly<FormRules>>('form')!
 
 provide('rule', rule[props.name])
-
 </script>
 
 <template>
-    <div>
-        <slot />
-    </div>
+  <div>
+    <slot />
+  </div>
 </template>
 
 <style></style>

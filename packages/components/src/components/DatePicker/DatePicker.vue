@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import '@dada-element/style/src/Select.scss'
-import { computed } from 'vue'
+import type { Ref } from 'vue'
+import { computed, inject, ref, watch } from 'vue'
 import { pxToVw } from '@dada-element/utils'
 import type { DatePickerOnChangeEvent } from '@uni-helper/uni-app-types'
+import type { RuleItem } from '../../types'
 
 // TODO: 这里还少一个block属性，记得顺便改文档
 
@@ -87,6 +89,33 @@ const emits = defineEmits<{
   (e: 'update:value', value: string): void
 }>()
 
+const isShake = ref(false)
+
+const rule = inject<RuleItem>('rule')
+const validate = inject<{
+  trigger: Ref<boolean>
+  setIsValidate: (value: boolean) => void
+}>('validate')
+
+if (validate) {
+  watch(validate.trigger, () => {
+    if (rule && rule.trigger.includes('submit')) {
+      const ans = rule.handle(props.value)
+
+      validate.setIsValidate(ans)
+      if (!ans)
+        shake()
+    }
+  })
+}
+
+function shake() {
+  isShake.value = true
+  setTimeout(() => {
+    isShake.value = false
+  }, 600)
+}
+
 function bindPickerChange(e: DatePickerOnChangeEvent) {
   emits('update:value', e.detail.value)
 }
@@ -97,6 +126,7 @@ const containerClassAry = computed(() => {
     shadow ? '__dd-input-shadow' : '',
     border ? '__dd-input-border' : '',
     `__dd-input-type-${type}`,
+    isShake.value ? 'shake-animation' : '',
   ]
 })
 

@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <div>
-        <form-simple/>
-    </div>
+  <div>
+    <form-simple />
+  </div>
 </template>
 
 <style>

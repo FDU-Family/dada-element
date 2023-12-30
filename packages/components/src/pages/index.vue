@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+
 function routeTo(path: string) {
   uni.navigateTo({
     url: `/pages${path}`,
@@ -33,8 +34,10 @@ const pages = ref([
 
 <template>
   <div class="index-page">
-    <DadaButton v-for="item in pages" :key="item.lable" width="325" class="mt" size="large" :type="item.type"
-      @click="routeTo(item.to)">
+    <DadaButton
+      v-for="item in pages" :key="item.lable" width="325" class="mt" size="large" :type="item.type"
+      @click="routeTo(item.to)"
+    >
       {{ item.lable }}
     </DadaButton>
   </div>

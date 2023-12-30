@@ -29,11 +29,13 @@
         "skipLibCheck": true
     },
     "include": [
-        "packages/**/*"
+        "packages/components/**/*",
+        "packages/utils/**/*"
     ],
     "exclude": [
         "**/__tests__/**",
         "**/tests/**",
-        "**/dist"
+        "**/dist",
+        "**/node_modules/**/*"
     ]
 }

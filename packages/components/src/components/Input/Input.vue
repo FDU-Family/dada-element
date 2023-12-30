@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import type { InputOnBlurEvent, InputOnFocusEvent, InputOnInputEvent } from '@uni-helper/uni-app-types'
 import '@dada-element/style/src/Input.scss'
-import { computed, inject, ref, useSlots, Ref, watch } from 'vue'
+import type { Ref } from 'vue'
+import { computed, inject, ref, useSlots, watch } from 'vue'
 import { pxToVw } from '@dada-element/utils'
-import { RuleItem } from '../../types'
+import type { RuleItem } from '../../types'
 
 const props = withDefaults(defineProps<{
   /**
@@ -100,8 +101,8 @@ const isShake = ref(false)
 
 const rule = inject<RuleItem>('rule')
 const validate = inject<{
-  trigger: Ref<boolean>;
-  setIsValidate: (value: boolean) => void;
+  trigger: Ref<boolean>
+  setIsValidate: (value: boolean) => void
 }>('validate')
 
 if (validate) {
@@ -110,13 +111,11 @@ if (validate) {
       const ans = rule.handle(props.value)
 
       validate.setIsValidate(ans)
-      if (!ans) {
+      if (!ans)
         shake()
-      }
     }
   })
 }
-
 
 const containerClassAry = computed(() => {
   const { shadow, border, type, block } = props
@@ -125,7 +124,7 @@ const containerClassAry = computed(() => {
     border ? '__dd-input-border' : '',
     block ? '__dd-input-block' : '',
     `__dd-input-type-${type}`,
-    isShake.value ? 'shake-animation' : ''
+    isShake.value ? 'shake-animation' : '',
   ]
 })
 
@@ -158,16 +157,16 @@ function inputHandle(e: InputOnInputEvent) {
 function blurHandle(e: InputOnBlurEvent) {
   isFocus.value = false
   emits('onBlur', e)
-  if (rule && rule.trigger.includes('blur') && !rule.handle(props.value)) {
+
+  if (rule && rule.trigger.includes('blur') && !rule.handle(props.value))
     shake()
-  }
 }
 
 function shake() {
   isShake.value = true
   setTimeout(() => {
     isShake.value = false
-  }, 600);
+  }, 600)
 }
 
 function focus() {
@@ -193,14 +192,14 @@ defineExpose({
       <div class="__dd-input-slot prefix">
         <slot name="prefix" />
       </div>
-      <input class="__dd-input" :class="classAry" :placeholder="placeholder" placeholder-class="__dd-input-placeholder"
+      <input
+        class="__dd-input" :class="classAry" :placeholder="placeholder" placeholder-class="__dd-input-placeholder"
         :value="value" :focus="isFocus" :password="props.password" :maxlength="props.maxlength" :disabled="props.disabled"
-        @input="inputHandle" @blur="blurHandle" @focus="focusHandle">
+        @input="inputHandle" @blur="blurHandle" @focus="focusHandle"
+      >
       <div class="__dd-input-slot suffix">
         <slot name="suffix" />
       </div>
     </div>
   </div>
 </template>
-
-<style lang="scss" src="@dada-element/style/src/animation.scss"></style>

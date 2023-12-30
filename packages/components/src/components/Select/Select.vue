@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import '@dada-element/style/src/Select.scss'
-import { computed } from 'vue'
+import type { Ref } from 'vue'
+import { computed, inject, ref, watch } from 'vue'
 import { pxToVw } from '@dada-element/utils'
 import type { SelectorPickerOnChangeEvent } from '@uni-helper/uni-app-types'
+import type { RuleItem } from '../../types'
 
 interface optionsProp {
   label: string | number
@@ -76,6 +78,25 @@ const emits = defineEmits<{
 
 const index = computed(() => props.options.findIndex(item => item.value === props.value))
 const array = computed(() => props.options.map(item => item.label))
+const isShake = ref(false)
+
+const rule = inject<RuleItem>('rule')
+const validate = inject<{
+  trigger: Ref<boolean>
+  setIsValidate: (value: boolean) => void
+}>('validate')
+
+if (validate) {
+  watch(validate.trigger, () => {
+    if (rule && rule.trigger.includes('submit')) {
+      const ans = rule.handle(props.value)
+
+      validate.setIsValidate(ans)
+      if (!ans)
+        shake()
+    }
+  })
+}
 
 function bindPickerChange(e: SelectorPickerOnChangeEvent) {
   const _index = Number(e.detail.value)
@@ -91,6 +112,7 @@ const containerClassAry = computed(() => {
     shadow ? '__dd-input-shadow' : '',
     border ? '__dd-input-border' : '',
     `__dd-input-type-${type}`,
+    isShake.value ? 'shake-animation' : '',
   ]
 })
 
@@ -108,14 +130,17 @@ const styleObj = computed(() => {
     obj.width = pxToVw(width)
   return obj
 })
+
+function shake() {
+  isShake.value = true
+  setTimeout(() => {
+    isShake.value = false
+  }, 600)
+}
 </script>
 
 <template>
-  <div
-    class="dada-element-wrapper __dd-input-container"
-    :class="containerClassAry"
-    :style="styleObj"
-  >
+  <div class="dada-element-wrapper __dd-input-container" :class="containerClassAry" :style="styleObj">
     <div :class="areaClassAry" class="__dd-input-area">
       <div v-if="label" class="__dd-input-label">
         {{ label }}

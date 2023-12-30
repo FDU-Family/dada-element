@@ -6,132 +6,137 @@ import {
   onScopeDispose,
   ref,
   unref,
-  watchEffect
-} from "./chunk-J5XXNUGQ.js";
+  watchEffect,
+} from './chunk-J5XXNUGQ.js'
 
 // ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/index.js
-import "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/fonts.css";
+import 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/fonts.css'
 
 // ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/without-fonts.js
-import "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/vars.css";
-import "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/base.css";
-import "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/utils.css";
-import "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/custom-block.css";
-import "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code.css";
-import "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code-group.css";
-import "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-doc.css";
-import "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-sponsor.css";
-import VPBadge from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPBadge.vue";
-import Layout from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/Layout.vue";
-import { default as default2 } from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeHero.vue";
-import { default as default3 } from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeFeatures.vue";
-import { default as default4 } from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeSponsors.vue";
-import { default as default5 } from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPDocAsideSponsors.vue";
-import { default as default6 } from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPage.vue";
-import { default as default7 } from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageTitle.vue";
-import { default as default8 } from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageSection.vue";
-import { default as default9 } from "D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamMembers.vue";
+import 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/vars.css'
+import 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/base.css'
+import 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/utils.css'
+import 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/custom-block.css'
+import 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code.css'
+import 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code-group.css'
+import 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-doc.css'
+import 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-sponsor.css'
+import VPBadge from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPBadge.vue'
+import Layout from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/Layout.vue'
+import { default as default2 } from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeHero.vue'
+import { default as default3 } from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeFeatures.vue'
+import { default as default4 } from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeSponsors.vue'
+import { default as default5 } from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPDocAsideSponsors.vue'
+import { default as default6 } from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPage.vue'
+import { default as default7 } from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageTitle.vue'
+import { default as default8 } from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageSection.vue'
+import { default as default9 } from 'D:/code/uniapp/dd/node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamMembers.vue'
+
+// ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/support/utils.js
+
+// ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/composables/data.js
+import { useData as useData$ } from 'vitepress'
 
 // ../../node_modules/.pnpm/@vueuse+shared@10.4.1_vue@3.3.4/node_modules/@vueuse/shared/index.mjs
 function tryOnScopeDispose(fn) {
   if (getCurrentScope()) {
-    onScopeDispose(fn);
-    return true;
+    onScopeDispose(fn)
+    return true
   }
-  return false;
+  return false
 }
 function toValue(r) {
-  return typeof r === "function" ? r() : unref(r);
+  return typeof r === 'function' ? r() : unref(r)
 }
-var isClient = typeof window !== "undefined" && typeof document !== "undefined";
-var isIOS = getIsIOS();
+const isClient = typeof window !== 'undefined' && typeof document !== 'undefined'
+const isIOS = getIsIOS()
 function getIsIOS() {
-  var _a;
-  return isClient && ((_a = window == null ? void 0 : window.navigator) == null ? void 0 : _a.userAgent) && /iP(ad|hone|od)/.test(window.navigator.userAgent);
+  let _a
+  return isClient && ((_a = window == null ? void 0 : window.navigator) == null ? void 0 : _a.userAgent) && /iP(ad|hone|od)/.test(window.navigator.userAgent)
 }
 function cacheStringFunction(fn) {
-  const cache = /* @__PURE__ */ Object.create(null);
+  const cache = /* @__PURE__ */ Object.create(null)
   return (str) => {
-    const hit = cache[str];
-    return hit || (cache[str] = fn(str));
-  };
+    const hit = cache[str]
+    return hit || (cache[str] = fn(str))
+  }
 }
-var hyphenateRE = /\B([A-Z])/g;
-var hyphenate = cacheStringFunction(
-  (str) => str.replace(hyphenateRE, "-$1").toLowerCase()
-);
-var camelizeRE = /-(\w)/g;
-var camelize = cacheStringFunction((str) => {
-  return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : "");
-});
+const hyphenateRE = /\B([A-Z])/g
+const hyphenate = cacheStringFunction(
+  str => str.replace(hyphenateRE, '-$1').toLowerCase(),
+)
+const camelizeRE = /-(\w)/g
+const camelize = cacheStringFunction((str) => {
+  return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : '')
+})
 function identity(arg) {
-  return arg;
+  return arg
 }
 
 // ../../node_modules/.pnpm/@vueuse+core@10.4.1_vue@3.3.4/node_modules/@vueuse/core/index.mjs
-var defaultWindow = isClient ? window : void 0;
-var defaultDocument = isClient ? window.document : void 0;
-var defaultNavigator = isClient ? window.navigator : void 0;
-var defaultLocation = isClient ? window.location : void 0;
+const defaultWindow = isClient ? window : void 0
+const defaultDocument = isClient ? window.document : void 0
+const defaultNavigator = isClient ? window.navigator : void 0
+const defaultLocation = isClient ? window.location : void 0
 function useMounted() {
-  const isMounted = ref(false);
+  const isMounted = ref(false)
   if (getCurrentInstance()) {
     onMounted(() => {
-      isMounted.value = true;
-    });
+      isMounted.value = true
+    })
   }
-  return isMounted;
+  return isMounted
 }
 function useSupported(callback) {
-  const isMounted = useMounted();
+  const isMounted = useMounted()
   return computed(() => {
-    isMounted.value;
-    return Boolean(callback());
-  });
+    isMounted.value
+    return Boolean(callback())
+  })
 }
 function useMediaQuery(query, options = {}) {
-  const { window: window2 = defaultWindow } = options;
-  const isSupported = useSupported(() => window2 && "matchMedia" in window2 && typeof window2.matchMedia === "function");
-  let mediaQuery;
-  const matches = ref(false);
+  const { window: window2 = defaultWindow } = options
+  const isSupported = useSupported(() => window2 && 'matchMedia' in window2 && typeof window2.matchMedia === 'function')
+  let mediaQuery
+  const matches = ref(false)
   const handler = (event) => {
-    matches.value = event.matches;
-  };
+    matches.value = event.matches
+  }
   const cleanup = () => {
     if (!mediaQuery)
-      return;
-    if ("removeEventListener" in mediaQuery)
-      mediaQuery.removeEventListener("change", handler);
+      return
+    if ('removeEventListener' in mediaQuery)
+      mediaQuery.removeEventListener('change', handler)
     else
-      mediaQuery.removeListener(handler);
-  };
+      mediaQuery.removeListener(handler)
+  }
   const stopWatch = watchEffect(() => {
     if (!isSupported.value)
-      return;
-    cleanup();
-    mediaQuery = window2.matchMedia(toValue(query));
-    if ("addEventListener" in mediaQuery)
-      mediaQuery.addEventListener("change", handler);
+      return
+    cleanup()
+    mediaQuery = window2.matchMedia(toValue(query))
+    if ('addEventListener' in mediaQuery)
+      mediaQuery.addEventListener('change', handler)
     else
-      mediaQuery.addListener(handler);
-    matches.value = mediaQuery.matches;
-  });
+      mediaQuery.addListener(handler)
+    matches.value = mediaQuery.matches
+  })
   tryOnScopeDispose(() => {
-    stopWatch();
-    cleanup();
-    mediaQuery = void 0;
-  });
-  return matches;
+    stopWatch()
+    cleanup()
+    mediaQuery = void 0
+  })
+  return matches
 }
-var _global = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
-var globalKey = "__vueuse_ssr_handlers__";
-var handlers = getHandlers();
+const _global = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {}
+const globalKey = '__vueuse_ssr_handlers__'
+const handlers = getHandlers()
 function getHandlers() {
   if (!(globalKey in _global))
-    _global[globalKey] = _global[globalKey] || {};
-  return _global[globalKey];
+    _global[globalKey] = _global[globalKey] || {}
+  return _global[globalKey]
 }
-var defaultState = {
+const defaultState = {
   x: 0,
   y: 0,
   pointerId: 0,
@@ -141,19 +146,19 @@ var defaultState = {
   width: 0,
   height: 0,
   twist: 0,
-  pointerType: null
-};
-var keys = Object.keys(defaultState);
-var DEFAULT_UNITS = [
-  { max: 6e4, value: 1e3, name: "second" },
-  { max: 276e4, value: 6e4, name: "minute" },
-  { max: 72e6, value: 36e5, name: "hour" },
-  { max: 5184e5, value: 864e5, name: "day" },
-  { max: 24192e5, value: 6048e5, name: "week" },
-  { max: 28512e6, value: 2592e6, name: "month" },
-  { max: Number.POSITIVE_INFINITY, value: 31536e6, name: "year" }
-];
-var _TransitionPresets = {
+  pointerType: null,
+}
+const keys = Object.keys(defaultState)
+const DEFAULT_UNITS = [
+  { max: 6e4, value: 1e3, name: 'second' },
+  { max: 276e4, value: 6e4, name: 'minute' },
+  { max: 72e6, value: 36e5, name: 'hour' },
+  { max: 5184e5, value: 864e5, name: 'day' },
+  { max: 24192e5, value: 6048e5, name: 'week' },
+  { max: 28512e6, value: 2592e6, name: 'month' },
+  { max: Number.POSITIVE_INFINITY, value: 31536e6, name: 'year' },
+]
+const _TransitionPresets = {
   easeInSine: [0.12, 0, 0.39, 0],
   easeOutSine: [0.61, 1, 0.88, 1],
   easeInOutSine: [0.37, 0, 0.63, 1],
@@ -177,105 +182,99 @@ var _TransitionPresets = {
   easeInOutCirc: [0.85, 0, 0.15, 1],
   easeInBack: [0.36, 0, 0.66, -0.56],
   easeOutBack: [0.34, 1.56, 0.64, 1],
-  easeInOutBack: [0.68, -0.6, 0.32, 1.6]
-};
-var TransitionPresets = Object.assign({}, { linear: identity }, _TransitionPresets);
+  easeInOutBack: [0.68, -0.6, 0.32, 1.6],
+}
+const TransitionPresets = Object.assign({}, { linear: identity }, _TransitionPresets)
 
 // ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/shared.js
-var inBrowser = typeof document !== "undefined";
-
-// ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/support/utils.js
-import { withBase } from "vitepress";
-
-// ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/composables/data.js
-import { useData as useData$ } from "vitepress";
-var useData = useData$;
+const inBrowser = typeof document !== 'undefined'
+const useData = useData$
 
 // ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/support/utils.js
 function ensureStartingSlash(path) {
-  return /^\//.test(path) ? path : `/${path}`;
+  return /^\//.test(path) ? path : `/${path}`
 }
 
 // ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/support/sidebar.js
 function getSidebar(_sidebar, path) {
   if (Array.isArray(_sidebar))
-    return addBase(_sidebar);
+    return addBase(_sidebar)
   if (_sidebar == null)
-    return [];
-  path = ensureStartingSlash(path);
+    return []
+  path = ensureStartingSlash(path)
   const dir = Object.keys(_sidebar).sort((a, b) => {
-    return b.split("/").length - a.split("/").length;
+    return b.split('/').length - a.split('/').length
   }).find((dir2) => {
-    return path.startsWith(ensureStartingSlash(dir2));
-  });
-  const sidebar = dir ? _sidebar[dir] : [];
-  return Array.isArray(sidebar) ? addBase(sidebar) : addBase(sidebar.items, sidebar.base);
+    return path.startsWith(ensureStartingSlash(dir2))
+  })
+  const sidebar = dir ? _sidebar[dir] : []
+  return Array.isArray(sidebar) ? addBase(sidebar) : addBase(sidebar.items, sidebar.base)
 }
 function getSidebarGroups(sidebar) {
-  const groups = [];
-  let lastGroupIndex = 0;
+  const groups = []
+  let lastGroupIndex = 0
   for (const index in sidebar) {
-    const item = sidebar[index];
+    const item = sidebar[index]
     if (item.items) {
-      lastGroupIndex = groups.push(item);
-      continue;
+      lastGroupIndex = groups.push(item)
+      continue
     }
-    if (!groups[lastGroupIndex]) {
-      groups.push({ items: [] });
-    }
-    groups[lastGroupIndex].items.push(item);
+    if (!groups[lastGroupIndex])
+      groups.push({ items: [] })
+
+    groups[lastGroupIndex].items.push(item)
   }
-  return groups;
+  return groups
 }
 function addBase(items, _base) {
   return [...items].map((_item) => {
-    const item = { ..._item };
-    const base = item.base || _base;
+    const item = { ..._item }
+    const base = item.base || _base
     if (base && item.link)
-      item.link = base + item.link;
+      item.link = base + item.link
     if (item.items)
-      item.items = addBase(item.items, base);
-    return item;
-  });
+      item.items = addBase(item.items, base)
+    return item
+  })
 }
 
 // ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/composables/sidebar.js
 function useSidebar() {
-  const { frontmatter, page, theme: theme2 } = useData();
-  const is960 = useMediaQuery("(min-width: 960px)");
-  const isOpen = ref(false);
+  const { frontmatter, page, theme: theme2 } = useData()
+  const is960 = useMediaQuery('(min-width: 960px)')
+  const isOpen = ref(false)
   const sidebar = computed(() => {
-    const sidebarConfig = theme2.value.sidebar;
-    const relativePath = page.value.relativePath;
-    return sidebarConfig ? getSidebar(sidebarConfig, relativePath) : [];
-  });
+    const sidebarConfig = theme2.value.sidebar
+    const relativePath = page.value.relativePath
+    return sidebarConfig ? getSidebar(sidebarConfig, relativePath) : []
+  })
   const hasSidebar = computed(() => {
-    return frontmatter.value.sidebar !== false && sidebar.value.length > 0 && frontmatter.value.layout !== "home";
-  });
+    return frontmatter.value.sidebar !== false && sidebar.value.length > 0 && frontmatter.value.layout !== 'home'
+  })
   const leftAside = computed(() => {
     if (hasAside)
-      return frontmatter.value.aside == null ? theme2.value.aside === "left" : frontmatter.value.aside === "left";
-    return false;
-  });
+      return frontmatter.value.aside == null ? theme2.value.aside === 'left' : frontmatter.value.aside === 'left'
+    return false
+  })
   const hasAside = computed(() => {
-    if (frontmatter.value.layout === "home")
-      return false;
+    if (frontmatter.value.layout === 'home')
+      return false
     if (frontmatter.value.aside != null)
-      return !!frontmatter.value.aside;
-    return theme2.value.aside !== false;
-  });
-  const isSidebarEnabled = computed(() => hasSidebar.value && is960.value);
+      return !!frontmatter.value.aside
+    return theme2.value.aside !== false
+  })
+  const isSidebarEnabled = computed(() => hasSidebar.value && is960.value)
   const sidebarGroups = computed(() => {
-    return hasSidebar.value ? getSidebarGroups(sidebar.value) : [];
-  });
+    return hasSidebar.value ? getSidebarGroups(sidebar.value) : []
+  })
   function open() {
-    isOpen.value = true;
+    isOpen.value = true
   }
   function close() {
-    isOpen.value = false;
+    isOpen.value = false
   }
   function toggle() {
-    isOpen.value ? close() : open();
+    isOpen.value ? close() : open()
   }
   return {
     isOpen,
@@ -287,24 +286,24 @@ function useSidebar() {
     isSidebarEnabled,
     open,
     close,
-    toggle
-  };
+    toggle,
+  }
 }
-var hashRef = ref(inBrowser ? location.hash : "");
+const hashRef = ref(inBrowser ? location.hash : '')
 if (inBrowser) {
-  window.addEventListener("hashchange", () => {
-    hashRef.value = location.hash;
-  });
+  window.addEventListener('hashchange', () => {
+    hashRef.value = location.hash
+  })
 }
 
 // ../../node_modules/.pnpm/vitepress@1.0.0-rc.4_@algolia+client-search@4.19.1_@types+node@20.4.2_search-insights@2.7.0/node_modules/vitepress/dist/client/theme-default/without-fonts.js
-var theme = {
+const theme = {
   Layout,
   enhanceApp: ({ app }) => {
-    app.component("Badge", VPBadge);
-  }
-};
-var without_fonts_default = theme;
+    app.component('Badge', VPBadge)
+  },
+}
+const without_fonts_default = theme
 export {
   default5 as VPDocAsideSponsors,
   default3 as VPHomeFeatures,
@@ -315,6 +314,6 @@ export {
   default8 as VPTeamPageSection,
   default7 as VPTeamPageTitle,
   without_fonts_default as default,
-  useSidebar
-};
-//# sourceMappingURL=@theme_index.js.map
+  useSidebar,
+}
+// # sourceMappingURL=@theme_index.js.map
