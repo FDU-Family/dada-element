@@ -16,3 +16,10 @@ export interface swiperImage {
 }
 
 export type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left' | 'bottom right'
+
+export interface RuleItem {
+  handle: (value: any) => boolean,
+  trigger: ('blur' | 'submit')[],
+}
+
+export type FormRules = Record<string, RuleItem>
