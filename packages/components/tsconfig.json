@@ -1,19 +1,20 @@
 {
-    "extends": "../../tsconfig",
     "compilerOptions": {
         "allowJs": true,
         "noImplicitThis": true,
         "types": [
             "@dcloudio/types",
+            "@uni-helper/uni-app-types",
             "vitest/globals"
         ],
         "declaration": true, // 生成类型声明文件
-        "declarationDir": "types" // 声明文件的输出目录
+        "declarationDir": "types", // 声明文件的输出目录
     },
     "include": [
         "src/components/**/*.vue",
         "src/types.ts",
         "src/**/hooks/*.ts",
+        "src/**/*",
         "../utils/index.ts",
         "../utils/src"
     ],
@@ -30,5 +31,5 @@
         "@/*": [
             "./src/*"
         ]
-    }
+    },
 }

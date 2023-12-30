@@ -1,63 +1,52 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 function routeTo(path: string) {
   uni.navigateTo({
     url: `/pages${path}`,
   })
 }
+
+const types = ['default', 'primary', 'secondary', 'warning', 'info']
+
+function randomType() {
+  return types[Math.floor(Math.random() * 5)]
+}
+
+const pages = ref([
+  { lable: '按钮', to: '/button', type: randomType() },
+  { lable: '文本框', to: '/input', type: randomType() },
+  { lable: '单选框', to: '/radio', type: randomType() },
+  { lable: 'Tab', to: '/tabs', type: randomType() },
+  { lable: '选择器', to: '/select', type: randomType() },
+  { lable: '日历选择器', to: '/date-picker', type: randomType() },
+  { lable: '时间选择器', to: '/time-picker', type: randomType() },
+  { lable: '图片', to: '/image', type: randomType() },
+  { lable: '弹窗', to: '/pop-out', type: randomType() },
+  { lable: '图标', to: '/icon', type: randomType() },
+  { lable: '切换', to: '/switcher', type: randomType() },
+  { lable: '头像', to: '/avatar', type: randomType() },
+  { lable: 'Tag', to: '/tag', type: randomType() },
+  { lable: 'swiper', to: '/swiper', type: randomType() },
+  { lable: '表单', to: '/swiper', type: randomType() },
+])
 </script>
 
 <template>
   <div class="index-page">
-    <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/button')">
-      按钮
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" @click="routeTo('/input')">
-      文本框
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="secondary" @click="routeTo('/radio')">
-      单选框
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="warning" @click="routeTo('/tabs')">
-      Tab
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="info" @click="routeTo('/select')">
-      选择器
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/date-picker')">
-      日历选择器
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" @click="routeTo('/time-picker')">
-      时间选择器
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="secondary" @click="routeTo('/image')">
-      图片
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="warning" @click="routeTo('/pop-out')">
-      弹窗
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="info" @click="routeTo('/icon')">
-      图标
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" @click="routeTo('/switcher')">
-      切换
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/avatar')">
-      头像
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/tag')">
-      Tag
-    </DadaButton>
-    <DadaButton width="700" class="mt" size="large" type="primary" @click="routeTo('/swiper')">
-      swiper
+    <DadaButton v-for="item in pages" :key="item.lable" width="325" class="mt" size="large" :type="item.type"
+      @click="routeTo(item.to)">
+      {{ item.lable }}
     </DadaButton>
   </div>
 </template>
 
 <style lang="scss">
-.index-page{
+.index-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0 25px;
 }
 </style>
