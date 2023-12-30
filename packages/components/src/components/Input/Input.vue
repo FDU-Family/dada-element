@@ -99,11 +99,11 @@ const slots = useSlots()
 const keyboardHeight = ref()
 const isShake = ref(false)
 
-const rule = inject<RuleItem>('rule')
+const rule = inject<RuleItem>('rule', null)
 const validate = inject<{
   trigger: Ref<boolean>
   setIsValidate: (value: boolean) => void
-}>('validate')
+}>('validate', null)
 
 if (validate) {
   watch(validate.trigger, () => {
@@ -192,11 +192,9 @@ defineExpose({
       <div class="__dd-input-slot prefix">
         <slot name="prefix" />
       </div>
-      <input
-        class="__dd-input" :class="classAry" :placeholder="placeholder" placeholder-class="__dd-input-placeholder"
+      <input class="__dd-input" :class="classAry" :placeholder="placeholder" placeholder-class="__dd-input-placeholder"
         :value="value" :focus="isFocus" :password="props.password" :maxlength="props.maxlength" :disabled="props.disabled"
-        @input="inputHandle" @blur="blurHandle" @focus="focusHandle"
-      >
+        @input="inputHandle" @blur="blurHandle" @focus="focusHandle">
       <div class="__dd-input-slot suffix">
         <slot name="suffix" />
       </div>

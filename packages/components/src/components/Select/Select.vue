@@ -80,11 +80,11 @@ const index = computed(() => props.options.findIndex(item => item.value === prop
 const array = computed(() => props.options.map(item => item.label))
 const isShake = ref(false)
 
-const rule = inject<RuleItem>('rule')
+const rule = inject<RuleItem>('rule', null)
 const validate = inject<{
   trigger: Ref<boolean>
   setIsValidate: (value: boolean) => void
-}>('validate')
+}>('validate', null)
 
 if (validate) {
   watch(validate.trigger, () => {

@@ -91,11 +91,11 @@ const emits = defineEmits<{
 
 const isShake = ref(false)
 
-const rule = inject<RuleItem>('rule')
+const rule = inject<RuleItem>('rule', null)
 const validate = inject<{
   trigger: Ref<boolean>
   setIsValidate: (value: boolean) => void
-}>('validate')
+}>('validate', null)
 
 if (validate) {
   watch(validate.trigger, () => {
@@ -155,7 +155,8 @@ const styleObj = computed(() => {
       <div class="__dd-input-slot prefix">
         <slot name="prefix" />
       </div>
-      <picker mode="date" :value="value" :start="start" :end="end" :fields="fields" class="__dd-select" @change="bindPickerChange">
+      <picker mode="date" :value="value" :start="start" :end="end" :fields="fields" class="__dd-select"
+        @change="bindPickerChange">
         <template v-if="value">
           {{ value }}
         </template>

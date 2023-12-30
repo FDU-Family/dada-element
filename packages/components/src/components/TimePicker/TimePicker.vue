@@ -83,11 +83,11 @@ const emits = defineEmits<{
 
 const isShake = ref(false)
 
-const rule = inject<RuleItem>('rule')
+const rule = inject<RuleItem>('rule', null)
 const validate = inject<{
   trigger: Ref<boolean>
   setIsValidate: (value: boolean) => void
-}>('validate')
+}>('validate', null)
 
 if (validate) {
   watch(validate.trigger, () => {

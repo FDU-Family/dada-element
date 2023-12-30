@@ -5,7 +5,7 @@ import type { FormRules } from '../../types'
 const props = defineProps<{
   name: string
 }>()
-const rule = inject<Readonly<FormRules>>('form')!
+const rule = inject<Readonly<FormRules>>('form',{})
 
 provide('rule', rule[props.name])
 </script>
