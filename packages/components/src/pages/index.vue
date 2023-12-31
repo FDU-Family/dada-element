@@ -29,6 +29,7 @@ const pages = ref([
   { lable: 'Tag', to: '/tag', type: randomType() },
   { lable: 'swiper', to: '/swiper', type: randomType() },
   { lable: '表单', to: '/form', type: randomType() },
+  { lable: '过渡切换', to: '/transition', type: randomType() },
 ])
 </script>
 

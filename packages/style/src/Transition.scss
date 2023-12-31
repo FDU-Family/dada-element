@@ -1,0 +1,6 @@
+@use "mixins/mixin" as *;
+
+.__dada-transition {
+    @include trans-all();
+    display: flex;
+}

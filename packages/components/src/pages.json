@@ -63,6 +63,10 @@
     {
       "path": "pages/time-picker",
       "type": "page"
+    },
+    {
+      "path": "pages/transition",
+      "type": "page"
     }
   ],
   "globalStyle": {

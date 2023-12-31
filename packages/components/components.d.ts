@@ -34,6 +34,8 @@ declare module 'vue' {
     DadaTag: typeof import('@/components/Tag/Tag.vue')['default']
     DadaTimePicker: typeof import('@/components/TimePicker/TimePicker.vue')['default']
     DadaToast: typeof import('@/components/Toast/Toast.vue')['default']
+    DadaTransition: typeof import('@/components/Transition/Transition.vue')['default']
+    DadaTransitionItem: typeof import('@/components/TransitionItem/TransitionItem.vue')['default']
     DatePicker: typeof import('./src/components/DatePicker/DatePicker.vue')['default']
     DatePickerDefault: typeof import('./src/components/DatePicker/demo/DatePickerDefault.vue')['default']
     DatePickerFields: typeof import('./src/components/DatePicker/demo/DatePickerFields.vue')['default']
@@ -75,5 +77,7 @@ declare module 'vue' {
     TimePickerDefault: typeof import('./src/components/TimePicker/demo/TimePickerDefault.vue')['default']
     Toast: typeof import('./src/components/Toast/Toast.vue')['default']
     ToastDefault: typeof import('./src/components/Toast/demo/ToastDefault.vue')['default']
+    Transition: typeof import('./src/components/Transition/Transition.vue')['default']
+    TransitionTest: typeof import('./src/components/Transition/demo/transitionTest.vue')['default']
   }
 }
