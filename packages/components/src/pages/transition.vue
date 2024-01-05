@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <div>
-        <transition-test />
-    </div>
+  <div>
+    <transition-test />
+  </div>
 </template>
 
 <style>

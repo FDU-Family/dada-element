@@ -70,7 +70,6 @@ const styleAry = computed(() => {
       <div v-for="(item) in props.images" :key="item.id">
         <swiper-item :itemid="item.id">
           <DadaImage :src="item.src" :preview="props.preview" :mode="props.mode" />
-          <slot />
         </swiper-item>
       </div>
     </swiper>
