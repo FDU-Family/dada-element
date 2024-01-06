@@ -4,6 +4,7 @@ import { computed } from 'vue'
 import type { ImageMode } from '../../types'
 import '@dada-element/style/src/Swiper.scss'
 import DadaImage from '../Image/Image.vue'
+import type { SwiperOnChangeEvent } from '@uni-helper/uni-app-types'
 
 export interface swiperImage {
   id: string
@@ -42,7 +43,17 @@ const props = withDefaults(defineProps<SwiperProps>(), {
   preview: false,
 })
 
-const styleAry = computed(() => {
+const emits = defineEmits<{
+  /**
+ * 发生滑动时时触发
+ *
+ * @param e 事件名称（'update:value'）
+ * @param value 新的选中值
+ */
+  (e: 'update:current', value: number): void
+}>()
+
+const styleObj = computed(() => {
   const { height } = props
   const obj: Record<string, string> = {}
   if (height)
@@ -50,26 +61,20 @@ const styleAry = computed(() => {
 
   return obj
 })
+
+function changeHandle(event: SwiperOnChangeEvent) {
+  emits('update:current', event.detail.current)
+}
 </script>
 
 <template>
   <div class="dada-element-wrapper __dd-swiper">
-    <swiper
-      :indicator-dots="props.dots"
-      :autoplay="props.autoplay"
-      :circular="props.circular"
-      :dot-color="props.dotColor"
-      :dot-active-color="props.dotActiveColor"
-      :interval="props.interval"
-      :vertical="props.vertical"
-      :touch="props.touch"
-      :current="props.current"
-      :current-item-id="props.currentItemId"
-      :style="styleAry"
-    >
-      <div v-for="(item) in props.images" :key="item.id">
+    <swiper :indicator-dots="dots" :autoplay="autoplay" :circular="circular" :dot-color="dotColor"
+      :dot-active-color="dotActiveColor" :interval="interval" :vertical="vertical" :touch="touch" :current="current"
+      :current-item-id="currentItemId" :style="styleObj" @change="changeHandle">
+      <div v-for="item in images" :key="item.id">
         <swiper-item :itemid="item.id">
-          <DadaImage :src="item.src" :preview="props.preview" :mode="props.mode" />
+          <DadaImage :src="item.src" :preview="preview" :mode="mode" />
         </swiper-item>
       </div>
     </swiper>
