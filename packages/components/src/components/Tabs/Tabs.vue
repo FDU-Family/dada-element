@@ -29,6 +29,11 @@ const props = withDefaults(defineProps<{
    * 是否带有边框
    */
   border?: boolean
+  
+  /**
+   * 是否删除显示主体
+   */
+  noBody?:boolean
 
   /**
    * 标签选项配置
@@ -44,6 +49,7 @@ const props = withDefaults(defineProps<{
   type: 'primary',
   border: true,
   dotted: false,
+  noBody: false,
   timeFunction: 'default',
 })
 
@@ -142,7 +148,7 @@ function clickLableHandle(e: TouchEvent, index: number) {
         {{ item.lable }}
       </div>
     </div>
-    <swiper easing-function="easeInOutCubic" :current="Number(value)" @change="changeHandle">
+    <swiper v-if="!noBody" easing-function="easeInOutCubic" :current="Number(value)" @change="changeHandle">
       <template v-for="item in slotArray" :key="item">
         <swiper-item>
           <slot :name="item" />
