@@ -41,6 +41,10 @@
       "type": "page"
     },
     {
+      "path": "pages/region-picker",
+      "type": "page"
+    },
+    {
       "path": "pages/select",
       "type": "page"
     },

@@ -155,8 +155,10 @@ const styleObj = computed(() => {
       <div class="__dd-input-slot prefix">
         <slot name="prefix" />
       </div>
-      <picker mode="date" :value="value" :start="start" :end="end" :fields="fields" class="__dd-select"
-        @change="bindPickerChange">
+      <picker
+        mode="date" :value="value" :start="start" :end="end" :fields="fields" class="__dd-select"
+        @change="bindPickerChange"
+      >
         <template v-if="value">
           {{ value }}
         </template>
