@@ -72,11 +72,12 @@ const props = withDefaults(defineProps<{
 })
 
 const iconClassAry = computed(() => {
-  const { name, size, type, shadow, shape, border, labelPosition } = props
+  const { name, size, type, shadow, shape, border, labelPosition,textType } = props
   return [
     name,
     `__dd-icon-size-${size}`,
     `__dd-icon-type-${type}`,
+    `__dd-icon-text-type-${textType}`,
     `__dd-icon-shape-${shape}`,
     `__dd-icon-label-${labelPosition}`,
     shadow ? '__dd-icon-shadow' : '',
