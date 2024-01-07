@@ -27,7 +27,6 @@ declare module 'vue' {
     DadaNotification: typeof import('@/components/Notification/Notification.vue')['default']
     DadaPopOut: typeof import('@/components/PopOut/PopOut.vue')['default']
     DadaRadio: typeof import('@/components/Radio/Radio.vue')['default']
-    DadaRaPicker: typeof import('@/components/RaPicker/RaPicker.vue')['default']
     DadaRegionPicker: typeof import('@/components/RegionPicker/RegionPicker.vue')['default']
     DadaSelect: typeof import('@/components/Select/Select.vue')['default']
     DadaSwiper: typeof import('@/components/Swiper/Swiper.vue')['default']

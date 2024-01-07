@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const value = ref('')
+const value = ref(undefined)
 </script>
 
 <template>
@@ -10,7 +10,7 @@ const value = ref('')
       {{ value }}
     </div>
     <div class="mt ml">
-      <dada-region-picker v-model:value="value" placeholder="请选择地区" start="2023-01-01" end="2023-12-31" />
+      <dada-region-picker v-model:value="value" placeholder="请选择地区" />
     </div>
     <div class="mt ml">
       <dada-region-picker v-model:value="value" placeholder="请选择地区" />
