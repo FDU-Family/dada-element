@@ -39,7 +39,7 @@ const previewFlag = ref(false)
 let isPreviewLoad = false
 
 watchEffect(() => {
-  if (props.src.startsWith('http'))
+  if (props.src.startsWith('http')) {
     uni.request({
       url: props.src, responseType: 'arraybuffer',
     }).then((res) => {
@@ -47,8 +47,8 @@ watchEffect(() => {
       const type = formatBase64MineType(base64[0])
       picSrc.value = `data:${type};base64,${base64}`
     })
-  else
-    picSrc.value = props.src
+  }
+  else { picSrc.value = props.src }
 })
 
 watch(() => props.previewSrc, () => {

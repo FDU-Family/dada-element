@@ -21,6 +21,7 @@ const pages = ref([
   { lable: '选择器', to: '/select', type: randomType() },
   { lable: '日历选择器', to: '/date-picker', type: randomType() },
   { lable: '时间选择器', to: '/time-picker', type: randomType() },
+  { lable: '地区选择器', to: '/region-picker', type: randomType() },
   { lable: '图片', to: '/image', type: randomType() },
   { lable: '弹窗', to: '/pop-out', type: randomType() },
   { lable: '图标', to: '/icon', type: randomType() },
