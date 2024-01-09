@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<{
    * 是否带有边框
    */
   border?: boolean
-  
+
   /**
    * 是否删除显示主体
    */
