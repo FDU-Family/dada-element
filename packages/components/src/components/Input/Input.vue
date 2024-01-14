@@ -71,6 +71,11 @@ const props = withDefaults(defineProps<{
    * 是否为块状元素
    */
   block?: boolean
+
+  /**
+   * 键盘弹起时，是否自动上推页面
+   */
+  keyboard: boolean
 }>(), {
   placeholder: '',
   shadow: false,
@@ -80,6 +85,7 @@ const props = withDefaults(defineProps<{
   maxlength: 140,
   type: 'default',
   block: false,
+  keyboard: false,
 })
 
 const emits = defineEmits<{
@@ -155,6 +161,7 @@ function inputHandle(e: InputOnInputEvent) {
 }
 
 function blurHandle(e: InputOnBlurEvent) {
+  keyboardHeight.value = 0
   isFocus.value = false
   emits('onBlur', e)
 
@@ -174,7 +181,9 @@ function focus() {
 }
 
 function focusHandle(e: InputOnFocusEvent) {
-  keyboardHeight.value = e.detail.height
+  if (!props.keyboard)
+    keyboardHeight.value = `${e.detail.height}px`
+
   emits('onFocus', e)
 }
 
@@ -192,9 +201,11 @@ defineExpose({
       <div class="__dd-input-slot prefix">
         <slot name="prefix" />
       </div>
-      <input class="__dd-input" :class="classAry" :placeholder="placeholder" placeholder-class="__dd-input-placeholder"
+      <input
+        class="__dd-input" :class="classAry" :placeholder="placeholder" placeholder-class="__dd-input-placeholder"
         :value="value" :focus="isFocus" :password="props.password" :maxlength="props.maxlength" :disabled="props.disabled"
-        @input="inputHandle" @blur="blurHandle" @focus="focusHandle">
+        :adjust-position="props.keyboard" @input="inputHandle" @blur="blurHandle" @focus="focusHandle"
+      >
       <div class="__dd-input-slot suffix">
         <slot name="suffix" />
       </div>
