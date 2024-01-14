@@ -2,6 +2,7 @@
 import { reactive } from 'vue'
 
 const visible = reactive(Array.from({ length: 4 }).map(() => false))
+const message = '测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度，测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度'
 
 function clickHandle(index: number) {
   visible[index] = true
@@ -16,11 +17,14 @@ function clickHandle(index: number) {
     <div class="mt ml">
       <div>
         <DadaButton @click="clickHandle(1)">
-          loading 预设(默认)
+          loading 预设(默认222222)
         </DadaButton>
       </div>
-      <DadaToast v-model:visible="visible[1]">
+      <!-- <DadaToast v-model:visible="visible[1]">
         测试
+      </DadaToast> -->
+      <DadaToast v-model:visible="visible[1]" preset="error" :message="message">
+        测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度,测试文本长度
       </DadaToast>
     </div>
     <div class="mt ml">
@@ -37,7 +41,7 @@ function clickHandle(index: number) {
           error预设
         </DadaButton>
       </div>
-      <DadaToast v-model:visible="visible[3]" preset="error" />
+      <DadaToast v-model:visible="visible[3]" preset="error" message="ceshicfsafdasfasfddasfsf" />
     </div>
     <div class="mt ml">
       <div>
