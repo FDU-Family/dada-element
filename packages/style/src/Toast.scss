@@ -1,6 +1,7 @@
 .__dd-toast {
-  width: 200px;
-  height: 200px;
+  max-width: 630px;
+  min-width: 200px;
+  min-height: 200px;
   background-color: var(--bas-nagative);
   border-radius: 40px;
   display: flex;
@@ -10,12 +11,20 @@
   font-size: 26px;
   font-weight: 700;
   color: var(--main-deep);
+  overflow: hidden;
 }
 .__dd-toast-icon {
   width: 100px;
   height: 100px;
   font-size: 100px;
   font-weight: normal;
+}
+
+.__dd-toast-content {
+  padding: 0 20px 20px 20px;
+  line-height: 40px;
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .__dd-toast-icon-loading {

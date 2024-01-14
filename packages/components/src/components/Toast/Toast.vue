@@ -79,7 +79,9 @@ function updateHandle(value: boolean) {
       <div class="iconfont __dd-toast-icon" :class="classAry" />
       <div>
         <template v-if="!icon && preset">
-          {{ presetClass[preset].content }}
+          <div class="__dd-toast-content">
+            {{ presetClass[preset].content }}
+          </div>
         </template>
         <slot v-else />
       </div>
