@@ -181,7 +181,9 @@ function focus() {
 }
 
 function focusHandle(e: InputOnFocusEvent) {
-  keyboardHeight.value = `${e.detail.height}px`
+  if (!props.keyboard)
+    keyboardHeight.value = `${e.detail.height}px`
+
   emits('onFocus', e)
 }
 
