@@ -52,7 +52,7 @@ $props-map: (
   ),
   type: (
     none: (
-      color: var(--main-deep),
+      color: var(--bas-nagative),
     ),
     default: (
       background-color: var(--main-flat),
@@ -71,6 +71,9 @@ $props-map: (
     ),
   ),
   text-type: (
+    none: (
+      color: var(--bas-nagative),
+    ),
     default: (
       color: var(--main-flat),
     ),

@@ -31,7 +31,7 @@ const props = withDefaults(defineProps<{
   /**
    * 图标文字的类型
    */
-  textType?: 'default' | 'primary' | 'secondary' | 'warning' | 'info'
+  textType?: 'none' | 'default' | 'primary' | 'secondary' | 'warning' | 'info'
 
   /**
    * 图标文字的颜色
@@ -72,7 +72,7 @@ const props = withDefaults(defineProps<{
 })
 
 const iconClassAry = computed(() => {
-  const { name, size, type, shadow, shape, border, labelPosition,textType } = props
+  const { name, size, type, shadow, shape, border, labelPosition, textType } = props
   return [
     name,
     `__dd-icon-size-${size}`,
