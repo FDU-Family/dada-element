@@ -14,9 +14,6 @@
         "src/components/**/*.vue",
         "src/types.ts",
         "src/**/hooks/*.ts",
-        "src/**/*",
-        "../utils/index.ts",
-        "../utils/src"
     ],
     "exclude": [
         "**/node_modules",

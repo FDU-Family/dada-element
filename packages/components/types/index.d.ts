@@ -1,2 +1,2 @@
-export * from './packages/components/src/components'
-export * from './packages/components/src/types'
+export * from './components'
+export * from './types'
