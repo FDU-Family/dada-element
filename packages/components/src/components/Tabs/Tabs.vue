@@ -33,7 +33,7 @@ const props = withDefaults(defineProps<{
   /**
    * 是否删除显示主体
    */
-  noBody?:boolean
+  noBody?: boolean
 
   /**
    * 标签选项配置
@@ -143,7 +143,7 @@ function clickLableHandle(e: TouchEvent, index: number) {
         class="__dd-tabs-label trans-all"
         :class="labelClassAry(index)"
         :style="labelStyleObj"
-        @click="clickLableHandle($event, index)"
+        @click="clickLableHandle($event as unknown as TouchEvent, index)"
       >
         {{ item.lable }}
       </div>

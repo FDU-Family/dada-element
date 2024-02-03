@@ -1,12 +1,12 @@
 import { mount } from '@vue/test-utils'
-import { describe, expect, test, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import Button from '../Button.vue'
 
-describe('Button.vue', () => {
-  test('测试组件正确引入', async () => {
+describe('button.vue', () => {
+  it('测试组件正确引入', async () => {
     expect(Button).toBeTruthy()
   })
-  test('测试点击事件', async () => {
+  it('测试点击事件', async () => {
     const clickFnMock = vi.fn()
     const wrapper = mount(Button, {
       props: {
@@ -17,7 +17,7 @@ describe('Button.vue', () => {
 
     expect(clickFnMock).toHaveBeenCalled()
   })
-  test('测试属性', async () => {
+  it('测试属性', async () => {
     const typeWrapper = mount(Button)
     expect(typeWrapper.vm.$props.type).toBe('default')
     // 更改类名后要修改

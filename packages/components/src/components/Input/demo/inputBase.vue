@@ -9,7 +9,6 @@ function clickHandle() {
 }
 
 function focusTest() {
-  // eslint-disable-next-line no-console
   console.log('hello, focus has listened')
 }
 </script>

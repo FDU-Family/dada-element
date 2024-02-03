@@ -19,7 +19,7 @@ const defaultProps = {
   width: 600,
 }
 
-describe('Input.vue', () => {
+describe('input.vue', () => {
   it('测试组件导入', () => {
     expect(Input).toBeTruthy()
   })

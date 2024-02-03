@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { pxToVw } from '@dada-element/utils'
 import { computed } from 'vue'
+import type { SwiperOnChangeEvent } from '@uni-helper/uni-app-types'
 import type { ImageMode } from '../../types'
 import '@dada-element/style/src/Swiper.scss'
 import DadaImage from '../Image/Image.vue'
-import type { SwiperOnChangeEvent } from '@uni-helper/uni-app-types'
 
 export interface swiperImage {
   id: string
@@ -45,11 +45,11 @@ const props = withDefaults(defineProps<SwiperProps>(), {
 
 const emits = defineEmits<{
   /**
- * 发生滑动时时触发
- *
- * @param e 事件名称（'update:value'）
- * @param value 新的选中值
- */
+   * 发生滑动时时触发
+   *
+   * @param e 事件名称（'update:value'）
+   * @param value 新的选中值
+   */
   (e: 'update:current', value: number): void
 }>()
 
@@ -69,9 +69,11 @@ function changeHandle(event: SwiperOnChangeEvent) {
 
 <template>
   <div class="dada-element-wrapper __dd-swiper">
-    <swiper :indicator-dots="dots" :autoplay="autoplay" :circular="circular" :dot-color="dotColor"
+    <swiper
+      :indicator-dots="dots" :autoplay="autoplay" :circular="circular" :dot-color="dotColor"
       :dot-active-color="dotActiveColor" :interval="interval" :vertical="vertical" :touch="touch" :current="current"
-      :current-item-id="currentItemId" :style="styleObj" @change="changeHandle">
+      :current-item-id="currentItemId" :style="styleObj" @change="changeHandle"
+    >
       <div v-for="item in images" :key="item.id">
         <swiper-item :itemid="item.id">
           <DadaImage :src="item.src" :preview="preview" :mode="mode" />

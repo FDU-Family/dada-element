@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const images = [
   {
@@ -20,7 +20,7 @@ const current = ref(0)
     <dada-swiper class="casual" :text="true" :images="images" :dot-color="color" />
   </div>
   <div class="outside">
-    <dada-swiper class="casual" height="500px" :text="true" :images="images" :dot-color="color" v-model:current="current" />
+    <dada-swiper v-model:current="current" class="casual" height="500px" :text="true" :images="images" :dot-color="color" />
   </div>
   <div>{{ current + 1 }}/{{ images.length }}</div>
 </template>

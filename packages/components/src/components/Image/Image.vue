@@ -41,7 +41,8 @@ let isPreviewLoad = false
 watchEffect(() => {
   if (props.src.startsWith('http')) {
     uni.request({
-      url: props.src, responseType: 'arraybuffer',
+      url: props.src,
+      responseType: 'arraybuffer',
     }).then((res) => {
       const base64 = uni.arrayBufferToBase64(res.data as ArrayBuffer)
       const type = formatBase64MineType(base64[0])
@@ -64,7 +65,8 @@ function previewHandle() {
       // 第一次加载
       if (props.previewSrc) {
         uni.request({
-          url: props.previewSrc, responseType: 'arraybuffer',
+          url: props.previewSrc,
+          responseType: 'arraybuffer',
         }).then((res) => {
           const base64 = uni.arrayBufferToBase64(res.data as ArrayBuffer)
           const type = formatBase64MineType(base64[0])

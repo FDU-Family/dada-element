@@ -2,7 +2,7 @@
   "scripts": {
     "play": "pnpm --filter play dev",
     "dev": "pnpm --filter @dada-element/components dev",
-    "fix": "eslint --fix --ext .js,.ts,.vue .",
+    "lint:fix": "eslint packages/components/src --fix",
     "lint": "eslint --ext .js,.ts,.vue .",
     "test": "pnpm --filter @dada-element/components test",
     "coverage": "pnpm --filter @dada-element/components coverage",

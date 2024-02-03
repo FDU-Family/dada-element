@@ -28,7 +28,7 @@ const options = [
 
   },
 ]
-describe('Tabs.vue', () => {
+describe('tabs.vue', () => {
   it('测试Tabs组件引入是否成功', () => {
     expect(Tabs).toBeTruthy()
   })

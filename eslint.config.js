@@ -23,4 +23,7 @@ module.exports = antfu({
     '**/fixtures',
     // ...globs
   ],
+  rules: {
+    'no-console': 'off',
+  },
 })
