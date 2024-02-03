@@ -19,6 +19,16 @@ withDefaults(defineProps<{
    * 使用预设的类型
    */
   preset?: 'default'
+
+  /**
+   * z-index
+   *
+   * 为number时为实际值，为string时为9990+value
+   *
+   * 正常使用请使用字符串类型，并且以整十为单位，如0 < 10 < 20 ...
+   * @default 9990
+   */
+  zIndex?: number
 }>(), {
   title: '标题',
 })
@@ -55,7 +65,7 @@ function updateHandle(value: boolean) {
 </script>
 
 <template>
-  <DadaPopOut :visible="visible" @update:visible="updateHandle">
+  <DadaPopOut :visible="visible" :z-index="zIndex" @update:visible="updateHandle">
     <div class="dada-element-wrapper __dd-modal-container" @click.stop="">
       <div class="__dd-modal-title">
         {{ title }}
