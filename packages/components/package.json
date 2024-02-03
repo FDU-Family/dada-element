@@ -1,13 +1,12 @@
 {
   "name": "@dada-element/components",
-  "version": "1.2.23",
-
+  "version": "1.2.24",
   "description": "all components are settled here",
   "author": "gjssss",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FDU-Family/dada-element"
+    "url": "git+https://github.com/FDU-Family/dada-element.git"
   },
   "main": "./index.ts",
   "module": "./index.ts",
