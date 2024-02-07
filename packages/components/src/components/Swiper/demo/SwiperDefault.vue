@@ -11,8 +11,18 @@ const images = [
     src: 'https://placekitten.com/800/1200',
   },
 ]
+const singleImage = [
+  {
+    id: 'A',
+    src: 'https://placekitten.com/200/300',
+  },
+]
 const color = '#f5cf39'
 const current = ref(0)
+
+function getImageMsg(value: string) {
+  console.log('what i had have', value)
+}
 </script>
 
 <template>
@@ -20,7 +30,22 @@ const current = ref(0)
     <dada-swiper class="casual" :text="true" :images="images" :dot-color="color" />
   </div>
   <div class="outside">
-    <dada-swiper v-model:current="current" class="casual" height="500px" :text="true" :images="images" :dot-color="color" />
+    <dada-swiper
+      v-model:current="current" class="casual" height="500px" :text="true" :images="images"
+      :dot-color="color"
+    />
+  </div>
+  <div class="outside">
+    <dada-swiper
+      v-model:current="current" class="casual" height="500px" :text="true" :images="singleImage" :dots="false"
+      :dot-color="color"
+    />
+  </div>
+  <div class="outside">
+    <dada-swiper
+      v-model:current="current" class="casual" height="500px" :text="true" :images="images" :dots="false"
+      :dot-color="color" @image-event="getImageMsg"
+    />
   </div>
   <div>{{ current + 1 }}/{{ images.length }}</div>
 </template>
