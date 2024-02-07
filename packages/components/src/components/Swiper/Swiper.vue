@@ -102,7 +102,7 @@ const emits = defineEmits<{
    * @param e 事件名称（'update:value'）
    * @param value 新的选中值
    */
-  (e: 'imageEvent', value: string): void
+  (e: 'imageEvent', value: string | number | object): void
 }>()
 
 const styleObj = computed(() => {
@@ -118,8 +118,7 @@ function changeHandle(event: SwiperOnChangeEvent) {
   emits('update:current', event.detail.current)
 }
 
-function imageHandler(value: string) {
-  console.log('item--------', value)
+function imageHandler(value: string | number | object) {
   emits('imageEvent', value)
 }
 </script>
