@@ -1,7 +1,7 @@
 {
   "name": "dada-element",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "play": "pnpm --filter play dev",
     "dev": "pnpm --filter @dada-element/components dev",
