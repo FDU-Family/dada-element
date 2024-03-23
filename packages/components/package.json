@@ -25,7 +25,8 @@
     "dev": "uni -p mp-weixin",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "test-ui": "vitest --ui"
+    "test-ui": "vitest --ui",
+    "release": "release-it"
   },
   "dependencies": {
     "@dada-element/utils": "*",
