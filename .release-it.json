@@ -1,29 +1,3 @@
 {
-    "git": {
-        "commitMessage": "chore(release): release v${version}",
-        "tagName": "v${version}"
-    },
-    "npm": {
-        "publish": true
-    },
-    "github": {
-        "release": true
-    },
-    "hooks": {
-        "after:bump": "echo The version is now ${version}"
-    },
-    "plugins": {
-        "@release-it/conventional-changelog": {
-            "preset": "angular",
-            "infile": "CHANGELOG.md",
-            "ignoreRecommendedBump": true
-        },
-
-        "@release-it-plugins/workspaces": {
-            "publish": false,
-            "workspaces": [
-                "packages/*"
-            ]
-        }
-    }
+    "git": false
 }

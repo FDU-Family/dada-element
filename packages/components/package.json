@@ -1,6 +1,6 @@
 {
   "name": "@dada-element/components",
-  "version": "1.2.26",
+  "version": "2.0.1",
   "description": "dada components based on uniapp",
   "author": "gjssss djd",
   "license": "MIT",
@@ -25,8 +25,7 @@
     "dev": "uni -p mp-weixin",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "test-ui": "vitest --ui",
-    "release": "release-it"
+    "test-ui": "vitest --ui"
   },
   "dependencies": {
     "@dada-element/utils": "*",
