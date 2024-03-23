@@ -21,3 +21,5 @@ cypress/videos/*
 tmp
 
 .vscode
+
+.npmrc
