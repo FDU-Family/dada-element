@@ -1,0 +1,81 @@
+name: DaDa Element Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+      - 'v*.*.*-aplha.*'
+      - 'v*.*.*-beta.*'
+      - 'v*.*.*-rc.*'
+    
+    branches: 
+      - master
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+
+    outputs:
+      release_type: ${{ steps.release-type.outputs.value }}
+
+    setps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: 🚚 Get release type
+              id: release-type
+              run: |
+                  if [[ ${{ github.ref_name }} =~ -(alpha|beta|rc)\. ]]; then
+                      extracted_type="${BASH_REMATCH[1]}"
+                      echo "value=$extracted_type" >> $GITHUB_OUTPUT
+                  else
+                      echo "value=stable" >> $GITHUB_OUTPUT
+                  fi
+
+  release-npm:
+    needs: [prepare]
+    if: github.repository == 'FDU-Family/dada-element'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with: 
+          ref: ${{ github.ref }}
+
+      - name: Intsall pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Install dependencies and build
+        run: |
+          pnpm install
+          pnpm build
+
+      - name: Publish to NPM
+        run: |
+            if [[ ${{ needs.prepare.outputs.release_type }} == "alpha" ]]; then
+                pnpm publish --access public --tag ${{ needs.prepare.outputs.release_type }} -r --no-git-checks
+            else
+                pnpm publish --access public -r --no-git-checks
+            fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        
+        
+  
