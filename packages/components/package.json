@@ -1,8 +1,8 @@
 {
   "name": "@dada-element/components",
   "version": "1.2.25",
-  "description": "all components are settled here",
-  "author": "gjssss",
+  "description": "dada components based on uniapp",
+  "author": "gjssss djd",
   "license": "MIT",
   "repository": {
     "type": "git",

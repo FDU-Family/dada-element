@@ -1,4 +1,7 @@
 {
+  "name": "dada-element",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
     "play": "pnpm --filter play dev",
     "dev": "pnpm --filter @dada-element/components dev",
@@ -9,14 +12,20 @@
     "test-ui": "pnpm --filter @dada-element/components test-ui",
     "docs:dev": "pnpm --filter @dada-element/docs docs:dev",
     "docs:build": "pnpm --filter @dada-element/docs docs:build",
-    "docs:preview": "pnpm --filter @dada-element/docs docs:preview"
+    "docs:preview": "pnpm --filter @dada-element/docs docs:preview",
+    "release": "release-it",
+    "release:aplha": "release-it preminor --preRelease=alpha",
+    "release:beta": "release-it preminor --preRelease=beta",
+    "release:rc": "release-it preminor --preRelease=rc"
   },
   "dependencies": {
     "@dada-element/components": "workspace:*",
+    "@dada-element/docs": "workspace:*",
     "@dada-element/resolver": "workspace:*",
     "@dada-element/style": "workspace:*",
     "@dada-element/utils": "workspace:*",
-    "@dada-element/docs": "workspace:*",
+    "@release-it-plugins/workspaces": "^4.2.0",
+    "@release-it/conventional-changelog": "^8.0.1",
     "@types/lodash-es": "4.17.8",
     "lodash-es": "4.17.21",
     "vue": "3.2.47"
@@ -25,6 +34,7 @@
     "@antfu/eslint-config": "2.6.3",
     "@types/node": "20.4.2",
     "eslint": "8.56.0",
+    "release-it": "^17.1.1",
     "typescript": "5.1.6",
     "vite": "4.4.5",
     "vue-tsc": "1.8.8"
