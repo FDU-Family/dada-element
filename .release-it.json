@@ -7,6 +7,9 @@
     "github": {
         "release": true
     },
+    "hooks": {
+        "after:bump": "echo The version is now ${version}"
+    },
     "plugins": {
         "@release-it/conventional-changelog": {
             "preset": "angular",
