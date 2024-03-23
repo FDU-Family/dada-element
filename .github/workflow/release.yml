@@ -8,8 +8,6 @@ on:
       - 'v*.*.*-beta.*'
       - 'v*.*.*-rc.*'
     
-    branches: 
-      - master
 
 jobs:
   prepare:
