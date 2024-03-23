@@ -12,7 +12,11 @@
     "test-ui": "pnpm --filter @dada-element/components test-ui",
     "docs:dev": "pnpm --filter @dada-element/docs docs:dev",
     "docs:build": "pnpm --filter @dada-element/docs docs:build",
-    "docs:preview": "pnpm --filter @dada-element/docs docs:preview"
+    "docs:preview": "pnpm --filter @dada-element/docs docs:preview",
+    "release": "release-it",
+    "release:aplha": "release-it preminor --preRelease=alpha",
+    "release:beta": "release-it preminor --preRelease=beta",
+    "release:rc": "release-it preminor --preRelease=rc"
   },
   "dependencies": {
     "@dada-element/components": "workspace:*",
