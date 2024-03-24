@@ -16,7 +16,7 @@ jobs:
     outputs:
       release_type: ${{ steps.release-type.outputs.value }}
 
-    setps:
+    steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -28,14 +28,14 @@ jobs:
           node-version: '16'
 
       - name: 🚚 Get release type
-              id: release-type
-              run: |
-                  if [[ ${{ github.ref_name }} =~ -(alpha|beta|rc)\. ]]; then
-                      extracted_type="${BASH_REMATCH[1]}"
-                      echo "value=$extracted_type" >> $GITHUB_OUTPUT
-                  else
-                      echo "value=stable" >> $GITHUB_OUTPUT
-                  fi
+        id: release-type
+        run: |
+            if [[ ${{ github.ref_name }} =~ -(alpha|beta|rc)\. ]]; then
+                extracted_type="${BASH_REMATCH[1]}"
+                echo "value=$extracted_type" >> $GITHUB_OUTPUT
+            else
+                echo "value=stable" >> $GITHUB_OUTPUT
+            fi
 
   release-npm:
     needs: [prepare]
