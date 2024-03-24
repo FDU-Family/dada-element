@@ -1,12 +1,13 @@
 {
   "name": "@dada-element/components",
-  "version": "1.2.26",
+  "version": "1.2.31",
+  "private": false,
   "description": "dada components based on uniapp",
   "author": "gjssss djd",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FDU-Family/dada-element.git"
+    "url": "https://github.com/FDU-Family/dada-element.git"
   },
   "main": "./index.ts",
   "module": "./index.ts",
@@ -25,7 +26,11 @@
     "dev": "uni -p mp-weixin",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "test-ui": "vitest --ui"
+    "test-ui": "vitest --ui",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
   },
   "dependencies": {
     "@dada-element/utils": "*",

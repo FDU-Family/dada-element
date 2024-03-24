@@ -1,7 +1,12 @@
 {
   "name": "dada-element",
   "type": "module",
-  "version": "1.2.26",
+  "version": "1.2.31",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FDU-Family/dada-element"
+  },
   "scripts": {
     "play": "pnpm --filter play dev",
     "dev": "pnpm --filter @dada-element/components dev",
@@ -32,6 +37,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.6.3",
+    "@release-it/bumper": "^6.0.1",
     "@types/node": "20.4.2",
     "eslint": "8.56.0",
     "release-it": "^17.1.1",
