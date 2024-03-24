@@ -43,7 +43,12 @@ const props = withDefaults(defineProps<{
   /**
    * 文字颜色
    */
-  textColor?: string
+  textColor?: string,
+
+  /**
+   * 是否禁用
+   */
+  disabled?: boolean
 }>(), {
   type: 'default',
   text: false,
@@ -58,11 +63,14 @@ const emit = defineEmits<{
 }>()
 
 function click(event: TouchEvent) {
-  emit('click', event)
+  if(!props.disabled) {
+    emit('click', event)
+  }
+  
 }
 
 const classAry = computed(() => {
-  const { type, text, size, circle, block, shadow } = props
+  const { type, text, size, circle, block, shadow, disabled } = props
   return [
     `__dd-button-type-${type}`,
     `__dd-button-size-${size}`,
@@ -70,6 +78,7 @@ const classAry = computed(() => {
     circle ? '__dd-button-circle' : '',
     block ? '__dd-button-block' : '',
     shadow ? '__dd-button-shadow' : '',
+    disabled ? '__dd-button-disabled' : ''
   ]
 })
 const styleObj = computed(() => {
