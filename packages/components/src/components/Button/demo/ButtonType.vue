@@ -6,6 +6,9 @@
   <div>
     <h1>正常按钮</h1>
     <div>
+      <DadaButton class="mr" :disabled="true">
+        失效按钮
+      </DadaButton>
       <DadaButton class="mr">
         按钮
       </DadaButton>
