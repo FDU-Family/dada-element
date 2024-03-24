@@ -1,7 +1,12 @@
 {
   "name": "dada-element",
   "type": "module",
-  "version": "1.2.26",
+  "version": "1.2.30",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dream-num/univer"
+  },
   "scripts": {
     "play": "pnpm --filter play dev",
     "dev": "pnpm --filter @dada-element/components dev",

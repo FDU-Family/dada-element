@@ -1,6 +1,7 @@
 {
   "name": "@dada-element/components",
-  "version": "1.2.26",
+  "version": "1.2.30",
+  "private": false,
   "description": "dada components based on uniapp",
   "author": "gjssss djd",
   "license": "MIT",

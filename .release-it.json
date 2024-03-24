@@ -25,7 +25,7 @@
             "workspaces": [
                 "packages/components",
                 "packages/style",
-                "packages/resolver",
+                "packages/resolvers",
                 "packages/utils"
             ]
         }
