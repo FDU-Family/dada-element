@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FDU-Family/dada-element.git"
+    "url": "https://github.com/FDU-Family/dada-element.git"
   },
   "main": "./index.ts",
   "module": "./index.ts",
