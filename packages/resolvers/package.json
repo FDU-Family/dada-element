@@ -12,6 +12,12 @@
     "typescript",
     "resolver"
   ],
+  "scripts": {
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
+  },
   "peerDependencies": {
     "unplugin-vue-components": "*"
   },

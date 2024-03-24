@@ -23,7 +23,10 @@
         "@release-it-plugins/workspaces": {
             "publish": false,
             "workspaces": [
-                "packages/*"
+                "packages/components",
+                "packages/style",
+                "packages/resolver",
+                "packages/utils"
             ]
         }
     }
