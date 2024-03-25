@@ -1,5 +1,12 @@
 
 
+## [1.2.27](https://github.com/FDU-Family/dada-element/compare/v1.2.26...v1.2.27) (2024-03-25)
+
+
+### Features
+
+* add the btn disabled func ([076b416](https://github.com/FDU-Family/dada-element/commit/076b416fde92fc64c01400133992c2bc823a65e8))
+
 ## 0.0.1 (2024-03-23)
 
 
