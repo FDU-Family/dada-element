@@ -1,6 +1,7 @@
 {
   "name": "@dada-element/docs",
   "version": "0.0.1",
+  "private": true,
   "description": "the docs for dada components ",
   "scripts": {
     "docs:dev": "vitepress dev docs",
