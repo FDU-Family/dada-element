@@ -1,5 +1,7 @@
 
 
+## [1.3.1](https://github.com/FDU-Family/dada-element/compare/v1.3.0...v1.3.1) (2024-03-25)
+
 # [1.3.0](https://github.com/FDU-Family/dada-element/compare/v1.2.28...v1.3.0) (2024-03-25)
 
 ## [1.2.28](https://github.com/FDU-Family/dada-element/compare/v1.2.27...v1.2.28) (2024-03-25)
